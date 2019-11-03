@@ -1,7 +1,10 @@
-% !TeX spellcheck = de_DE
+% !TeX spellcheck = id_ID
 \documentclass[a4paper,12pt]{article}
 \usepackage[bahasa]{babel}
 \usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{listings}
 \graphicspath{ {./img/} }
 \begin{document}
 \title{Laporan Praktikum Statistika Pertemuan 7}
@@ -35,9 +38,84 @@
 Tabel Kontigensi merupakan tabel yang digunakan untuk mengukur hubungan (asosiasi) antara dua variable kategorik dimana tabel tersebut merangkum frekuensi bersama dari observasi pada setiap kategori variable. 
 \paragraph{}
 Misalkan n sampel diklasifikasikan secara silang berdasarkan dua atribut atau lebih dalam suatu.
-
+\paragraph{}
+Berikut ini contoh tabel kontingesi 2x2 :
+\begin{table}[!ht]
+	\begin{tabular}{|c|c|l|l|c|}
+		\hline
+		\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{l|}{Variable 2}                 & \multirow{2}{*}{Total} \\ \cline{3-4}
+		\multicolumn{2}{|l|}{}                  & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} &                        \\ \hline
+		\multirow{2}{*}{Variable 1}     & 1     & $O_{11}$                       &$O_{12}$                      &\multicolumn{1}{l|}{$n_{1+}$ }  \\ \cline{2-5} 
+		& 2     & $O_{21}$                       & $O_{22}$                       & \multicolumn{1}{l|}{$n_{2+}$}  \\ \hline
+		\multicolumn{2}{|c|}{Total}             & $n_{+1}$                       &  $n_{+2}$                      & N                      \\ \hline
+	\end{tabular}
+\end{table}
+\paragraph{}
+Dengan menggunakan R Console maka :
+\begin{enumerate}
+	\item Untuk membuat Tabel \textit{Contingency} dua arah dengan Fungsi \textit{\textbf{table( )}} dari  \textit{data.frame}
+	\item Untuk membuat Tabel Contingency tiga Arah atau lebih dengan Fungsi \textit{\textbf{ftable( )}} untuk membentuk tabel contingency tiga arah dari \textit{data.frame}.
+\end{enumerate}
+\subsection{Distribusi Frekuensi}
+\paragraph{}
+Distribusi frekuensi adalah daftar nilai data (bisa nilai individual atau nilai data yang sudah dikelompokkan ke dalam selang interval tertentu) yang disertai dengan nilai frekuensi yang sesuai.
+\paragraph{}
+Pengelompokkan data ke dalam beberapa kelas dimaksudkan agar ciri-ciri penting data tersebut dapat segera terlihat. Daftar frekuensi ini akan memberikan gambaran yang khas tentang bagaimana keragaman data.
+\paragraph{}
+Distribusi frekuensi dibuat dengan alasan berikut:
+\begin{enumerate}[label=\alph*.]
+	\item kumpulan data yang besar dapat diringkas
+	\item kita dapat memperoleh beberapa gambaran mengenai karakteristik data, dan
+	\item merupakan dasar dalam pembuatan grafik penting (seperti histogram).
+\end{enumerate}
+\paragraph{}
+Pada saat menyusun tabel distribusi frekuensi, pastikan bahwa 
+\begin{enumerate}[label=\alph*.]
+	\item kelas tidak tumpang tindih sehingga setiap nilai-nilai pengamatan harus masuk tepat ke dalam satu kelas
+	\item tidak akan ada data pengamatan yang tertinggal (tidak dapat dimasukkan ke dalam kelas tertentu). 
+\end{enumerate}
+\paragraph{}
+Dengan menggunakan R Console maka :
+\begin{enumerate}
+	\item Penyajian data dalam bentuk tabel  distribusi frequensi dapat digunakan \textbf{fungsi \textit{table()}}
+	\item Untuk  penyajian data dalam bentuk tabel  distribusi frequensi relatif  digunakan \textbf{fungsi \textit{table()/length()}}
+	\item Untuk Membuat Tabel Distribusi Frekuensi untuk Data Berkelompok digunakan \textbf{fungsi \textit{cut( )}} untuk membuat suatu interval. Argumen \textbf{\textit{break}} digunakan untuk menentukan batas-batas interval.	
+\end{enumerate}
+\section{Praktik}
+\subsection{Tabel Kontigensi}
 \subsubsection{Praktik 1}
+\paragraph{}
+Sajikan data berikut ini dalam bentuk table kontigensi 
+\begin{table}[!ht]
+	\begin{tabular}{|c|c|}
+		\hline 
+		Pendidikan & Jenis Kelamin \\ 
+		\hline 
+		S1 & Laki-laki \\ 
+		\hline 
+		S1 & Laki-laki \\ 
+		\hline 
+		S1 & Laki-laki \\ 
+		\hline 
+		S1 & Perempuan \\ 
+		\hline 
+		S1 & Perempuan \\ 
+		\hline 
+		S2 & Perempuan \\ 
+		\hline 
+		S2 & Perempuan \\ 
+		\hline 
+		S2 & Perempuan \\ 
+		\hline 
+		S2 & Perempuan \\ 
+		\hline 
+		S2 & Laki-laki \\ 
+		\hline 
+	\end{tabular}
+\end{table} 
 \includegraphics[width=\linewidth]{1}
+\paragraph{}
+Untuk memasukkan data tersebut, masukkan data dalam 
 \subsubsection{Praktik 2}
 \includegraphics[width=\linewidth]{2}
 \subsection{Distribusi Frekuensi}
