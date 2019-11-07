@@ -27,6 +27,8 @@
 \makeatother
 %\maketitle
 \newpage
+\tableofcontents
+\newpage
 \section{Tujuan}
 \begin{enumerate}
 	\item Praktikan dapat melakukan penyajian data dalam bentuk tabel Kontingensi
@@ -114,10 +116,12 @@ Sajikan data berikut ini dalam bentuk table kontigensi
 	\end{tabular}
 \end{table} 
 \paragraph{Penyelesaian\\}
-Buat variabel dan masukkan data dari variabel tersebut dengan dengan fungsi c dengan format perintah\\ \texttt{variabel <- c("data 1","data 2"..."data n").}\\
+Buat variabel dan masukkan data dari variabel tersebut dengan dengan fungsi c dengan format perintah\\ 
+\texttt{>variabel <- c("data 1","data 2"..."data n").}\\
 \includegraphics[width=\linewidth]{1}\\
 Pada praktik ini dibuat variabel \texttt{pendidikan}, yang berisi data jenjang pendidikan, dan variabel \texttt{jenis\_kelamin} yang berisi jenis kelamin.\\
-Seteleh itu dibuat tabel kontigensi dengan perintah
+Seteleh itu dibuat tabel kontigensi dua arah dari variabel \texttt{data\_frame}, dengan perintah\\
+\texttt{>table(data\_frame)}
 \subsubsection{Praktik 2}
 \paragraph{Soal\\}
 Sajikan data berikut ini dalam tabel kontigensi
@@ -138,22 +142,74 @@ Sajikan data berikut ini dalam tabel kontigensi
 	\end{tabular}
 \end{table}
 \paragraph{Penyelesaian\\}
-Buat variabel dan masukkan data dari variabel tersebut dengan format perintah\\ \texttt{variabel <- c("data 1","data 2"..."data n").}\\
+Buat variabel dan masukkan data dari variabel tersebut dengan format perintah\\ \texttt{>variabel <- c("data 1","data 2"..."data n").}\\
 \includegraphics[width=\linewidth]{2}\\
 Untuk praktek ini buat variabel \texttt{pendidikan} dan masukkan data dari pendidikan ke variabel tersebut dengan fungsi \texttt{c}\\
 Selanjutnya buat variabel \texttt{hobi}, \texttt{jenis\_kelamin}, dan \texttt{status} lalu beri data sesuai klasifikasi variabel tersebut.\\
 Lalu buat data frame yang terdiri dari variabel \texttt{jenis\_kelamin}, \texttt{pendidikan}, \texttt{status}, \texttt{hobi} dengan nama data\_frame,dengan perintah\\ 
-\texttt{data\_frame <- data.frame(jenis\_kelamin,pendidikan,status,hobi)}\\
-lalu buat tabel kontigensi dari tabel data\_frame dengan perintah\\
-\texttt{ftable(data\_frame)}
+\texttt{>data\_frame <- data.frame(jenis\_kelamin,pendidikan,status,hobi)}\\
+lalu buat tabel kontigensi dari tabel data\_frame, karena lebih dari dua arah maka tidak menggunakan perintah \texttt{table}, gunakan perintah\\
+\texttt{>ftable(data\_frame)}
 
 \subsection{Distribusi Frekuensi}
 \subsubsection{Praktik 1}
+\paragraph{Soal\\}
+Dari data berikutini sajikan dalam bentuk tabel distribusi frekuensi dan tabel distribusi frekuensi relatif. Data : 1, 2, 3, 2, 3, 3, 4, 5, 3, 2, 3, 4, 5, 5, 5, 5, 3, 2, 1, 3.\\
+\paragraph{Penyelesaian\\}
 \includegraphics[width=\linewidth]{3}
+Buat variabel \texttt{bilangan}, dan masukkan dengan fungsi \texttt{c}, dengan perintah\\
+\texttt{>bilangan <- c(1, 2, 3, 2, 3, 3, 4, 5, 3, 2, 3, 4, 5, 5, 5, 5, 3, 2, 1, 3)\\}
+cek banyaknya data pada variabel \texttt{bilangan} dengan perintah\\
+\texttt{>length(bilangan)}\\
+lalu buat tabel distribusi frekuensi dari variabel \texttt{bilangan} dengan perintah\\
+\texttt{>table(bilangan)}
 \subsubsection{Praktik 2}
+\paragraph{Soal\\}
+Sajikan data berikut dalam bentuk tabel distribusi frekuensi\\ 
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 4, 3, 2\\ 
+Kelas intervalnya 1 – 4, 5 - 10\\
+\paragraph{Penyelesaian\\}
+Buat variabel \texttt{bilangan} dan masukkan data menggunakan fungsi \texttt{c}\\
+\texttt{>bilangan <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 4, 3, 2)}
 \includegraphics[width=\linewidth]{4}
 \section{Latihan}
 \subsection{Latihan 1}
+\paragraph{Soal\\}
+Berikut ini data mahasiswa\\
+\begin{table}[!ht]
+	\begin{tabular}{|c|c|c|}
+		\hline 
+		nama & {gender} & {jurusan} \\ 
+		\hline 
+		Toni & Pria & D3 TI \\ 
+		\hline 
+		Tino & Pria & S1 SI \\ 
+		\hline 
+		Ana & Wanita & D3 MI \\ 
+		\hline 
+		Ina & Wanita & D3 TI \\ 
+		\hline 
+		Windha & Wanita & S1 TI \\ 
+		\hline 
+		Mega & Wanita & D3 MI \\ 
+		\hline 
+		Arif & Pria & S1 SI \\ 
+		\hline 
+		Tono &  Pria & D3 TI \\ 
+		\hline 
+		Linda & Wanita & D3 TI \\ 
+		\hline 
+		Paijo & Pria & S1 TI \\ 
+		\hline 
+	\end{tabular}
+\end{table}\\
+Tentukan:
+\begin{enumerate}
+	\item Tabel distribusi frekuensi mahasiswa menurut jurusannya
+	\item Tabel distribusi frekuensi mahasiswa menurut gendernya
+\end{enumerate}
+\paragraph{Penyelesaian\\}
+ 
 \includegraphics[width=\linewidth]{5}
 \subsection{Latihan 2}
 \includegraphics[width=\linewidth]{6}
