@@ -84,7 +84,7 @@ Dengan menggunakan R Console maka :
 \section{Praktik}
 \subsection{Tabel Kontigensi}
 \subsubsection{Praktik 1}
-\paragraph{}
+\paragraph{Soal\\}
 Sajikan data berikut ini dalam bentuk table kontigensi 
 \begin{table}[!ht]
 	\begin{tabular}{|c|c|}
@@ -113,11 +113,38 @@ Sajikan data berikut ini dalam bentuk table kontigensi
 		\hline 
 	\end{tabular}
 \end{table} 
-\includegraphics[width=\linewidth]{1}
-\paragraph{}
-Untuk memasukkan data tersebut, masukkan data dalam 
+\\\includegraphics[width=\linewidth]{1}
+\paragraph{Penyelesaian\\}
+Untuk memasukkan data ke dalam R, digunakan fungsi c 
 \subsubsection{Praktik 2}
+\paragraph{Soal\\}
+Sajikan data berikut ini dalam tabel kontigensi
+\begin{table}[!ht]
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		No & Jenis\_kelamin & \multicolumn{1}{c|}{Pendidikan} & \multicolumn{1}{c|}{status} & \multicolumn{1}{c|}{hobi} \\ \hline
+		1  & Laki-laki      & S1                              & Sudah menikah               & membaca                   \\ \hline
+		2  & Laki-laki      & S1                              & Sudah menikah               & membaca                   \\ \hline
+		3  & Laki-laki      & S1                              & Belum menikah               & membaca                   \\ \hline
+		4  & Perempuan      & S1                              & Sudah menikah               & membaca                   \\ \hline
+		5  & Perempuan      & S1                              & Sudah menikah               & memasak                   \\ \hline
+		6  & Perempuan      & S2                              & Belum menikah               & membaca                   \\ \hline
+		7  & Perempuan      & S2                              & Sudah menikah               & membaca                   \\ \hline
+		8  & Perempuan      & S2                              & Belum menikah               & memasak                   \\ \hline
+		9  & Perempuan      & S2                              & Belum menikah               & membaca                   \\ \hline
+		10 & Laki-laki      & S2                              & Sudah menikah               & memasak                   \\ \hline
+	\end{tabular}
+\end{table}
+\paragraph{Penyelesaian\\}
+Buat variabel dan masukkan data dari variabel tersebut dengan format perintah \texttt{variabel <- c("data1","data2"..."data n").}\\
 \includegraphics[width=\linewidth]{2}
+Untuk praktek ini buat variabel \texttt{pendidikan} dan masukkan data dari pendidikan ke variabel tersebut dengan fungsi \texttt{c}\\
+Selanjutnya buat variabel \texttt{hobi}, \texttt{jenis\_kelamin}, dan \texttt{status} lalu beri data sesuai klasifikasi variabel tersebut.\\
+Lalu buat data frame yang terdiri dari variabel \texttt{jenis\_kelamin}, \texttt{pendidikan}, \texttt{status}, \texttt{hobi} dengan nama data\_frame,dengan perintah\\ 
+\texttt{data\_frame <- data.frame(jenis\_kelamin,pendidikan,status,hobi)}\\
+lalu buat tabel kontigensi dari tabel data\_frame dengan perintah\\
+\texttt{ftable(data\_frame)}
+
 \subsection{Distribusi Frekuensi}
 \subsubsection{Praktik 1}
 \includegraphics[width=\linewidth]{3}
