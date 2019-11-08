@@ -34,3 +34,7 @@
 \contentsline {subsection}{\numberline {4.2}Latihan 2}{11}% 
 \contentsline {paragraph}{Soal\\}{11}% 
 \contentsline {paragraph}{Penyelesaian\\}{11}% 
+\contentsline {section}{\numberline {5}Tugas}{13}% 
+\contentsline {subsection}{\numberline {5.1}Tugas 1}{13}% 
+\contentsline {paragraph}{Soal\\}{13}% 
+\contentsline {paragraph}{Penyelesaian\\}{13}% 
