@@ -272,8 +272,17 @@ Sajikan data tersebut dalam bentuk tabel kontigensi
 	\end{tabular}
 \end{table}
 \paragraph{Penyelesaian\\}
-Buat tabel ke dalam file .txt menggunakan text editor.\\
 \includegraphics[width=\linewidth]{tugas1txt}
+Buat tabel ke dalam file .txt menggunakan text editor.\\
 \includegraphics[width=\linewidth]{tugas1output}
+Masukkan data dalam file .txt tadi ke dalam variabel menggunakan \texttt{read.table}.\\
+\texttt{>tugas1 <- read.table("tugas1.txt",header=T)}\\
+Buat tabel kontigensi dari tabel data tugas tadi dan memasukkannya ke variabel \texttt{tabeltugas1}\\
+\texttt{>tabeltugas <- table(tugas1)}
+\subsection{Tugas 2}
+\paragraph{Soal\\}
+Data hasil ujian akhir Statistika Elementer\\
+23 60 79 32 57 74 52 70 82 36 80 77 81 95 41 65 92 85 55 76 10 64 75 78 25 98 67 71 83 54 72 88 62 43 89 84 48 90 15 34 17 69 63 61\\
+Buatlah tabel distribusi frekuensi dengan kelas interval 20 – 39, 40 – 69, 70 - 100
 
 \end{document}

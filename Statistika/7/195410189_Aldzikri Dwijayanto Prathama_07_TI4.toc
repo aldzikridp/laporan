@@ -37,4 +37,6 @@
 \contentsline {section}{\numberline {5}Tugas}{13}% 
 \contentsline {subsection}{\numberline {5.1}Tugas 1}{13}% 
 \contentsline {paragraph}{Soal\\}{13}% 
-\contentsline {paragraph}{Penyelesaian\\}{13}% 
+\contentsline {paragraph}{Penyelesaian\\}{14}% 
+\contentsline {subsection}{\numberline {5.2}Tugas 2}{15}% 
+\contentsline {paragraph}{Soal\\}{15}% 
