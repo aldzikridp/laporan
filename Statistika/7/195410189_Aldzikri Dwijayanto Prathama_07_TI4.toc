@@ -31,4 +31,4 @@
 \contentsline {subsection}{\numberline {4.1}Latihan 1}{8}% 
 \contentsline {paragraph}{Soal\\}{8}% 
 \contentsline {paragraph}{Penyelesaian\\}{9}% 
-\contentsline {subsection}{\numberline {4.2}Latihan 2}{10}% 
+\contentsline {subsection}{\numberline {4.2}Latihan 2}{11}% 

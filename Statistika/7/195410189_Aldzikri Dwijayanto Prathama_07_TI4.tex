@@ -209,8 +209,15 @@ Tentukan:
 	\item Tabel distribusi frekuensi mahasiswa menurut gendernya
 \end{enumerate}
 \paragraph{Penyelesaian\\}
- 
+Pada latihan ini, saya memasukkan data menggunakan fungsi \texttt{read.table}, pertama buat tabel dalam text editor, dan diberi nama mahasiswa.txt.\\
+\includegraphics[width=\linewidth]{mahasiswatxt}
+Setelah itu masukkan tabel tersebut ke variabel \texttt{mahasiswa} beserta headernya\\
+\texttt{>mahasiswa <- read.table("mahasiswa.txt",header=T)}.\\
 \includegraphics[width=\linewidth]{5}
+Untuk membuat tabel distribusi frekuensi mahasiswa menurut jurusan berarti kita akan memakai tabel jurusan dan mengambil data dari kolom jurusan, gunakan perintah\\
+\texttt{>table(mahasiswa["jurusan"])}\\
+Sedangkan untuk tabel distribusi frekuensi mahasiswa menurut gendernya berarti kita akan memakai tabel jurusan dan mengambil data dari kolom gender, gunakan perintah\\
+\texttt{>table(mahasiswa["gender"])}\\ 
 \subsection{Latihan 2}
 \includegraphics[width=\linewidth]{6}
 
