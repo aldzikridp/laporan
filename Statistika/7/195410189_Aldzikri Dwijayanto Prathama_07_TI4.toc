@@ -32,3 +32,5 @@
 \contentsline {paragraph}{Soal\\}{8}% 
 \contentsline {paragraph}{Penyelesaian\\}{9}% 
 \contentsline {subsection}{\numberline {4.2}Latihan 2}{11}% 
+\contentsline {paragraph}{Soal\\}{11}% 
+\contentsline {paragraph}{Penyelesaian\\}{11}% 

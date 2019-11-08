@@ -217,8 +217,34 @@ Setelah itu masukkan tabel tersebut ke variabel \texttt{mahasiswa} beserta heade
 Untuk membuat tabel distribusi frekuensi mahasiswa menurut jurusan berarti kita akan memakai tabel jurusan dan mengambil data dari kolom jurusan, gunakan perintah\\
 \texttt{>table(mahasiswa["jurusan"])}\\
 Sedangkan untuk tabel distribusi frekuensi mahasiswa menurut gendernya berarti kita akan memakai tabel jurusan dan mengambil data dari kolom gender, gunakan perintah\\
-\texttt{>table(mahasiswa["gender"])}\\ 
+\texttt{>table(mahasiswa["gender"])}\\
+\newpage 
 \subsection{Latihan 2}
+\paragraph{Soal\\}
+Sajikan data berikuta dalam tabel kontigensi
+\begin{table}[!ht]
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		\multicolumn{1}{|c|}{Jenis Kelamin} & \multicolumn{1}{c|}{Bidang} & \multicolumn{1}{c|}{Status} & \multicolumn{1}{c|}{Didik} \\ \hline
+		Laki-laki                           & Marketing                   & Belum menikah               & SMU                        \\ \hline
+		Perempuan                           & Marketing                   & Sudah menikah               & Sarjana                    \\ \hline
+		Perempuan                           & Umum                        & Sudah menikah               & SMU                        \\ \hline
+		Laki-laki                           & Akuntansi                   & Belum menikah               & Sarjana                    \\ \hline
+		Perempuan                           & Marketing                   & Sudah menikah               & SMU                        \\ \hline
+		Perempuan                           & Akuntansi                   & Sudah menikah               & Sarjana                    \\ \hline
+		Perempuan                           & Akuntansi                   & Belum menikah               & Sarjana                    \\ \hline
+		Laki-laki                           & Umum                        & Belum menikah               & Sarjana                    \\ \hline
+		Perempuan                           & Marketing                   & Sudah menikah               & SMU                        \\ \hline
+		Laki-laki                           & Marketing                   & Sudah menikah               & SMU                        \\ \hline
+	\end{tabular}
+\end{table}
+\paragraph{Penyelesaian\\}
+Buat tabel dalam text editor\\
+\includegraphics[width=\linewidth]{pegawaitxt}
 \includegraphics[width=\linewidth]{6}
+masukkan tabel tadi ke dalam variabel \texttt{pegawai} dengan headernya menggunakan fungsi \texttt{read.table}\\
+\texttt{>pegawai <- read.table("pegawai.txt",header=T)}\\
+lalu buat tabel kontigensi dari variabel \texttt{pegawai}\\
+\texttt{>ftable(pegawai)}
 
 \end{document}
