@@ -172,6 +172,10 @@ Kelas intervalnya 1 – 4, 5 - 10\\
 Buat variabel \texttt{bilangan} dan masukkan data menggunakan fungsi \texttt{c}\\
 \texttt{>bilangan <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 4, 3, 2)}
 \includegraphics[width=\linewidth]{4}
+Buat distribusi frekuensi dari variabel bilangan dengan fungsi \texttt{cut}, menentukan intervalnya yaitu 1 – 4, 5 - 10 dengan fungsi \texttt{breaks}, lalu memasukkannya ke variabel \texttt{distribusi\_frekuensi}\\
+\texttt{> distribusi\_frekuensi <- cut(bilangan, breaks = c(1,5,10), include.lowest = TRUE, right = FALSE)}\\
+lalu data dari variabel \texttt{distribusi\_frekuensi} dijadikan tabel distribusi frekuensi dengan fungsi \texttt{table} lalu memasukkannya ke variabel \texttt{tabel}\\
+\texttt{> tabel <- table(distribusi\_frekuensi)}
 \section{Latihan}
 \subsection{Latihan 1}
 \paragraph{Soal\\}
@@ -284,5 +288,19 @@ Buat tabel kontigensi dari tabel data tugas tadi dan memasukkannya ke variabel \
 Data hasil ujian akhir Statistika Elementer\\
 23 60 79 32 57 74 52 70 82 36 80 77 81 95 41 65 92 85 55 76 10 64 75 78 25 98 67 71 83 54 72 88 62 43 89 84 48 90 15 34 17 69 63 61\\
 Buatlah tabel distribusi frekuensi dengan kelas interval 20 – 39, 40 – 69, 70 - 100
+\paragraph{Penyelesaian\\}
+\includegraphics[width=\linewidth]{tugas2}
+Masukkan data ke dalam variabel \texttt{hasil\_ujian} menggunakan fungsi \texttt{c}\\
+\texttt{> hasil\_ujian <- c(23,60,79,32,57,74,52,70,82,36,80,77,81,95,41,65,92,85,55\\,76,10,64,75,78,25,98,67,71,83,54,72,88,62,43,89,84,48,90,15,34,17,69,63,61)}\\
+lalu buat distribusi frekuensi dengan interval menggunakan fungsi \texttt{cut()}, dengan kelas interval 20 – 39, 40 – 69, 70 - 100, lalu hasilnya dimasukkan ke variabel \texttt{distri\_ujian}\\
+\texttt{> distri\_ujian <-cut(hasil\_ujian, breaks = c(20,40,70,100), include.lowest=T, right=F)}\\
+Karena data belum terorganisir, kita rubah data di variabel \texttt{distri\_ujian} menjadi tabel distribusi frekuensi menggunakan fungsi \texttt{table} dan memasukannya ke dalam variabel \texttt{tabel\_ujian}\\
+\texttt{tabel\_ujian <- table(distri\_ujian)}
+
+\newpage
+\section{Kesimpulan}
+Mahasiswa dapat melakukan penyajian data dalam bentuk tabel Kontingensi
+Mahasiswa dapat melakukan penyajian data dalam bentuk table distribusi
+
 
 \end{document}

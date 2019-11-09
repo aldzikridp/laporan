@@ -40,3 +40,5 @@
 \contentsline {paragraph}{Penyelesaian\\}{14}% 
 \contentsline {subsection}{\numberline {5.2}Tugas 2}{15}% 
 \contentsline {paragraph}{Soal\\}{15}% 
+\contentsline {paragraph}{Penyelesaian\\}{16}% 
+\contentsline {section}{\numberline {6}Kesimpulan}{17}% 
