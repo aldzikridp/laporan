@@ -1,0 +1,98 @@
+% !TeX spellcheck = id_ID
+\documentclass[a4paper,12pt]{article}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[table,xcdraw]{xcolor}
+\graphicspath{ {./img/} }
+\begin{document}
+\title{ {\Large Laporan Praktikum}\\ Algoritma dan Pemrograman \\{\Large Pertemuan 7}}
+
+\author{Aldzikri Dwijayanto Prathama 
+	\\195410189
+	\\Teknik Informatika}
+\makeatletter
+\begin{titlepage}
+	\begin{center}
+		{\huge \bfseries \@title }\\[14ex]
+		\includegraphics[scale=.8]{logo}\\[4ex]
+		{\large \@author}\\[19ex]
+		{\large \bfseries {SEKOLAH TINGGI MANAJEMEN INFORMATIKA DAN KOMPUTER
+				AKAKOM YOGYAKARTA}}
+	\end{center}
+
+
+%{\large \@date} 
+\end{titlepage}
+\makeatother
+%\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Tujuan}
+Mahasiswa dapat mengimplementasikan konsep seleksi bertingkat untuk menyelesaikan kasus 
+\section{Dasar Teori}
+\paragraph{}
+Seleksi pernah dipelajar pada pertemuan modul 5 dan 6 baik menggunakan if maupun
+switch-case. Seleksi bertingkat dapat diartikan sebagai seleksi di dalam seleksi. Beberapa bentuk kemungkinan seleksi bertingkat dua dapat dilihat seperti di bawah :
+\begin{table}[!ht]
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\rowcolor[HTML]{E5B9B7}
+		\multicolumn{1}{|c|}{\cellcolor[HTML]{E5B9B7} Bentuk 1} & \multicolumn{1}{c|}{\cellcolor[HTML]{E5B9B7} Bentuk 2} & \multicolumn{1}{c|}{\cellcolor[HTML]{E5B9B7} Bentuk 3} \\ \hline
+		
+		{\begin{lstlisting}[language=Java]
+if(kondisi1)
+{
+  Pernyataan1;
+}
+else
+{
+if(kondisi2)
+  Pernyataan2;
+else
+  Pernyataan3;
+}
+			
+		\end{lstlisting}}&
+{\begin{lstlisting}[language=Java]
+if(kondisi1)
+{
+  if(kondisi2)
+    Pernyataan1;
+  else
+    Pernyataan2;
+}
+else
+{
+  Pernyataan3;
+}
+	\end{lstlisting}}
+	
+	                               &
+{\begin{lstlisting}[language=Java]
+if(kondisi1)
+{
+  if(kondisi2)
+    Pernyataan1;
+  else
+    Pernyataan2;
+}
+else
+{
+  if(kondisi3)
+    Pernyataan3;
+  else
+    Pernyataan4;
+}
+\end{lstlisting}}
+	                                                              \\ \hline
+	\end{tabular}
+\end{table}
+
+
+
+\end{document}
