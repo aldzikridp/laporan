@@ -11,3 +11,10 @@
 \contentsline {paragraph}{Penyelesaian\\}{6}% 
 \contentsline {subsection}{\numberline {3.3}Praktik 3}{7}% 
 \contentsline {paragraph}{Masalah\\}{7}% 
+\contentsline {paragraph}{Penyelesaian\\}{7}% 
+\contentsline {subsection}{\numberline {3.4}Praktik 4}{8}% 
+\contentsline {paragraph}{Masalah\\}{8}% 
+\contentsline {paragraph}{Penyelesaian\\}{9}% 
+\contentsline {section}{\numberline {4}Latihan}{10}% 
+\contentsline {paragraph}{Masalah\\}{10}% 
+\contentsline {paragraph}{Penyelesaian\\}{10}% 

@@ -25,6 +25,7 @@
 	commentstyle=\color{pgreen},
 	keywordstyle=\color{pblue},
 	stringstyle=\color{pred},
+	rulecolor=\color{black},
 	basicstyle=\ttfamily,
 	moredelim=[il][\textcolor{pgrey}]{$$},
 	moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
@@ -32,7 +33,7 @@
 
 \graphicspath{ {./img/} }
 \begin{document}
-\title{ {\Large Laporan Praktikum}\\ Algoritma dan Pemrograman \\{\Large Pertemuan 7}}
+\title{ {\Large Laporan Praktikum}\\ Algoritma dan Pemrograman \\{\Large Pertemuan 8}}
 
 \author{Aldzikri Dwijayanto Prathama 
 	\\195410189
@@ -98,7 +99,7 @@ perulangan berakhir.
 \subsection{Praktik 1}
 \paragraph{Masalah\\}
 Ketik program di bawah
-\begin{lstlisting}
+\begin{lstlisting}[frame=single]
 import java.util.Scanner;
 public class UlangWhile1
 {
@@ -127,7 +128,7 @@ Buat flowchart untuk program diatas seperti berikut :\\
  \includegraphics[scale=1]{Capture2}
 \end{center}
 Pada output di atas terlihat bahwa tersebut melakukan penghitungan 1 - 5, di dalam program terdapat
-\begin{lstlisting}
+\begin{lstlisting}[frame=single]
 while (bil<=5) {
             System.out.println(bil);
             bil=bil+1;
@@ -180,6 +181,96 @@ public class modul8_3 {
     }
 }
 \end{lstlisting}
+\begin{enumerate}[label=\alph*.]
+	\item Simpan dan jalankan
+	\item Ujilah dengan mengisi ya sebanyak 2 kali , amati hasilnya
+	\item Lanjutkan menguji dengan mengisi tidak, amati hasilnya
+\end{enumerate}
 
+\paragraph{Penyelesaian\\}
+\begin{center}
+	\includegraphics[scale=.7]{Capture6}
+	\includegraphics[scale=1]{Capture7}
+\end{center}
+Program diatas memiliki fungsi \texttt{while} yang memiliki kondisi dari variabel running, yang sebelumnya sudah dideklarasikan dalam bentuk boolean dan memiliki nilai true. Lalu di dalam fungsi \texttt{while} terdapat seleksi if
+\begin{lstlisting}[frame=single]
+if( jawab.equalsIgnoreCase("tidak") ){
+                running = false;
+}
+\end{lstlisting}
+jika variabel \texttt{jawab} berisi "tidak", maka variabel "running" akan dirubah nilainya menjadi false, sehingga tidak cocok dengan kondisi di \texttt{while} dan pengulanganpun akan berhenti.
+
+\subsection{Praktik 4}
+\paragraph{Masalah\\}
+Buat program dengan while untuk mencetak bilangan genap dari 0 sampai 10
+
+\paragraph{Penyelesaian\\}
+	\includegraphics[scale=.7]{Capture8}
+	\includegraphics[scale=1]{Capture9}
+
+\begin{lstlisting}[frame=single]
+public class modul8_4
+{
+    public static void main(String args[])
+    {
+        int count = 2;
+        while(count <= 10)
+        {
+            if(count == 10)
+            {
+                System.out.print(count);
+            }
+            else
+            {
+                System.out.print(count +", ");
+            }
+            count=count+2;
+        }
+        System.out.println("");
+    }
+}
+\end{lstlisting}
+Fungsi \texttt{while} pada program di atas memiliki kondisi count <= 10, yang berarti pengulangan akan berhenti jika variabel "count" memiliki nilai lebih besar sama dengan 10. Didalam while terdapat pernyataan seleksi, jika variabel "count" memiliki nilai 10, maka program hanya akan mengeluarkan nilai dari variabel "count". Selain dari itu maka program akan mengeluarkan nilai variabel "count" ditambah koma dan spasi (", "). Setelah itu terdapat \texttt{count=count+2}, karena yang akan dikeluarkan pada layar adalah bilangan genap, maka variabel "count" akan ditambah dengan  2 di setiap terjadi pengulangan. Lalu pada baris program terakhir terdapat \texttt{System.out.println("");}, yang akan memindahkan ke baris selanjutnya pada command line setelah program selesai dijalankan.
+
+\section{Latihan}
+\paragraph{Masalah\\}
+Modifikasi praktik 4 agar bilangan genap yang dicetak dimulai dan diakhiri menurut
+keinginan user.
+
+\paragraph{Penyelesaian\\}
+\begin{center}
+	\includegraphics[scale=.7]{Capture10}\\
+	\includegraphics[scale=1]{Capture11}
+\end{center}
+
+\begin{lstlisting}[frame=single]
+import java.util.Scanner;
+public class latihan8
+{
+    public static void main(String args[])
+    {
+        int count = 2;
+        int batas;
+        Scanner in = new Scanner(System.in);
+        count = in.nextInt();
+        batas = in.nextInt();
+        while(count <= batas)
+        {
+	        if(count == batas)
+            {
+	            System.out.print(count);
+            }
+            else
+	        {
+	            System.out.print(count +", ");
+            }
+                count=count+2;
+        }
+        System.out.println("");
+    }
+}
+\end{lstlisting}
+Untuk program di atas, ditambahkan fungsi \texttt{Scanner} dan variabel "batas", lalu variabel "count" dan "batas" dirubah agar dapat diinpit saat program dijalankan. Pada while yang semula memiliki kondisi \texttt{count <= 10} dirubah menjadi \texttt{count <= batas}, yang berarti while akan mengulang selama variabel "count" lebih kecil sama dengan dari variabel "batas".\\
+Pada pernyataan \texttt{while}, seleksi if kondisinya diganti menjadi \texttt{count == batas}, jika variabel "count" bernilai sama dengan variabel "batas", maka program hanya akan mengeluarkan nilai dari count saja di layar.
 
 \end{document}
