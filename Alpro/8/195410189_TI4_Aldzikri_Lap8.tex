@@ -134,11 +134,11 @@ while (bil<=5) {
             bil=bil+1;
         }
 \end{lstlisting}
-yang mana fungsi \texttt{while} tersebut akan melakukan perulangan jika variabel \texttt{bil} memiliki nilai kurang dari sama dengan 5. Di dalam while terdapat pernyataan untuk mengeprint variabel bil, yang sebelumnya sudah diberi nilai 1, lalu akan menambahkan variabel bil dengan 1 sampai variabel bil bernilai lebih dari sama dengan 5. Maka fungsi while tersebut akan melakukan penghitungan 1 - 5.
+yang mana fungsi \texttt{while} tersebut akan melakukan perulangan jika variabel \texttt{bil} memiliki nilai kurang dari sama dengan 5. Di dalam while terdapat pernyataan untuk mengeprint variabel \texttt{bil}, yang sebelumnya sudah diberi nilai 1, lalu akan menambahkan variabel \texttt{bil} dengan 1 sampai variabel \texttt{bil} bernilai lebih dari sama dengan 5. Maka fungsi while tersebut akan melakukan penghitungan 1 - 5.
 \begin{center}
 	\includegraphics[scale=.5]{image--024}
 \end{center}
-Dari flowchart di atas terlihat jelas alur dari program sebelumnya, fungsi \texttt{while} akan melakukan pengecekan terlebih dahulu terhadap kondisi yang di berikan, pada kasus ini yaitu bil<=5, jika benar program akan mengeluarkan nilai dari variabel bil, dan menambahkannya dengan satu, lalu akan mengulanginya lagi sampai kondisi yang dicek false.
+Dari flowchart di atas terlihat jelas alur dari program sebelumnya, fungsi \texttt{while} akan melakukan pengecekan terlebih dahulu terhadap kondisi yang di berikan, pada kasus ini yaitu bil<=5, jika benar program akan mengeluarkan nilai dari variabel \texttt{bil}, dan menambahkannya dengan satu, lalu akan mengulanginya lagi sampai kondisi yang dicek false.
 
 \subsection{Praktik 2}
 \paragraph{Masalah\\}
@@ -152,7 +152,7 @@ kenapa bisa demikian, jelaskan !
 	\includegraphics[width=\linewidth]{Capture4}
 	\includegraphics[scale=1]{Capture5}
 \end{center}
-Program menjadi menghitung mundur, itu karena nilai awal variabel \texttt{bil} adalah 5, lalu kondisi pada \texttt{while} adalah bil>=1 dengan salah satu pernyataannya \texttt{bil=bil+1}, itu berarti while akan mengurangi variabel \texttt{bil} yang bernilai 5 dengan 1 di setiap pengulangannya sampai variabel bil bernilai kurang dari sama dengan 1. 
+Program menjadi menghitung mundur, itu karena nilai awal variabel \texttt{bil} adalah 5, lalu kondisi pada \texttt{while} adalah bil>=1 dengan salah satu pernyataannya \texttt{bil=bil+1}, itu berarti while akan mengurangi variabel \texttt{bil} yang bernilai 5 dengan 1 di setiap pengulangannya sampai variabel \texttt{bil} bernilai kurang dari sama dengan 1. 
 
 \subsection{Praktik 3}
 \paragraph{Masalah\\}
@@ -256,15 +256,15 @@ public class latihan8
         batas = in.nextInt();
         while(count <= batas)
         {
-	        if(count == batas)
+	    if(count == batas)
             {
 	            System.out.print(count);
             }
             else
-	        {
+	    {
 	            System.out.print(count +", ");
             }
-                count=count+2;
+            count=count+2;
         }
         System.out.println("");
     }
@@ -272,5 +272,75 @@ public class latihan8
 \end{lstlisting}
 Untuk program di atas, ditambahkan fungsi \texttt{Scanner} dan variabel "batas", lalu variabel "count" dan "batas" dirubah agar dapat diinpit saat program dijalankan. Pada while yang semula memiliki kondisi \texttt{count <= 10} dirubah menjadi \texttt{count <= batas}, yang berarti while akan mengulang selama variabel "count" lebih kecil sama dengan dari variabel "batas".\\
 Pada pernyataan \texttt{while}, seleksi if kondisinya diganti menjadi \texttt{count == batas}, jika variabel "count" bernilai sama dengan variabel "batas", maka program hanya akan mengeluarkan nilai dari count saja di layar.
+
+\section{Tugas}
+\subsection{Tugas 1}
+\paragraph{Masalah\\}
+Hitunglah jumlah dan rata-rata bilangan positif, dimana banyaknya data ditentukan
+dari data yang dimasukan dengan keyboard, contoh hasil output yang diinginkan
+sbb:\\[1ex]
+Banyaknya data : 4\\
+Data ke-1 : 3\\
+Data ke-2 : 5\\
+Data ke-3 : 2\\
+Data ke-4 : 6\\
+Rata-rata : 4.0\\
+Jumlah : 16.0\\
+Press any key to continue . . .\\[1ex]
+
+\paragraph{Penyelesaian\\}
+\begin{center}
+	\includegraphics[scale=.5]{tugas8-1}
+	\includegraphics[scale=.8]{tugas8-1-2}
+\end{center}
+\begin{lstlisting}[frame=single]
+import java.util.Scanner;
+public class Tugas8_1
+{
+    public static void main(String args[])
+    {
+        Scanner in = new Scanner(System.in);
+        int panjang;
+        int i = 0;
+        float jumlah = 0;
+        float rata;
+        System.out.print("Panjang data = ");
+        panjang = in.nextInt();
+        int[] data = new int[panjang];
+        while(i <= panjang - 1)
+        {
+            System.out.print("Data"+i+" = ");
+            data[i] = in.nextInt();
+            jumlah = jumlah + data[i];
+            i=i+1;
+        }
+        rata = jumlah/panjang;
+        System.out.println("Jumlah = "+jumlah);
+        System.out.println("rata-rata = "+rata);
+    }
+}
+\end{lstlisting}
+
+Program di atas memiliki variabel \texttt{data} yang berbentuk array integer, yang panjangnya ditentukan oleh variabel panjang. Karena array di java bersifat tetap, maka digunakan ArrayList, terlihat pada baris kode
+\begin{lstlisting}
+int[] data = new int[panjang];
+\end{lstlisting}   
+baris ini akan merubah panjang variabel \texttt{data}, dengan nilai dari variabel \texttt{panjang}.\\
+Pada fungsi \texttt{while} diberi kondisi i <= panjang - 1, itu karena array dimulai dari 0, jadi misalnya kita memberi panjang array itu 4, maka akan terdiri dari 0, 1, 2, 3.\\
+Di dalam \texttt{while} terdapat pernyataan
+\begin{lstlisting}
+data[i] = in.nextInt();
+\end{lstlisting}
+pernyataan ini akan menerima masukan dan memasukkannya ke variabel \texttt{data} ke "i", jadi variabel \texttt{data} akan dapat dimasukkan nilai sesuai dengan panjang array yang telah ditentukan.\\
+Lalu baris pernyataan
+\begin{lstlisting}
+jumlah = jumlah + data[i];
+\end{lstlisting}
+berfungsi untuk menambahkan variabel \texttt{jumlah}, dengan nilai variabel \texttt{data} ke "i", jadi variabel \texttt{jumlah} akan bernilai jumlah semua angka yang ada di variabel \texttt{data}.\\
+Setelah perulangan while selesai, program akan menjalankan pernyataan
+\begin{lstlisting}
+rata = jumlah/panjang;
+\end{lstlisting}
+yang akan memberi nilai ke variabel \texttt{rata} dari hasil operasi pembagian jumlah dengan panjang, yang menghasilkan rata-rata dari semua nilai di variabel \texttt{data}
 
 \end{document}

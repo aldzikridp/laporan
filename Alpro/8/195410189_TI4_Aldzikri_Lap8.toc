@@ -18,3 +18,7 @@
 \contentsline {section}{\numberline {4}Latihan}{10}% 
 \contentsline {paragraph}{Masalah\\}{10}% 
 \contentsline {paragraph}{Penyelesaian\\}{10}% 
+\contentsline {section}{\numberline {5}Tugas}{12}% 
+\contentsline {subsection}{\numberline {5.1}Tugas 1}{12}% 
+\contentsline {paragraph}{Masalah\\}{12}% 
+\contentsline {paragraph}{Penyelesaian\\}{12}% 
