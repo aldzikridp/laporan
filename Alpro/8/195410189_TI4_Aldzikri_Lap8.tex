@@ -59,7 +59,7 @@
 \newpage
 
 \section{Tujuan}
-Mahasiswa dapat mengimplementasikan menyelesaikan kasus konsep perulangan while untuk
+Mahasiswa dapat mengimplementasikan menyelesaikan kasus konsep perulangan while untuk menyelesaikan kasus
 \section{Dasar Teori}
 \paragraph{}
 Perulangan WHILE banyak digunakan pada program yang terstruktur. Perulangan
@@ -366,7 +366,7 @@ yang banyaknya data (n) di inputkan.
 		\item ulang = 1
 		\item tambah = 1
 		\item hitung = 1
-		\item \textit{selagi ulang <= batas} lakukan\\
+		\item selagi \textit{ulang <= batas} lakukan\\
 		 Tampilkan (hitung)\\
 		 tambah = tambah + 2\\
 		 hitung = hitung + tambah\\
@@ -377,9 +377,44 @@ yang banyaknya data (n) di inputkan.
 \begin{center}
 	\includegraphics[scale=.5]{main}
 \end{center}
+
+\newpage
 {\bfseries Program\\}
+\begin{center}
+	\includegraphics[scale=.8]{tugas8-2}\\[5ex]
+	\includegraphics[scale=.7]{tugas-8-2-1}
+\end{center}
+\newpage
+\begin{lstlisting}[frame=single]
+import java.util.Scanner;
+public class Tugas8_2
+{
+    public static void main(String args[])
+    {
+        int batas;
+        int ulang = 1;
+        int tambah = 1;
+        int hitung = 1;
+        Scanner in = new Scanner(System.in);
+        batas =in.nextInt();
+        while(ulang <= batas)
+        {
+            System.out.print(hitung + " ");
+            tambah = tambah + 2;
+            hitung = hitung + tambah;
+            ulang = ulang + 1;
+        }
+        System.out.println("");
+    }
+}
+\end{lstlisting}
 
+Pada program di atas terdapat pengulangan while yang memiliki kondisi ulang <= batas, yang mana variabel \texttt{ulang} dideklarasikan di awal memiliki nilai 1, dan variabel \texttt{batas} dimasukkan oleh user.
+karena deret bilangan 1, 4, 9, 16 memiliki selisih 3, 5, 7, yang juga memiliki selisih masing-masing bilangan yaitu 2. Maka variabel \texttt{tambah} ditambah dengan bilangan 2 di setiap perulangan, lalu variabel hitung ditambahkan dengan variabel tambah di setiap perulangan, setelah itu variabel ulang ditambah dengan 1, agar perulangan berhenti sesuai dengan variabel \texttt{batas} yang nilainya dimasukkan user.
 
+\newpage
+\section{Kesimpulan}
+Mahasiswa dapat mengimplementasikan menyelesaikan kasus konsep perulangan while untuk menyelesaikan kasus
 
 
 \end{document}

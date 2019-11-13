@@ -25,3 +25,4 @@
 \contentsline {subsection}{\numberline {5.2}Tugas 2}{14}% 
 \contentsline {paragraph}{Masalah\\}{14}% 
 \contentsline {paragraph}{Penyelesaian\\}{14}% 
+\contentsline {section}{\numberline {6}Kesimpulan}{18}% 
