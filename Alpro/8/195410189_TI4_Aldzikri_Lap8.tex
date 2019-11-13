@@ -10,6 +10,7 @@
 \usepackage{inconsolata}
 \usepackage{lipsum}
 
+
 \usepackage{color}
 \usepackage[table]{xcolor}
 \definecolor{pblue}{rgb}{0.13,0.13,1}
@@ -342,5 +343,43 @@ Setelah perulangan while selesai, program akan menjalankan pernyataan
 rata = jumlah/panjang;
 \end{lstlisting}
 yang akan memberi nilai ke variabel \texttt{rata} dari hasil operasi pembagian jumlah dengan panjang, yang menghasilkan rata-rata dari semua nilai di variabel \texttt{data}
+
+\subsection{Tugas 2}
+\paragraph{Masalah\\}
+Buatlah algoritma, flowchat dan program untuk menghasilkan deret suatu bilangan,
+yang banyaknya data (n) di inputkan.
+\begin{itemize}
+	\item Jika n =3 menghasilkan deret 1 4 9
+	\item Jika n =4 menghasilkan deret 1 4 9 16
+\end{itemize}
+
+\paragraph{Penyelesaian\\}
+{\bfseries Pseudocode\\}
+\begin{enumerate}
+	\item Deklarasi
+	\begin{enumerate}[label=\arabic*.]
+		\item batas : integer \{input\}
+		\item ulang, tambah, hitung : integer \{output\}
+	\end{enumerate}
+	\begin{enumerate}[label=\arabic*.]
+		\item Masukkan (batas)
+		\item ulang = 1
+		\item tambah = 1
+		\item hitung = 1
+		\item \textit{selagi ulang <= batas} lakukan\\
+		 Tampilkan (hitung)\\
+		 tambah = tambah + 2\\
+		 hitung = hitung + tambah\\
+		 ulang = ulang + 1	
+	\end{enumerate}
+\end{enumerate}
+{\bfseries Flowchart\\}
+\begin{center}
+	\includegraphics[scale=.5]{main}
+\end{center}
+{\bfseries Program\\}
+
+
+
 
 \end{document}
