@@ -2,3 +2,8 @@
 \contentsline {section}{\numberline {1}Tujuan}{2}% 
 \contentsline {section}{\numberline {2}Dasar Teori}{2}% 
 \contentsline {section}{\numberline {3}Praktik}{6}% 
+\contentsline {section}{\numberline {4}Latihan}{10}% 
+\contentsline {paragraph}{Konfigurasi RIPv2}{10}% 
+\contentsline {section}{\numberline {5}Tugas}{14}% 
+\contentsline {paragraph}{Tabel Routing RIP}{14}% 
+\contentsline {section}{\numberline {6}Kesimpulan}{15}% 
