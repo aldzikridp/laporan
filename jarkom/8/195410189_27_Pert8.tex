@@ -7,7 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{inconsolata}
 \usepackage{lipsum}
-
+\usepackage{xcolor}
 
 \graphicspath{ {./img/} }
 \begin{document}
@@ -156,7 +156,42 @@ Ada tiga versi dari Routing Information Protocol: RIPv1, RIPv2, dan RIPng.
 		
 	\end{enumerate}
 	
-	\item {\bfseries Instalasi Jaringan}
+	\item {\bfseries Instalasi Jaringan\\}
+	\begin{itemize}
+		\item Pasang 2 Router R951Ui-2HND,
+		
+		\item 3 kabel  straight UTP
+		
+		\item Hubungkan ether1 Router 1, ke ether1 Router2
+		
+		\item Hubungkan masing-masing ethernet2 ke jaringan lokal atau ke PC, seperti pada gambar berikut:
+		
+	\end{itemize}
+
+	\item \textbf{Menambahkan IP address ether1 dan ether2}
+	\begin{center}
+		\includegraphics[scale=.4]{Page-1-Image-2}
+	\end{center}
+	Pilih new terminal, lalu isikan perintah berikut\\
+	\texttt{[admin@MikroTik] >\textcolor{red} {ip address add address=192.168.3.1/24 interface=ether1}}\\
+	lalu tekan enter, kemudian masukkan perintah lagi\\
+	\texttt{[admin@MikroTik] >\textcolor{red} {ip address add address=192.168.10.1/24 interface=ether2}}\\
+	
+	\item \textbf{Routing RIP\\}
+	\begin{center}
+		\includegraphics[scale=.4]{Page-2-Image-3}
+	\end{center}
+	Setelah menambahkan IP ke interface ether1 dan ether2, routing rip dengan perintah\\
+	\texttt{[admin@MikroTik] >\textcolor{red}{routing rip interface add interface=ether1 send=v1 receive=v1}}\\
+	Tekan enter lalu masukkan perintah\\
+	\texttt{[admin@MikroTik] >\textcolor{red}{routing rip network add network=192.168.10.0/24}}\\
+	Setelah itu masukkan\\
+	\texttt{[admin@MikroTik] >\textcolor{red}{routing rip network add network=192.168.3.0/24}}
+	
+	\item \textbf{Melihat Hasil Routing}
+	\begin{center}
+		\includegraphics[scale=.4]{Page-2-Image-4}
+	\end{center}
 	
 \end{enumerate}
 
