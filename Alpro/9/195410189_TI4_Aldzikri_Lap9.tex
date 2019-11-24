@@ -147,5 +147,54 @@ Program java UlangDo4 memiliki variabel bil berjenis integer, yang nilainya dima
 	\includegraphics[scale=1]{Capture6}
 	\includegraphics[scale=1]{Capture6_2}
 \end{center}
+Pada program latihan9\_1 di atas, terdapat variabel cel yang bernilai 20 dan fah yang berjenis float, lalu di bawahanya terdapat perulangan do-while yang akan menjalankan operasi konversi cel ke fahrenheit dan memasukan hasilnya ke variabel fah, lalu program akan menampilkan nilai dari variabel cel dan fah, setelah itu akan menambahkan nilai 1, ke variabel cel. Perulangan ini akan terus diulang selama variabel bernilai kurang dari sama dengan 30. Sehingga program tersebut akan menampilkan suhu celcius dari 20 - 30 dan mengkonversinya ke fahrenheit.
+
+\subsection{Latihan 2}
+\begin{center}
+	\includegraphics[scale=1]{Capture7}
+	\includegraphics[scale=1]{Capture7_2}
+\end{center}
+Program latihan9\_2 memiliki variabel jwb yang berjenis string, dan run yang bernilai true dan berjenis boolean. Dibawahnya terdapat perulangan do-while yang akan menampilkan tulisan "STMIK AKAKOM"  ke layar, lalu akan menyediakan input untuk user, kika user memasukkan tidak, maka variabel dari run akan berubah menjadi false, sehingga kondisi di while tidak terpenuhi dan perulanganpun berhenti.
+
+\section{Tugas}
+\subsection{Tugas 1}
+\begin{center}
+	\includegraphics[scale=.5]{tugas1}
+	\includegraphics[scale=.5]{tugas1_2}
+\end{center}
+Program di atas memiliki variabel \texttt{data} yang berbentuk array integer, yang panjangnya ditentukan oleh variabel panjang. Karena array di java bersifat tetap, maka digunakan ArrayList, terlihat pada baris kode
+\begin{lstlisting}
+int[] data = new int[panjang];
+\end{lstlisting}   
+baris ini akan merubah panjang variabel \texttt{data}, dengan nilai dari variabel \texttt{panjang}.\\
+Pada fungsi \texttt{while} diberi kondisi i <= panjang - 1, itu karena array dimulai dari 0, jadi misalnya kita memberi panjang array itu 4, maka akan terdiri dari 0, 1, 2, 3.\\
+Di dalam \texttt{do} terdapat pernyataan
+\begin{lstlisting}
+data[i] = in.nextInt();
+\end{lstlisting}
+pernyataan ini akan menerima masukan dan memasukkannya ke variabel \texttt{data} ke "i", jadi variabel \texttt{data} akan dapat dimasukkan nilai sesuai dengan panjang array yang telah ditentukan.\\
+Lalu baris pernyataan
+\begin{lstlisting}
+jumlah = jumlah + data[i];
+\end{lstlisting}
+berfungsi untuk menambahkan variabel \texttt{jumlah}, dengan nilai variabel \texttt{data} ke "i", jadi variabel \texttt{jumlah} akan bernilai jumlah semua angka yang ada di variabel \texttt{data}.\\
+Setelah perulangan do-while selesai, program akan menjalankan pernyataan
+\begin{lstlisting}
+rata = jumlah/panjang;
+\end{lstlisting}
+yang akan memberi nilai ke variabel \texttt{rata} dari hasil operasi pembagian jumlah dengan panjang, yang menghasilkan rata-rata dari semua nilai di variabel \texttt{data}
+
+\subsection{Tugas 2}
+\begin{center}
+	\includegraphics[scale=.5]{tugas2}
+	\includegraphics[scale=.5]{tugas2_2}
+\end{center}
+Pada program di atas terdapat pengulangan do-while yang memiliki kondisi ulang <= batas, yang mana variabel \texttt{ulang} dideklarasikan di awal memiliki nilai 1, dan variabel \texttt{batas} dimasukkan oleh user.
+karena deret bilangan 1, 4, 9, 16 memiliki selisih 3, 5, 7, yang juga memiliki selisih masing-masing bilangan yaitu 2. Maka variabel \texttt{tambah} ditambah dengan bilangan 2 di setiap perulangan, lalu variabel hitung ditambahkan dengan variabel tambah di setiap perulangan, setelah itu variabel ulang ditambah dengan 1, agar perulangan berhenti sesuai dengan variabel \texttt{batas} yang nilainya dimasukkan user.
+
+\newpage
+
+\section{Kesimpulan}
+Setelah kegiatan praktik mahasiswa dapat mengimplementasikan konsep perulangan do-while untuk menyelesaikan kasus
 
 \end{document}
