@@ -4,6 +4,7 @@
 \usepackage{multirow}
 \usepackage{enumitem}
 \usepackage{listings}
+\usepackage{adjustbox}
 \graphicspath{ {./img/} }
 \begin{document}
 \title{Laporan Praktikum Statistika Pertemuan 9}
@@ -147,6 +148,122 @@ Data mengenai lama (durasi) beberapa judul film dengan data mentah sebagai berik
 \end{enumerate}
 
 \subsubsection{Latihan 2}
+Dari catatan sebuah rumah sakit bersalin diperoleh data tentang dan berat badan bayi yang dilahirkan di rumah sakit A dan B tersebut. Dari sampel random sebanyak 20 orang bayi, berat badannya sebagai berikut (kg)\\ 
+rumah sakit A  : 2.5, 3, 4, 2.4, 3.6, 3, 2.8, 2.3,  2.9\\
+rumah sakit B : 3.5, 4.1, 3.4, 2.8, 3, 3.5, 3.2, 2.6, 3.3, 2.8, 3.7, 3.7, 2.9, 2.6
+\begin{center}
+	\includegraphics[scale=.5]{lat2}
+\end{center}
+\begin{enumerate}[label=\alph*.]
+	\item Untuk menentukan Q$_{1}$ dan Q$_{3}$ dari data kedua rumah sakit tersebut di atas, masukkan data ke dalam variabel terlebih dahulu\\
+	\texttt{RS\_A <- c(2.5,3,4,2.4,3.6,3,2.8,2.3,2.9)}\\
+	\texttt{RS\_B <- c(3.5,4.1,3.4,2.8,3,3.5,3.2,2.6,3.3,2.8,3.7,3.7,2.9,2.6)}\\
+	Lalu tentukan Q$_{1}$ dan Q$_{3}$ dengan fungsi quantile\\
+	Untuk menentukan Q$_{1}$ dan Q$_{3}$ RS A\\
+	\texttt{quantile(RS\_A, probs=(0.25))}\\
+	\texttt{quantile(RS\_A, probs=(0.75))}\\
+	Sedangkan untuk menentukan Q$_{1}$ dan Q$_{3}$ RS B\\
+	\texttt{quantile(RS\_B, probs=(0.25))}\\
+	\texttt{quantile(RS\_B, probs=(0.75))}\\
+	Dari output di atas RS A memiliki nilai Q$_{1}$ = 2,5 dan Q$_{3}$ = 3. Sedangkan RS B memiliki nilai Q$_{1}$ = 2,825 dan Q$_{3}$ = 3,5.
+	
+	\item Untuk menentukan keruncingan dan kemiringan dari data kedua rumah sakit tersebut, gunakan fungsi describe dari library psych.\\
+	Untuk rumah sakit A\\
+	\texttt{describe(RS\_A)}\\
+	Sedangkan untuk rumah sakit B\\ 
+	\texttt{describe(RS\_B)}\\
+	Dari outputnya terihat Rumah sakit A memiliki keruncingan -1,01, karena nilai koefisien kurtosisnya < 0,263 maka distribusinya adalah platikurtik. Sedangkan kermiringannya 0,6.\\
+	Sedangkan untuk Rumah sakit B memiliki keruncingan -1,2 , karena nilai koefisien kurtosisnya < 0,263 maka distribusinya adalah platikurtik. Sedangkan kermiringannya 0,21.
+\end{enumerate}
 
+\subsection{Latihan}
+\subsubsection{Latihan 1}
+Perhatikan data berikut
+\begin{table}[!ht]
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Panjang bayi            & Umur       & Bobot lahir \\ \hline
+		(\textbackslash{}cm), y & (hari), x1 & (kg), x2    \\ \hline
+		57.5                    & 78         & 2.75        \\ \hline
+		52.8                    & 69         & 2.15        \\ \hline
+		61.3                    & 77         & 4.41        \\ \hline
+		67                      & 88         & 5.52        \\ \hline
+		53.5                    & 67         & 3.21        \\ \hline
+		62.7                    & 80         & 4.32        \\ \hline
+		56.2                    & 74         & 2.31        \\ \hline
+		68.5                    & 94         & 4.3         \\ \hline
+		69.2                    & 102        & 3.71        \\ \hline
+	\end{tabular}
+\end{table}
 
+\begin{enumerate}[label=\alph*.]
+	\item \begin{minipage}[t]{\linewidth}
+		\raggedright
+		\adjustbox{valign=t}{%
+			\includegraphics[width=.75\linewidth]{tugas1a}%
+		}
+	\end{minipage}
+	Untuk menentukan D$_{3}$ dari data panjang bayi, pertama masukkan data\\
+	\texttt{pbayi <- c(57.5,52.8,61.3,67.0,53.5,62.7,56.2,68.5,69.2)\\}
+	Lalu tentukan D$_{3}$ dengan perintah\\
+	\texttt{quantile(pbayi,probs=(0.3))\\}
+	Dari outputnya terlihat nilai D$_{3}$ data dari panjang bayi memiliki nilai 56,72
+	
+	\item 
+	\begin{minipage}[t]{\linewidth}
+		\raggedright
+		\adjustbox{valign=t}{
+			\includegraphics[width=.75\linewidth]{tugas1b}%
+		}
+	\end{minipage}
+	Untuk menentukan P$_{65}$ dari data panjang bayi, pertama masukkan data\\
+	\texttt{bbayi <- c(78,69,77,88,67,80,74,94,102)\\}
+	Lalu tentukan P$_{65}$ dengan perintah\\
+	\texttt{quantile(bbayi,probs=(0.65))\\}
+	Dari outputnya terlihat nilai P$_{65}$ data dari panjang bayi memiliki nilai 81,6
+	
+	\item 
+	\begin{minipage}[t]{\linewidth}
+		\raggedright
+		\adjustbox{valign=t}{
+			\includegraphics[width=.75\linewidth]{tugas1c}%
+		}
+	\end{minipage}
+	Untuk menentukan Q$_{1}$ dari data panjang bayi, pertama masukkan data\\
+	\texttt{ubayi <- c(2.75,2.15,4.41,5.52,3.21,4.32,2.31,4.30,3.71)\\}
+	Lalu tentukan Q$_{1}$ dengan perintah\\
+	\texttt{quantile(ubayi,probs=(0.25))\\}
+	Dari outputnya terlihat nilai Q$_{1}$ data dari panjang bayi memiliki nilai 2,75.
+	
+	\item 
+	\begin{minipage}[t]{\linewidth}
+		\raggedright
+		\adjustbox{valign=t}{
+			\includegraphics[width=.75\linewidth]{tugas1d}%
+		}
+	\end{minipage}
+	Dari output di atas, data dari panjang bayi memiliki nilai kemiringan 0,04 , sedangkan data dari bobot bayi memiliki nilai kemiringan 0,49.  
+			
+\end{enumerate}
+
+\newpage
+
+\subsubsection{Latihan 2}
+Diberikan data nilai mahasiswa sebagai berikut: 68 84 75 82 68 90 62 88 76 93 73 79 88 73 60 93 71 59 85 75 61 65 75 87 74 62 95 78 63 72
+
+\begin{enumerate}[label=\alph*.]
+	\item 
+	\begin{minipage}[t]{\linewidth}
+		\raggedright
+		\adjustbox{valign=t}{
+			\includegraphics[width=.75\linewidth]{tugas2a}%
+		}
+	\end{minipage}
+	untuk menentukan D$_{1}$, D$_{2}$, dan D$_{3}$, pertama masukkan data\\
+	\texttt{nilai = c(68,84,75,82,68,90,62,88,76,93,73,79,88,73,60,93\\
+		,71,59,85,75,61,65,75,87,74,62,95,78,63,72)}\\
+	Lalu tentukan D$_{1}$, D$_{2}$, dan D$_{3}$ dengan perintah\\
+	\texttt{quantile(nilai,probs= c(0.1,0.2,0.3))\\}
+	dari output di atas terlihat D$_{1}$ memiliki nilai 61,9, D$_{2}$ memiliki nilai 64,6, sedangkan D$_{3}$ memiliki nilai 70,1.
+\end{enumerate}
 \end{document}
