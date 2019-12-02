@@ -1,0 +1,11 @@
+\babel@toc {bahasa}{}
+\contentsline {section}{\numberline {1}Tujuan}{2}% 
+\contentsline {section}{\numberline {2}Dasar Teori}{2}% 
+\contentsline {paragraph}{}{2}% 
+\contentsline {section}{\numberline {3}Praktik}{4}% 
+\contentsline {subsection}{\numberline {3.1}Praktik 1}{4}% 
+\contentsline {subsection}{\numberline {3.2}Praktik 2}{6}% 
+\contentsline {subsection}{\numberline {3.3}Praktik 3}{8}% 
+\contentsline {section}{\numberline {4}Latihan}{9}% 
+\contentsline {section}{\numberline {5}Tugas}{11}% 
+\contentsline {section}{\numberline {6}Kesimpulan}{13}% 
