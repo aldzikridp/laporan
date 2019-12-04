@@ -79,10 +79,21 @@ jaringan akan sangat terbantu dalam melakukan tugas-tugasnya.
 \section{Praktik}
 \begin{enumerate}
 	\item \textbf{Instalasi Jaringan}\\
-	Langkah pertama adalah menyambungkan router dengan jaringan, port ether1 yang berperan sebagai dhcp client disambungkan ke jaringan internet akakom, lalu ether2 disambungkan ke pc1, sedangkan ether3 yang akan memiliki dhcp server disambungkan ke pc2.
+	Langkah pertama adalah menyambungkan router dengan jaringan, port ether1 yang berperan sebagai dhcp client disambungkan ke jaringan internet akakom, lalu ether2 disambungkan ke pc1, sedangkan ether3 yang akan memiliki dhcp server disambungkan ke pc2. 
 	
 	\item \textbf{Menghapus konfigurasi Mikrotik}\\
-	Untuk me-reset konfigurasi pada mikrotik, pertama login terlebih dahulu dengan winbox
+	\begin{center}
+		\includegraphics[scale=.4]{Capture1}
+	\end{center}
+	Untuk me-reset konfigurasi pada mikrotik, pertama login terlebih dahulu dengan winbox, lalu kilk new terminal dan tuliskan \texttt{system reset-configuration no-default=yes}, perintah tersebut akan mereset router tanpa konfigurasi default. Lalu tekan y untuk konfirmasi.Maka Mikrotik akan booting dan konfigurasinya telah dihapus semua. Lalu login kembali dengan mac address.
+	
+	\item \textbf{Cek IP Address pada Interface.\\}
+	Klik menu IP → Addresses, maka akan muncul kotak windows Address List dan
+	pastikan pada kotak tersebut masih kosong.
+	\begin{center}
+		\includegraphics[scale=.5]{Capture2}
+	\end{center}
+	
 \end{enumerate}
 
 \end{document}
