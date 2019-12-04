@@ -94,6 +94,51 @@ jaringan akan sangat terbantu dalam melakukan tugas-tugasnya.
 		\includegraphics[scale=.5]{Capture2}
 	\end{center}
 	
+	\item \textbf{Setting DHCP Client pada Ether 1.\\}
+	klik IP lalu pilih dhcp client, maka muncul jendela dhcp, kemudian klik "+", maka muncul jendela New DHCP Client.
+	\begin{center}
+		\includegraphics[scale=.5]{Capture5}
+	\end{center}
+	 Pada tab DHCP, pilih Interface-nya: Ether1 (dengan cara klik tombol panah bawah
+	, lalu klik Ether1), lalu klik tombol Apply. Langkah berikutnya klik tab Status, untuk melihat IP Address, Gateway, DHCP
+	Server, Primary DNS, dll. yang didapat DHCP Client di Ether1 dari DHCP Server
+	yang ada di laboratorium, seperti pada Gambar berikut: (alamat IP Address yang
+	di dapat berbeda-beda). Lalu klik tombol OK, dan pastikan pada kotak windows DHCP Client terdapat interface
+	Ether1 yang telah di konfigurasi sebagai DHCP Client dan pastikan juga pada kotak
+	windows Address List, Ether1 telah mendapat IP yang sama dengan yang ada pada
+	kotak windows DHCP Client.Sampai dengan langkah ini, berarti Ether1 telah mendapatkan IP yang disewakan oleh
+	DHCP Server yang berada di laboratorium.
+	
+	\item \textbf{Menambahkan IP Address pada Ether2.\\}
+	Klik menu IP → Addresses, maka akan muncul kotak windows Address List.
+	\begin{center}
+		\includegraphics[scale=.5]{Capture6}
+	\end{center}
+	Lalu klik tombol "+", maka muncul window New address Isikan alamat IP pada Address: 192.168.168.100.1/24 dan Interface: Ether2. Klik tombol Apply (Network, akan terisi secara otomatis) seperti pada gambar di
+	bawah ini.Lalu klik tombol OK, sampai dengan langkah ini, berarti Ether2 memiliki IP yang diisikan dan dapat dilihat pada kotak windows Address List (termasuk Ether1).
+	
+	\item \textbf{Menambahkan IP Address pada Ether3\\}
+	Klik menu IP → Addresses, maka akan muncul kotak windows Address List. Lalu klik tombol "+"
+	, maka akan muncul kotak window New Address,
+	i sikan alamat IP pada Address: 172.18.10.1/24 dan Interface: Ether3, lalu klik
+	tombol Apply (Network, akan terisi secara otomatis) seperti pada gambar di
+	bawah ini. Lalu klik tombol OK, sampai dengan langkah ini, berarti Ether3 memiliki IP yang
+	diisikan dan dapat dilihat pada kotak windows Address List (termasuk Ether1 dan
+	Ether2).
+	\begin{center}
+		\includegraphics[scale=.5]{Capture7}
+	\end{center}
+	
+	\item\textbf{Setting IP address pada komputer yang terhubung ke Ether2}\\
+	Klik kanan pada icon Network , kemudian akan muncul 2 menu dan pilih menu
+	Open Network \& Internet settings.
+	\begin{center}
+		\includegraphics[scale=.5]{Capture8}
+	\end{center}
+	Akan muncul kotak window Setting, pilih menu Change adapter option.
+	Tampil kotak window Network Connections, klik kanan Ethernet (yang mau diberikan IP Address), lalu pilih menu Properties.
+	
+	
 \end{enumerate}
 
 \end{document}
