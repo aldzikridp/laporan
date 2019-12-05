@@ -136,9 +136,105 @@ jaringan akan sangat terbantu dalam melakukan tugas-tugasnya.
 		\includegraphics[scale=.5]{Capture8}
 	\end{center}
 	Akan muncul kotak window Setting, pilih menu Change adapter option.
+	Tampil kotak window Network Connections, klik kanan Ethernet (yang mau diberikan IP Address), lalu pilih menu Properties. Maka akan tampil kotak window Ethernet Properties, double klik Internet Protocol Version 4 (TCP/IPv4), lalu pilih Use the following IP address, isi IP address: 192.168.100.5, Subnet mask: 255.255.255.0 Default gateway:
+	192.168.100.1 dan Preferred DNS server: 172.17.81.253 (sesuai dengan alamat IP pada Primary DNS di Ether1, pada waktu konfigurasi DHCP Client).
+	Kemudian klik tombol OK, dan lakukan tes koneksi dengan perintah Ping ke Gateway-nya: 192.168.100.1 dan pastikan terkoneksi.
+	\begin{center}
+		\includegraphics[scale=.4]{Capture9}
+	\end{center}
+	
+	\item \textbf{Setting DHCP Server pada Interface Ether3}\\
+	\begin{center}
+		\includegraphics[scale=.5]{Capture10}
+	\end{center}
+	Pilih menu IP → DHCP Server, akan muncul kotak window DHCP Server, lalu klik menu DHCP Setup.
+	Akan muncul kotak window DHCP Setup, lalu pada isian DHCP Server Interface
+	
+	pilih interface: Ether3 dengan cara klik tombol panah bawah terlebih dahulu. Klik tombol Next, pada isian DHCP Address Space alamat network dan netmasknya: 172.18.10.0/24 (secara otomatis berdasarkan setting IP Address pada interface Ether3).
+	Klik tombol Next, pada isian Gateway for DHCP Network: 172.18.10.1 yang akan dijadikan sebagai gateway untuk setiap DHCP Client-nya (secara otomatis sama dengan IP Address pada interface Ether3).
+	Klik tombol Next, pada isian Addresses to Give out: 172.18.10.2 – 172.18.10.254 (merupakan range IP Address yang akan diberikan (tepatnya disewakan) ke setiap DHCP Client-nya. (pada praktik kali ini silahkankan di ubah range-nya dari 172.18.10.2 – 172.18.10.10 sehingga komputer client akan menerima IP Address sesuai range tersebut.
+	Klik tombol Next, pada isian DNS Server: 172.17.81.253 (akan berisi alamat DNS Server yang telah didapat mikrotik, dapat dilihat pada menu IP → DNS), dapat diganti dengan alamat DNS Server yang lain.
+	Klik tombol Next, pada isian Lease Time: 3d 00:00:00 (akan berisi lama waktu IP Address dipinjamkan ke Client), isian ini berarti dipinjamkan selama 3 hari. Untuk menghindari penuh atau kehabisan IP, setting Lease-Time jangan terlalu lama, misalkan 1 hari saja.
+	Klik tombol Next, maka akan tertampil pesan yang menyatakan bahwa setting DHCP telah berhasil.
+	
+	\item \textbf{Setting IP address pada komputer yang terhubung ke Ether3 (DHCP Server)}\\
+	Klik kanan pada icon Network , kemudian akan muncul 2 menu dan pilih menuOpen Network \& Internet settings. Akan muncul kotak window Setting, pilih menu Change adapter option.
 	Tampil kotak window Network Connections, klik kanan Ethernet (yang mau diberikan IP Address), lalu pilih menu Properties.
+	Maka akan tampil kotak window Ethernet Properties, double klik Internet Protocol Version 4 (TCP/IPv4), lalu pilih Obtain an IP address automatically dan Obtain DNS server address automatically.Kemudian klik tombol OK. 
+	\begin{center}
+		\includegraphics[scale=.8]{image4}
+	\end{center}
+	Cek IP Address dari komputer tersebut menggunakan aplikasi Comment Prompt dengan perintah ipconfig /all.
+	\begin{center}
+		\includegraphics[scale=.4]{image5}
+	\end{center}
+	IP address yang didapat tidak bisa 172.18.10.100 , karena dhcp pool yang dikonfigurasi adalah 172.18.10.2 sampai 172.18.10.10
+	\begin{center}
+		\includegraphics[scale=.7]{image6}
+	\end{center}
+	Lakukan tes koneksi dengan perintah Ping ke Gateway-nya: 172.18.10.1 dan pastikan terkoneksi.
 	
+	\item \textbf{Cek Koneksi ke Internet Melalui Router Menggunakan Terminal.}\\
+	\begin{center}
+		\includegraphics[scale=.6]{Capture11}
+	\end{center}
+	Klik New Terminal, akan muncul kotak window Terminal, berikan perintah untuk cek koneksi ke situs berita: www,detik.com koneksi dengan perintah Ping dan pastikan terkoneksi.
 	
+	\item \textbf{Cek Koneksi ke Internet Melalui PC yang terhubung ke Ether2 maupun Ether2.}
+	Jalankan aplikasi Command Prompt, berikan perintah untuk cek koneksi ke situs berita: www,detik.com koneksi dengan perintah Ping dan hasilnya sama seperti pada gambar berikut yang berarti tidak terkoneksi.
+	\begin{center}
+		\includegraphics[scale=.5]{Capture12}
+	\end{center}
+	
+	\item \textbf{Setting Source-Network Address Translation (Src-NAT),}\\
+	Cek koneksi pada praktik ke-10 membuktikan bahwa router sudah terkoneksi dengan jaringan internet, sedangkan pada praktik ke-11 membuktikan bahwa kedua PC yang terhubung ke Ether2 dan Ether3 belum terkoneksi dengan jaringan internet. Setting ini akan mengubah source address dari sebuah paket data, yang berasal dari PC yang terhubung ke Ether2 diubah ke source address-nya milik Ether1 yang sudah sudah terbukti dapat terkoneksi dengan internet, sehingga menjadikan PC yang terhubung ke Ether2 dapat terkoneksi dengan jaringan internet.
+	
+	Pilih menu IP → Firewall, akan muncul kotak window Firewall, lalu klik tab NAT.	
+	Kemudian klik tombol + , 
+	\begin{center}
+		\includegraphics[scale=.8]{Capture13}
+	\end{center}
+	maka akan muncul kotak window New NAT Rule, klik tab General dan lakukan pengisian pada Chain: srcnat (untuk mengubah source address dari sebuah paket data), Src. Address: 192.168.100.0/24 (source address yang diubah memiliki alamat network 192.168.100.0 dan netmask: 255.255.255.0) dan Out. Interface:Ether1 (interface yang akan dikenali dari luar).	
+	\begin{center}
+		\includegraphics[scale=.5]{Capture14}
+	\end{center}
+	Klik tab Action, pada isian Action:masquerade (ini berarti bahwa source address 192.168.100.0/24 ditopengkan sehingga nanti akan dikenal dengan source addres-nya Ether1, yaitu: 172.17.25.106/24, kemudian klik tombol Apply.Kemudian klik tombol OK, yang berarti setting Src-NAT telah selesai.
+	\begin{center}
+		\includegraphics[scale=.5]{Capture15}
+	\end{center}
+	
+	\item \textbf{Cek Kembali Koneksi ke Internet Melalui PC yang terhubung ke Ether2 maupun Ether2.}\\
+	Jalankan aplikasi Command Prompt, berikan perintah untuk cek koneksi ke situs berita: www.detik.com koneksi dengan perintah Ping dan hasilnya akan berbeda seperti pada gambar berikut.\\
+	
+	Pada PC yang terhubung ke Ether2.
+	\begin{center}
+		\includegraphics[scale=.4]{Capture16}
+	\end{center}
 \end{enumerate}
 
+\section{Latihan}
+Pilih menu IP → Firewall, akan muncul kotak window Firewall, lalu klik tab NAT.	
+Kemudian klik tombol + , 
+\begin{center}
+	\includegraphics[scale=.5]{lat1}
+\end{center}
+maka akan muncul kotak window New NAT Rule, klik tab General dan lakukan pengisian pada Chain: srcnat (untuk mengubah source address dari sebuah paket data), Src. Address: 172.18.10.0/24 (source address yang diubah memiliki alamat network 172.18.10.0 dan netmask: 255.255.255.0) dan Out. Interface:Ether1 (interface yang akan dikenali dari luar).	
+\begin{center}
+	\includegraphics[scale=.5]{lat2}
+\end{center}
+Klik tab Action, pada isian Action:masquerade (ini berarti bahwa source address 172.18.10.0/24 ditopengkan sehingga nanti akan dikenal dengan source addres-nya Ether1, yaitu: 172.17.25.106/24, kemudian klik tombol Apply.Kemudian klik tombol OK, yang berarti setting Src-NAT telah selesai.
+\begin{center}
+	\includegraphics[scale=.5]{lat3}
+\end{center}
+
+\section{Tugas}
+\begin{enumerate}
+	\item Hasil cek koneksi pada praktik ke-13 berbeda, antara cek koneksi internet pada PC yang terhubung ke Ether2 dengan yang terhubung ke Ether3 karena yang dikonfigurasi untuk dimask adalah jaringan hanya 192.168.100.0
+	
+	\item Perbedaan Out. Interface dengan In. Interface adalah Out adalah interface yang menjadi tujuan dari paket jaringan, sedangkan in adalah darimana paket jaringan berasal. 
+\end{enumerate}
+
+\newpage
+\section{Kesimpulan}
+Setelah praktik ini mahasiswa mampu melakukan konfigurasi NAT pada mikrotik untuk mengakses Internet
 \end{document}

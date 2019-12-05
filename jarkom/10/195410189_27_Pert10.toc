@@ -5,3 +5,6 @@
 \contentsline {paragraph}{Keamanan\\}{2}% 
 \contentsline {paragraph}{Administrasi Jaringan\\}{3}% 
 \contentsline {section}{\numberline {3}Praktik}{3}% 
+\contentsline {section}{\numberline {4}Latihan}{15}% 
+\contentsline {section}{\numberline {5}Tugas}{16}% 
+\contentsline {section}{\numberline {6}Kesimpulan}{18}% 
