@@ -5,3 +5,8 @@
 \contentsline {paragraph}{Praktik 2\\}{4}% 
 \contentsline {paragraph}{Praktik 1\\}{6}% 
 \contentsline {paragraph}{Praktik 2\\}{7}% 
+\contentsline {subsection}{\numberline {1.2}Latihan}{9}% 
+\contentsline {paragraph}{Latihan 1\\}{9}% 
+\contentsline {paragraph}{Latihan 2\\}{10}% 
+\contentsline {subsection}{\numberline {1.3}Tugas}{11}% 
+\contentsline {paragraph}{Tugas 1\\}{11}% 

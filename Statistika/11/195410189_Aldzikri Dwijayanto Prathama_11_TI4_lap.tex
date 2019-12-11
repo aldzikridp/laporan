@@ -207,6 +207,81 @@ rata $\lambda$ gunakan perintah:\\
 \item \textbf{Mencari nilai x yang membatasi luas daerah(nilai peluang) distribusi Poisson}\\
 Sebuah direktorat kemahasiswaan menyatakan bahwa mereka menerima keluhan
 mahasiswa rata-rata 20 orang per hari. Tentukanlah banyaknya mahasiswa yg datang
-mengeluh apabila diketahui probabilitas yg mengeluh 0,25
+mengeluh apabila diketahui probabilitas yg mengeluh 0,25\\
+\includegraphics{prakf}\\
+Diketahui:\\
+P = 0.25\\
+$\lambda$ = 20 \\
+untuk mencari nilai x dari luasan (peluang) P berdistribusi
+poisson dengan rata-rata $\lambda$ digunakan fungsi \texttt{qpois}. Jadi perintahnya:\\
+\texttt{qpois(0.25,3)}\\
+\end{enumerate}
+
+\newpage
+\subsection{Latihan}
+\paragraph{Latihan 1\\}
+Sebuah perusahaan sepatu mengelompokkan hasil produksinya menjadi dua bagian, yaitu
+kualitas ekspor, biasanya 40\%, dan sisanya merupakan kualitas non ekspor, 60\%. Jika
+diambil secara acak 10 pasang sepatu, hitung probabilitas:
+\begin{enumerate}[label=\alph*.]
+	\item Semua sepatu yang berkualitas eksport\\
+	\includegraphics{lat1a}\\
+	Diketahui:\\
+	x = 10 \\
+	n = 10 \\
+	p = 40\% = 0.4 \\
+	Untuk menghitung P(X=10) digunakan perintah dbinom, sehingga perintahnya:\\
+	\texttt{dbinom(10,10,0.4)}\\
+	jadi P(X=10) = 0,0001
+	
+	\item Sekurang-kurangnya ada enam sepatu berkualitas eksport\\
+	\includegraphics{lat1b}\\
+	Diketahui:\\
+	X $\geq$ 6
+	n = 10\\
+	p = 40\% = 0.4\\
+	$P(X \geq 6) = 1 - P(X \leq 5)$\\
+	Untuk menghitung $P(X \geq 6)$ digunakan perintah 1 - pbinom\\
+	\texttt{1-pbinom(5,10,8.4)}\\
+	Dari output di atas diketahui $P(X \geq 6) = 0.166$
+	
+	\item Tentukan banyaknya sepatu yang berkualitas eksport\\
+	\includegraphics{lat1c}\\
+	Diketahui:\\
+	n = 1\\
+	E = 0.4\\
+	Sehingga dari output diatas diketahui banyak sepatu import adalah 4
+\end{enumerate}
+
+\paragraph{Latihan 2\\}
+Jumlah pemesanan motor produk nasional di sebuah agen adalah 20 buah per minggunya.
+Tingkat permintaan rata-rata tersebut relatif tetap dan pelanggan tidak saling
+mempengaruhi satu sama lainnya mengenai kebiasaan belanja mereka.	
+\begin{enumerate}[label = \alph*.]
+	\item Berapakah probabilitas bahwa lebih dari 20 motor yang dipesan dalam satu minggu
+	tertentu ?\\
+	\includegraphics{lat2a}\\
+	Diketahui:\\
+	$P(X < 20)$\\
+	$\lambda = 20$\\
+	$P(X > 20) = 1 - P(X < 20)$
+	Maka perintah yang digunakan adalah:\\
+	\texttt{1 - ppois(20,20)}
+	
+	\item Berapa probabilitas tepat sebanyak 17 motor dipesan dalam seminggu?\\
+	\includegraphics{lat2b}\\
+	Diketahui:\\
+	x = 17\\
+	$\lambda$ = 20\\
+	Maka perintah R nya adalah:\\
+	\texttt{dpois(17,20)}
+\end{enumerate}
+
+\subsection{Tugas}
+\paragraph{Tugas 1\\}
+Probabilitas seseorang sembuh dari penyakit jantung setelah operasi adalah 0.4. Bila
+diketahui 15 orang menderita penyakit ini, berapa peluang
+\begin{enumerate}[label = \alph*.]
+	\item Sekurang-kurangnya 10 orang dpt sembuh
 \end{enumerate}
 \end{document}
