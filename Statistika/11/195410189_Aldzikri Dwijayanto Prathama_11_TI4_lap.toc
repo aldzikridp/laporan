@@ -10,3 +10,4 @@
 \contentsline {paragraph}{Latihan 2\\}{10}% 
 \contentsline {subsection}{\numberline {1.3}Tugas}{11}% 
 \contentsline {paragraph}{Tugas 1\\}{11}% 
+\contentsline {paragraph}{Tugas 2\\}{11}% 
