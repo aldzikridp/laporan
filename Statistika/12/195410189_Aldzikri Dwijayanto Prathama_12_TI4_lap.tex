@@ -47,17 +47,70 @@ Apabila X berdistribusi Normal dengan rata-rata 3 dan standar deviasi 0.5, tentu
 \begin{enumerate}[label=\alph*.]
   \item $P(X = 4)$\\
   \includegraphics[scale=1]{praka1a}\\
-  Diketahui:\\
-  X = 4\\
-  mean = 3\\
-  sd = 0.5\\
+  Diketahui:
+  \begin{itemize}
+  	\item X = 4
+  	\item mean = 3
+  	\item sd = 0.5
+  \end{itemize}
   Pada soal a adalah mencari probabiliatas kumulatif x dengan rata-rata $\lambda$
   Atau P(X = x), sehingga kita gunakan perintah dnorm, format dari perintah dnorm adalah seperti berikut\\
   \texttt{>dnorm(x, mean, sd)\\}
   Jadi untuk soal ini perintahnya adalah\\
   \texttt{dnorm(4,3,0.5)}\\
   Dari output di atas diketahui bahwa $P(X = 4) = 0,10798$
-  \item $P (X < 3,5)$
+  
+  \item $P (X < 3,5)$\\
+  \includegraphics[scale=1]{praka1b}\\
+  Diketahui:
+  \begin{itemize}
+  	\item X < 3.5
+  	\item mean = 3
+  	\item sd = 0.5
+  \end{itemize}
+  Pada soal b adalah mencari probabiliatas kumulatif x  dengan rata-rata $\lambda$
+  Atau $P(X < x)$, sehingga kita gunakan perintah pnorm, format dari perintah dnorm adalah seperti berikut\\
+  \texttt{>pnorm(x, mean, sd)\\}
+  Jadi untuk soal ini perintahnya adalah\\
+  \texttt{pnorm(3.5,3,0.5)}\\
+  Dari output di atas diketahui bahwa $P(X < 4) = 0,841$
+\end{enumerate}
+
+\paragraph{Praktik 2\\}
+Apabila X berdistribusi Normal dengan rata-rata 10 dan standar deviasi 0.65, tentukan probabilitas 
+\begin{enumerate}
+	\item $P(3 < X < 7)$\\
+	\includegraphics{praka2a}\\
+	Diketahui:
+	\begin{itemize}
+		\item mean = 10
+		\item sd = 0.65 
+		\item $P(3 < X < 7) = P(X < 7) - P(X < 3)$ 
+	\end{itemize}
+	Pada soal ini adalah mencari probabiliatas kumulatif x  dengan rata-rata $\lambda$
+	Atau $P(X < x)$, sehingga kita gunakan perintah pnorm.
+	Untuk penyelesaiannya pertama kita cari $P(X < 3)$\\
+	\texttt{b = pnorm(3,10,0.65)}\\
+	lalu cari $P(X < 7)$\\
+	\texttt{a = pnorm(7,10,0.65)}\\
+	lalu kurangi $P(X < 7)$ dengan $P(X < 3)$
+	\texttt{a-b}\\
+	dari hasil di atas diketahui $P(3 < X < 7) = 1,9610^{-6}$
+
+    \item $P(X \geq 3)$
+        \includegraphics{praka2b}\\
+        Diketahui:
+        \begin{itemize}
+            \item mean = 10
+            \item sd = 0.65 
+            \item $P(X \geq 3) = 1 - P(X < 3)$ 
+        \end{itemize} 
+        Pada praktik ini digunakan perintah \texttt{pnorm} karena akan dicari $P(X < 3)$\\
+        \texttt{b = pnorm(3,10,0.65)}\\
+        Lalu kurangi 1 dengan hasil operasi tadi\\
+        \texttt{1-b}\\
+        Dari output diatas diketahui $P(X \geq 3) = 1$ 
+	
 \end{enumerate}
 
 \end{enumerate}
