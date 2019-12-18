@@ -110,8 +110,45 @@ Apabila X berdistribusi Normal dengan rata-rata 10 dan standar deviasi 0.65, ten
         Lalu kurangi 1 dengan hasil operasi tadi\\
         \texttt{1-b}\\
         Dari output diatas diketahui $P(X \geq 3) = 1$ 
-	
+
 \end{enumerate}
+
+\item Membangkitkan data berdistribusi Normal\\
+    Akan digenerate data berdistribusi normal dengan jumlah data 30, mean = 0 dan sd =1.
+    \includegraphics{prakb}\\
+    Untuk membangkitkan n data berdidtribusi normal dengan parameter mean dan sd gunakan perintah\\
+    \texttt{rnorm(n, mean, sd)}\\
+    Untuk membangkitkan data berdistribusi normal dengan jumlah data 30, mean = 0, dan sd = 1 perintahnya adalah\\
+    \texttt{rnorm(30,0,1)}
+
+\item Menghitung nilai x yang membatasi luas daerah(nilai peluang) distribusi Normal\\
+    \paragraph{Praktik 1\\}
+    Tentukan nilai kritis z dimana P(Z < z) = 0,95\\
+    \includegraphics{prakc1}
+    Diketahui:
+    \begin{itemize}
+        \item P = 0.95
+        \item mean = 0  
+        \item sd = 1
+    \end{itemize}
+    Untuk mencari nilai x dari luasan (peluang) P berdistribusi Normal dengan parameter mean dan sd gunakan perintah \texttt{qnorm}
+    \texttt{qnorm{0.95,0,1}\\
+        Jadi diketahui $P(Z < z) = 0,95 maka z = 1,64$
+
+    \paragraph{Praktik 2\\}
+    Tentukan nilai kritis x dimana P(X < x) = 0,95, untuk X berdistribusi Normal dengan mean 3, standar deviasi 0.5\\
+    \includegraphics{prakc2}
+    \begin{itemize}
+        \item P = 0.95
+        \item mean = 3  
+        \item sd = 0.5
+    \end{itemize}
+    Untuk mencari nilai kritis x digunakan perintah \texttt{qnorm}\\
+    \texttt{qnorm(0.95,5,0.5)}\\
+    Jadi diketahui $P(X < x) = 0,95 maka x = 3,82$
+
+\item 
+
 
 \end{enumerate}
 \end{document}
