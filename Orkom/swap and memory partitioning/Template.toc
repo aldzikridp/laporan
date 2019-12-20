@@ -1,0 +1,14 @@
+\babel@toc {bahasa}{}
+\contentsline {section}{\numberline {1}Swap Memory}{2}%
+\contentsline {paragraph}{}{2}%
+\contentsline {paragraph}{}{2}%
+\contentsline {paragraph}{}{2}%
+\contentsline {paragraph}{Swap space\\}{2}%
+\contentsline {paragraph}{}{2}%
+\contentsline {paragraph}{}{2}%
+\contentsline {paragraph}{Jenis Linux swap\\}{2}%
+\contentsline {paragraph}{}{3}%
+\contentsline {paragraph}{Thrashing\\}{3}%
+\contentsline {paragraph}{Ukuran Swap Space yang Dianjurkan\\}{3}%
+\contentsline {section}{\numberline {2}Partisi Memory}{4}%
+\contentsline {section}{\numberline {3}Daftar Pustaka}{5}%

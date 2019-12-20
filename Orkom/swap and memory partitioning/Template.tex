@@ -1,0 +1,102 @@
+% !TeX spellcheck = id_ID
+\documentclass[a4paper,12pt]{article}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{listings}
+\graphicspath{ {./img/} }
+\begin{document}
+\title{Swap Memory dan Memory Partitioning}
+%\author{Aldzikri Dwijayanto Prathama \\ {\small 195410189}}
+\author{Aldzikri Dwijayanto Prathama 
+	\\195410189}
+\makeatletter
+\begin{titlepage}
+	\begin{center}
+		{\huge \bfseries \@title }\\[14ex]
+		\includegraphics[scale=.8]{logo}\\[4ex]
+		{\large \@author}\\[20ex]
+		{\large \bfseries {SEKOLAH TINGGI MANAJEMEN INFORMATIKA DAN KOMPUTER
+				AKAKOM YOGYAKARTA}}
+	\end{center}
+
+
+%{\large \@date} 
+\end{titlepage}
+\makeatother
+%\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Swap Memory}
+\paragraph{}
+Swap space adalah aspek yang umum perkomputeran saat ini, terlepas dari sistem operasi. Linux memakai swap space untuk meningkatkan jumlah dari virtual memory yang tersedia untuk host.
+
+\paragraph{}
+Ada dua tipe dasar memory dalam komputer. Tipe pertama, random access memory (RAM), digunakan untuk menyimpan data dan program ketika mereka sedang digunakan oleh komputer. Program dan data tidak dapat digunakan oleh komputer kecuali mereka disimpan didalam RAM. RAM bertipe volatile, artinya data akan hilang jika komputer dimatikan.
+
+\paragraph{}
+Yang kedua adalah hard disk. CPU tidak bisa mengakses langsung program dan data yang ada di dalam memory ini. Program dan data harus di copy terlebih dahulu ke RAM.
+
+\paragraph{Swap space\\}
+Swap space adalah tipe kedua memory di system modern Linux. Fungsi utama dari swap adalah membagi disk space untuk memory RAM, ketika RAM penuh dan membutuhkan lebih banyak space.
+
+\paragraph{}
+Kernel menggunakan program manajemen memory yang mendeteksi block, atau page dari memory yang isinya jarang dipakai. Memory manajemen memindahkan page yang jarang dipakai ke partisi khusus yang di desain untuk paging, yang akan mengurangi pemakaian RAM. Page memory yangg di swap ke hard drive tersebut dilacak oleh kode memory manajemen yang ada dalam kernel dan dapat dikembalikan ke RAM jika dibutuhkan.
+
+\paragraph{}
+Jumlah total memory pada linux adalah RAM ditambah dengan swap space yang biasnya disebut dengan virtual memory.
+
+\paragraph{Jenis Linux swap\\}
+Linux menyediakkan dua jenis swap space. Secara default, kebanyakan instalasi Linux membuat partisi swap, tapi juga memungkinkan untuk menggunakan file yang dikonfigurasi khusus sebagai swap file. Partisi swap seperti namanya, adalah partisi standard yang didesain sebagai swap space oleh perintah \texttt{mkswap}.
+
+\paragraph{}
+Swap file bisa digunakan jika tidak ada ruang yang tersedia pada drive untukk membuat partisi swap. Ini hanyalah file biasa yang dibuat dan di prealokasikan ke ukuran yang diatur. Lalu perintah \texttt{mkswap} dijalankan untuk mengaturnya sebagai swap space. Tetapi swap file ini tidak dianjurkan.
+
+\paragraph{Thrashing\\}
+Thrashing bisa terjadi ketika RAM dan swap space hampir penuih. System menghabiskan sangat banyak waktu untuk me-\textit{paging} block dari memory antara swap space dan RAM, dan sebaliknya yang menjadikan sisa waktu yang tersisa untuk \textit{real work} menjadi sedikit. Gejala dari thrashing ini sangat jelas, yaitu System menjadi lambat, atau benar-benar tidak responsif, dan lampu indikator aktivitas drive hampir menyala terus menerus.
+
+\paragraph{Ukuran Swap Space yang Dianjurkan\\}
+Berikut ini adalah ukuran swap yang dianjurkan, diambil dari dokumentasi fedora 31
+\begin{table}[!ht]
+\begin{tabular}{|c|c|c|}
+\hline
+Besar Ram          & Swap Space yang dianjurkan  & Swap Space yang dianjurkan untuk hibernate \\ \hline
+\textless{}2GB     & 2 kali ukuran ram           & 3 kali ukuran ram                          \\ \hline
+2GB-8GB            & setara dengan ukuran ram    & 2 kali ukuran ram                          \\ \hline
+8GB-64GB           & setengah  dari ukuran ram   & 1.5 kali ukuran ram                        \\ \hline
+\textgreater{}64GB & tergantung dari beban kerja & hibernasi tidak dianjurkan                 \\ \hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{Partisi Memory}
+Partisi memori adalah pembagian harddisk menjadi beberapa bagian yang digunakan untuk mempermudah manajemen file.\\
+Terdapat 2 jenis partisi memori, yaitu :
+\begin{enumerate}
+    \item Fixed Partitioning\\
+        Ciri-ciri:
+        \subitem Pembagian memori ditentukan di awal dan tidak dapat dirubah
+        \subitem Ukuran partisi bisa sama (equal-size) atau berbeda (unequal-size)
+        \subitem Ukuran program > ukuran partisi
+        \subitem Penggunaan memori yang tidak efisien
+        \subitem Internal Fragmentation
+
+    \item Dynamic Partitioning\\
+        Dalam dynamic memory partitioning,,memori dipartisi menjadi bagian-bagian dengan jumlah dan besar yang tidak tentu.\\
+        Ciri-ciri:
+        \subitem Alokasi memori ditentukan saat runtime
+        \subitem Setiap proses diberikan alokasi sesuai yang dibutuhkan
+        \subitem External Fragmentation
+        \subitem Ruang kosong di memori banyak, tetapi terbagi-bagi
+
+\end{enumerate}
+
+\newpage
+\section{Daftar Pustaka}
+https://opensource.com/article/18/9/swap-space-linux-systems\\
+https://docs.fedoraproject.org/en-US/fedora/f31/install-guide/install\\
+https://socs.binus.ac.id/2019/02/28/memory-management/
+
+\end{document}
