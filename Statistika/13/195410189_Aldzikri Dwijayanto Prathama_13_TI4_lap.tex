@@ -1,0 +1,82 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{adjustbox}
+\graphicspath{ {./img/} }
+\begin{document}
+\title{Laporan Praktikum Statistika Pertemuan 13}
+\author{Aldzikri Dwijayanto Prathama 
+	\\195410189}
+\makeatletter
+\begin{titlepage}
+	\begin{center}
+		{\huge \bfseries \@title }\\[14ex]
+		\includegraphics[scale=.8]{logo}\\[4ex]
+		{\large \@author}\\[20ex]
+		{\large \bfseries {SEKOLAH TINGGI MANAJEMEN INFORMATIKA DAN KOMPUTER
+				AKAKOM YOGYAKARTA}}
+	\end{center}
+
+
+\end{titlepage}
+\makeatother
+\newpage
+\tableofcontents
+\newpage
+\section{Tujuan}
+Praktikan mampu melakukan analisis data menggunakan uji rata-rata satu populasi normal dan variansi tidak diketahui
+
+\section{Dasar Teori}
+\subsection{Uji hipotesis Mean Populasi Normal}
+Ingin diketahui apakah mean ($\alpha$) dari suatu populasi Normal sama dengan $\alpha_{0} $(konstanta) berdasarkan sampel random berukuran n. Langkah uji hipotesisnya dapat di urutkan sebagai berikut :\\
+\begin{enumerate}
+    \item Hipotesis
+        \begin{enumerate}
+            \item $H_{0} : \mu = \mu_{0}$ (uji dua sisi)\\
+                $H_{1} : \mu \neq \mu_{0}$
+
+            \item $H_{0} : \mu \leq \mu_{0}$ (uji sisi kanan)\\
+                $H_{1} : \mu > \mu_{0}$
+
+            \item $H_{0} : \mu \geq \mu_{0}$ (uji sisi kiri)\\
+                $H_{1} : \mu < \mu_{0}$
+
+        \end{enumerate}
+
+    \item Diambil tingkat signifikansi $\alpha$
+
+    \item Statistik penguji\\
+        \begin{math}
+            t = \frac{\bar{X} - \mu_{0}} {s/\sqrt{n}}
+        \end{math}\\
+        (jika $\sigma$ tidak diketahui) n atau p\_value
+
+    \item Daerah kritis: daerah dimana $H_{0}$ ditolak.
+        \begin{enumerate}
+            \item $H_{0}$ ditolak jika $t > t_{n - 1;\alpha/2}$ atau $t < - t_{n-1;\alpha/2}$
+            \item $H_{0}$ ditolak jika $t > t_{n - 1;\alpha/2}$ (untuk uji kanan) 
+            \item $H_{0}$ ditolak jika $t < - t_{n-1;\alpha/2}$ (Untuk uji kiri) atau
+            \item $H_{0}$ ditolak jika $p\_value < \alpha$ (untuk semua uji)
+        \end{enumerate}
+        
+    \item Kesimpulan\\
+        Berdasarkan langkah 4 dan hasil hitungan statistik penguji langkah 3, diambil kesimpulan apakah $H_{0}$ ditolak atau tidak ditolak pada tingkat signifikansi $\alpha$.
+\end{enumerate}
+
+\section{Pembahasan}
+\subsection{Praktik}
+\subsubsection{Praktik 1}
+Berikut ini adalah data tekanan darah sistolik (dalam mmHg) 14 pasien yang menjalani terapi untuk hipertensi. Diasumsikan tekanan darah sistolik menyebar normal. Berdasarkan data berikut, dapatkah disimpulkan bahwa rata-rata tekanan darah pasien kurang dari 165 mmHg? Gunakan alpha 5\%\\
+Berikut data tekanan darah pasien-pasien tersebut\\
+\begin{center}
+    183 152 178 157 194 163 144\\
+    194 163 114 178 152 118 158
+\end{center}
+
+\paragraph{Jawab\\}
+
+
+\end{document}
