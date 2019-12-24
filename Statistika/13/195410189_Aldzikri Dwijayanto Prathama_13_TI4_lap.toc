@@ -6,3 +6,7 @@
 \contentsline {subsection}{\numberline {3.1}Praktik}{3}%
 \contentsline {subsubsection}{\numberline {3.1.1}Praktik 1}{3}%
 \contentsline {paragraph}{Jawab\\}{3}%
+\contentsline {subsubsection}{\numberline {3.1.2}Praktik 2}{4}%
+\contentsline {paragraph}{Jawab\\}{4}%
+\contentsline {subsection}{\numberline {3.2}Latihan}{4}%
+\contentsline {subsubsection}{\numberline {3.2.1}Latihan 1}{4}%

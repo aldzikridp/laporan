@@ -77,6 +77,27 @@ Berikut data tekanan darah pasien-pasien tersebut\\
 \end{center}
 
 \paragraph{Jawab\\}
+Pada praktik ini diketahui $\mu$ adalah 165, $\alpha=0,05$ sedangkan yang diuji adalah hipotesis bahwa rata-rata tekanan darah pasien adalah kurang dari 165, berarti yang diuji adalah sisi kiri, maka \texttt{mu}=165 , dan alternative=less\\
+Jadi perintah yang digunakan adalah:\\
+\texttt{t.test(x.mu=165,alternative = "less")}\\
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{prak1.png}
+\end{center}
+Dari output di atas diketahui t = -0,67737 dan \texttt{p-value} = 0.255
+karena $p\_value = 0.255 > 0.05$ maka $H_{0}$ gagal ditolak, berarti rata-rata tekanan darah sistolik pasien lebih dari 165 mmHg.
 
+\subsubsection{Praktik 2}
+Ujilah hipotesis bahwa isi minuman kemasan X 500 ml. Bila diambil secara random 10 minuman kemasan dan diukur isinya adalah 500.2, 500. 9, 500,7,  500.1,  499.8,  499.9, 500.4,  500.3, 499.8, 500.3 ml.Gunakan taraf nyata 1\%! 
+
+\paragraph{Jawab\\}
+Dari soal di atas diketahui $\mu = 500$, jadi mu = 500. Sedangkan yang diujikan adalah kedua sisi, jadi alternative="two.sided". Dan $\alpha = 0.01$ karena yang diujikan dua sisi, maka $\alpha$\textbackslash2 jadi $\frac{\alpha}{2} = 0.005$
+\begin{center}
+    \includegraphics[width = 0.8\linewidth]{prak2.png}
+\end{center}
+Dari output di atas diketahui bahwa \texttt{p\_value}-nya lebih besar dari $\alpha$ ($0.06781 > 0.05$) sehingga $H_{0}$ gagal ditolak, berarti rata-rata isi minuman kemasan adalah 500ml
+
+\subsection{Latihan}
+\subsubsection{Latihan 1}
+Seorang manajer marketing  ingin mengetahui apakah web yang dibuat pada satu bulan sudah memenuhi target, yaitu minimal dikunjungi 50 pengunjung per hari. Lakukanlah uji hipotesis dengan $\alpha = 10\%$! 
 
 \end{document}
