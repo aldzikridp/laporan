@@ -96,8 +96,108 @@ Dari soal di atas diketahui $\mu = 500$, jadi mu = 500. Sedangkan yang diujikan 
 \end{center}
 Dari output di atas diketahui bahwa \texttt{p\_value}-nya lebih besar dari $\alpha$ ($0.06781 > 0.05$) sehingga $H_{0}$ gagal ditolak, berarti rata-rata isi minuman kemasan adalah 500ml
 
+\newpage
+
 \subsection{Latihan}
 \subsubsection{Latihan 1}
 Seorang manajer marketing  ingin mengetahui apakah web yang dibuat pada satu bulan sudah memenuhi target, yaitu minimal dikunjungi 50 pengunjung per hari. Lakukanlah uji hipotesis dengan $\alpha = 10\%$! 
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        32 & 53 & 71 \\ \hline
+        35 & 64 & 69 \\ \hline
+        33 & 57 & 53 \\ \hline
+        38 & 66 & 55 \\ \hline
+        39 & 58 & 58 \\ \hline
+        37 & 67 & 63 \\ \hline
+        41 & 56 & 66 \\ \hline
+        45 & 66 & 62 \\ \hline
+        43 & 59 & 67 \\ \hline
+        47 & 63 & 70 \\ \hline
+    \end{tabular}
+\end{table}
+\paragraph{Jawab\\}
+Dari soal di atas diketahui $\mu = 50$ dan $\alpha = 0.1$, maka  perintah yang digunakan adalah\\
+\texttt{t.test(x,mu=50,alternative = "less")}\\
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{lat1.png}
+\end{center}
+Dari output di atas diketahui \textit{p\_value} = 0.9707, karena $\alpha = 0.1$ berarti $H_{0}$ gagal ditolak, berarti jumlah pengunjung web berjumlah lebih dari sama dengan 50 pengunjung per hari.
+
+\newpage
+
+\subsubsection{Latihan 2}
+Seorang peneliti ingin mengetahui berapakah jumlah pengunjung kantin selama 18 hari kerja sudah sesuai target pemilik kantin, yaitu 50 orang/hari. Lakukanlah uji hipotesis dengan $\alpha = 5\%$! 
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        35 & 53 \\ \hline
+        43 & 64 \\ \hline
+        51 & 42 \\ \hline
+        38 & 43 \\ \hline
+        60 & 58 \\ \hline
+        55 & 43 \\ \hline
+        50 & 36 \\ \hline
+        65 & 40 \\ \hline
+        38 & 58 \\ \hline
+    \end{tabular}
+\end{table}
+\paragraph{Jawab\\}
+Dari soal di atas diketahui $\mu = 50$, $\alpha = 5\%$, dan $H_{0} : \mu = \mu_{0}$, $H_{1} : \mu \neq \mu_{0}$ jadi yang diujikan adalah dua sisi(\texttt{two.sided}), jadi perintah R yang digunakan adalah:\\
+\texttt{t.test(x,mu=50,alternative="two.sided")}\\
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{lat2.png}
+\end{center}
+Dari output di atas diketahui bahwa \texttt{p\_value} = 0.5132, karena $\alpha = 0.05$ berarti $H_{0}$ tidak ditolak sehingga jumlah pengunjung target sudah memenuhi target.
+
+\subsection{Tugas}
+\subsubsection{Tugas 1}
+Petugas parkir kampus menghitung jumlah mahasiswa yang memakai sepeda ke kampus. Pengamatan dilakukan selama 20 hari kerja. Pengamatan dilakukan untuk mengetahui apakah himbauan terhadap mahasiswa agar memakai sepeda ke kampus sudah terpenuhi, yaitu dengan melihat apakah mahasiswa yang bersepeda sudah lebih dari 40 mahasiswa/hari. Lakukanlah uji hipotesis dengan alpa = 5\%! Berikan interpretasinya! Berikut data yang diperoleh selama 20 hari :
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        27 & 39 \\ \hline
+        33 & 32 \\ \hline
+        31 & 42 \\ \hline
+        38 & 43 \\ \hline
+        38 & 35 \\ \hline
+        40 & 34 \\ \hline
+        42 & 36 \\ \hline
+        36 & 40 \\ \hline
+        37 & 38 \\ \hline
+        41 & 43 \\ \hline
+    \end{tabular}
+\end{table}
+\paragraph{Jawab\\}
+Dari soal di atas dapat diketahui:
+\begin{itemize}
+    \item $\mu = 40$
+    \item $\alpha = 0.05$
+    \item $H_{0} : \mu \leq \mu_{0}$
+    \item $H_{1} : \mu > \mu_{0}$
+\end{itemize}
+Sehingga perintah R yang digunakan adalah:\\
+\texttt{t.test(x,mu=40,alternative="greater")}\\
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{tugas1.png}
+\end{center}
+Dari output di atas diketahui bahwa \texttt{p\_value} = 0.9949, sehingga $p\_value > \alpha$, maka $H_{0}$ tidak ditolak, berarti mahasiswa yang naik sepeda masih kurang dari 40 per-harinya
+
+\subsubsection{Tugas 2}
+Seorang peneliti ingin melakukan suatu penelitian mengenai tinggi badan mahasiswa yang mengikuti mata kuliah Statistika. Untuk itu dilakukan suatu penelitian terhadap sepuluh mahasiswa yang mengikuti mata kuliah tsb, dengan data sbb:\\
+TB (cm) 185 150 156 171 160 160 165 171 166 150\\ 
+Ujilah hipotesis: apakah tinggi badan mahasiswa tersebut adalah 155 cm?
+
+\paragraph{Jawab\\}
+Dari soal di atas dapat diketahui:
+\begin{center}
+    \item $\mu = 155$
+    \item $\alpha = 0.05$
+    \item $H_{0} : \mu = \mu_{0}$
+    \item $H_{1} : \mu \neq \mu_{0}$
+\end{center}
 
 \end{document}

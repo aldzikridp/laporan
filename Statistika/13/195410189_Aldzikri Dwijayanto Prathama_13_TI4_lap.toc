@@ -8,5 +8,13 @@
 \contentsline {paragraph}{Jawab\\}{3}%
 \contentsline {subsubsection}{\numberline {3.1.2}Praktik 2}{4}%
 \contentsline {paragraph}{Jawab\\}{4}%
-\contentsline {subsection}{\numberline {3.2}Latihan}{4}%
-\contentsline {subsubsection}{\numberline {3.2.1}Latihan 1}{4}%
+\contentsline {subsection}{\numberline {3.2}Latihan}{5}%
+\contentsline {subsubsection}{\numberline {3.2.1}Latihan 1}{5}%
+\contentsline {paragraph}{Jawab\\}{5}%
+\contentsline {subsubsection}{\numberline {3.2.2}Latihan 2}{6}%
+\contentsline {paragraph}{Jawab\\}{6}%
+\contentsline {subsection}{\numberline {3.3}Tugas}{7}%
+\contentsline {subsubsection}{\numberline {3.3.1}Tugas 1}{7}%
+\contentsline {paragraph}{Jawab\\}{7}%
+\contentsline {subsubsection}{\numberline {3.3.2}Tugas 2}{8}%
+\contentsline {paragraph}{Jawab\\}{8}%
