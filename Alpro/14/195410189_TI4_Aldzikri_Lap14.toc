@@ -1,0 +1,6 @@
+\babel@toc {indonesian}{}
+\contentsline {section}{\numberline {1}Tujuan}{2}%
+\contentsline {section}{\numberline {2}Dasar Teori}{2}%
+\contentsline {section}{\numberline {3}Praktik}{3}%
+\contentsline {subsection}{\numberline {3.1}Praktik 1}{3}%
+\contentsline {paragraph}{Jawab}{3}%
