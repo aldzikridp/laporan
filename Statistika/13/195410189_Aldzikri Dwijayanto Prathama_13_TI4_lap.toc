@@ -18,3 +18,4 @@
 \contentsline {paragraph}{Jawab\\}{7}%
 \contentsline {subsubsection}{\numberline {3.3.2}Tugas 2}{8}%
 \contentsline {paragraph}{Jawab\\}{8}%
+\contentsline {section}{\numberline {4}Kesimpulan}{10}%
