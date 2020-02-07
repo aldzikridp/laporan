@@ -239,14 +239,15 @@ public class terbesar2{
     }
 }               
             \end{lstlisting}
-            Program di atas merupakan program sebelumnya yang dimodifikasi dengan menggunakan operator logika \&& pada kondisi, sehingga dilakukan dua
+            Program di atas merupakan program sebelumnya yang dimodifikasi dengan menggunakan operator logika \&\& pada kondisi, sehingga dilakukan dua
             perbandingan sekaligur pada setiap kondisi.\\
             Jika program dijalankan maka akan seperti berikut:\\
             \includegraphics{05b.PNG}
 
             \newpage
 
-            \begin{lstlisting}
+        \item
+            \begin{lstlisting}[frame=single]
 import java.util.Scanner;
 public class spa{
     public static void main (String arg[]){
@@ -292,5 +293,335 @@ public class spa{
     }
 }               
             \end{lstlisting}
+            \paragraph{}
+            Program di atas merupakan program untuk menentukan SPA, seleksi tingkat pertama akan menyeleksi gelombang. Kedua seleksi pertama memiliki seleksi if
+            di dalamnya yang akan menyeleksi jenjang. Lalu di dalam else terdapat seleksi, yang akan menyeleksi jurusan, dan akan menampilkan SPA yang harus 
+            dibayarkan.\\
+            Jika program dijalankan maka akan seperti berikut:\\
+            \includegraphics{06b.PNG}
+
+            \newpage
+
+        \item
+            \begin{lstlisting}[frame=single]
+import java.util.Scanner;
+public class spaswitch{
+    public static void main (String arg[]){
+        Scanner in=new Scanner(System.in);
+        int gel;
+        String jen,jur;
+        System.out.print("masukkan gelombang (1/2/3) : ");
+        gel=in.nextInt();
+        System.out.print("masukkan jenjang (D3/S1) : ");
+        jen=in.next();
+        System.out.print("masukkan jurusan : ");
+        jur=in.next();
+        switch(gel)
+        {
+            case 1:
+            switch(jen)
+            {
+                case "D3":
+                System.out.println("SPA gel "+gel+" : Rp. 8.600.000 ");
+                break;
+                case "S1":
+                switch(jur)
+                {
+                    case "TI":
+                    System.out.println("SPA gel "+gel+" : Rp. 13.400.000 ");
+                    break;
+                    case "SI":
+                    System.out.println("SPA gel "+gel+" : Rp. 12.400.000 ");
+                    break;
+                    default:
+                    System.out.println("jurusan tidak terdaftar");
+                }
+                break;
+            }
+            break;
+            case 2:
+            switch(jen)
+            {
+                case "D3":
+                System.out.println("SPA gel "+gel+" : Rp. 9.100.000 ");
+                break;
+                case "S1":
+                switch(jur)
+                {
+                    case "TI":
+                    System.out.println("SPA gel "+gel+" : Rp. 13.900.000 ");
+                    break;
+                    case "SI":
+                    System.out.println("SPA gel "+gel+" : Rp. 12.900.000 ");
+                    break;
+                    default:
+                    System.out.println("jurusan tidak terdaftar");
+                }
+            }
+            break;
+            }
+        break;
+        default:
+        System.out.println("Salah masukkan gelombang");
+        }
+    }
+}
+            \end{lstlisting}
+            \paragraph{}
+            Program tersebut merupakan program sebelumnya yang seleksinya dirubah dari if-else menjadi switch-case. Sama dengan program sebelumnya, switch
+            pertama diisi expresi gel, sehingga akan menyeleksi gelombang, lalu switch didalamnya akan menyeleksi jenjang, dan seleksi di dalamnya lagi akan 
+            menyeleksi jurusan.\\
+            Jika program dijalankan maka akan seperti berikut:\\
+            \includegraphics{07b.PNG}
+
+            \newpage
+
+        \item
+            \begin{lstlisting}[frame=single]
+import java.util.Scanner;
+public class spa2{
+    public static void main (String arg[]){
+        Scanner in=new Scanner(System.in);
+        int gel;
+        String jen,jur;
+        System.out.print("masukkan gelombang(1/2): ");
+        gel=in.nextInt();
+        System.out.print("masukkan jenjang(D3/S1): ");
+        jen=in.next();
+        System.out.print("masukkan jurusan : ");
+        jur=in.next();
+        if(gel==1)
+        {
+            if(jen.equals("D3"))
+            {
+                if((jur.equals("TK")) || (jur.equals("MI")) || (jur.equals("KA")))
+                    System.out.println("SPA gel "+gel+" : Rp. 8.600.000 ");
+                else
+                    System.out.println("jurusan tidak terdaftar");
+            }
+            else if(jen.equals("S1"))
+            {
+                if(jur.equals("TI"))
+                    System.out.println("SPA gel "+gel+" : Rp. 13.400.000 ");
+                else if(jur.equals("SI"))
+                    System.out.println("SPA gel "+gel+" : Rp. 12.400.000 ");
+                else
+                    System.out.println("jurusan tidak terdaftar");
+            }
+        }
+        else if(gel==2)
+        {
+            if(jen.equals("D3"))
+                if((jur.equals("TK")) || (jur.equals("MI")) || (jur.equals("KA")))
+                {
+                    System.out.println("SPA gel "+gel+" : Rp. 9.100.000 ");
+                }
+            else
+                System.out.println("jurusan tidak terdaftar");
+            else if(jen.equals("S1"))
+            {
+                if(jur.equals("TI"))
+                    System.out.println("SPA gel "+gel+" : Rp. 13.900.000 ");
+                else if(jur.equals("SI"))
+                    System.out.println("SPA gel "+gel+" : Rp. 12.900.000 ");
+            }
+            else
+            System.out.println("jurusan tidak terdaftar");
+        }
+        else
+        System.out.println("Salah masukkan gelombang");
+    }
+}                
+            \end{lstlisting}
+            \paragraph{}
+            Program tersebut merupakan program pada praktik 6 yang sudah dirubah. sehingga, jika dipilih jenjang D3, maka user hanya bisa memilih TK, MI, atau
+            KA. Caranya dengan menambahkan seleksi, setelah seleksi if dengan kondisi jen.equals("D3).\\
+            Jika program dijalankan maka akan seperti berikut:\\
+            \includegraphics{08b.PNG}
+
+            \newpage
+
+            \item
+            \begin{lstlisting}[frame=single]
+import java.util.Scanner;
+public class spaswitch{
+    public static void main (String arg[]){
+        Scanner in=new Scanner(System.in);
+        int gel;
+        String jen,jur;
+        System.out.print("masukkan gelombang (1/2/3) : ");
+        gel=in.nextInt();
+        System.out.print("masukkan jenjang (D3/S1) : ");
+        jen=in.next();
+        System.out.print("masukkan jurusan : ");
+        jur=in.next();
+        switch(gel)
+        {
+            case 1:
+            switch(jen)
+            {
+                case "D3":
+                System.out.println("SPA gel "+gel+" : Rp. 8.600.000 ");
+                break;
+                case "S1":
+                switch(jur)
+                {
+                    case "TI":
+                    System.out.println("SPA gel "+gel+" : Rp. 13.400.000 ");
+                    break;
+                    case "SI":
+                    System.out.println("SPA gel "+gel+" : Rp. 12.400.000 ");
+                    break;
+                    default:
+                    System.out.println("jurusan tidak terdaftar");
+                }
+                break;
+            }
+            break;
+            case 2:
+            switch(jen)
+            {
+                case "D3":
+                System.out.println("SPA gel "+gel+" : Rp. 9.100.000 ");
+                break;
+                case "S1":
+                switch(jur)
+                {
+                    case "TI":
+                    System.out.println("SPA gel "+gel+" : Rp. 13.900.000 ");
+                    break;
+                    case "SI":
+                    System.out.println("SPA gel "+gel+" : Rp. 12.900.000 ");
+                    break;
+                    default:
+                    System.out.println("jurusan tidak terdaftar");
+                }
+            }
+            break;
+            case 3:
+            switch(jen)
+            {
+                case "D3":
+                System.out.println("SPA gel "+gel+" : Rp. 9.600.000 ");
+                break;
+                case "S1":
+                switch(jur)
+                {
+                    case "TI":
+                    System.out.println("SPA gel "+gel+" : Rp. 14.400.000 ");
+                    break;
+                    case "SI":
+                    System.out.println("SPA gel "+gel+" : Rp. 13.400.000 ");
+                    break;
+                    default:
+                    System.out.println("jurusan tidak terdaftar");
+                }
+                break;
+            }
+            break;
+            default:
+            System.out.println("Salah masukkan gelombang");
+        }
+    }
+}
+            \end{lstlisting}
+            \paragraph{}
+            Program di atas merupakan program dari praktik 7, yang sudah ditambahkan dengan gelombang 3. Caranya adalah menambahkan case pada switch pertama, yang memiliki struktur seperti case sebelumnya.\\
+            Jika dijalankan maka akan seperti berikut:\\
+            \includegraphics{09b.PNG}
     \end{enumerate}
+
+    \subsection{Latihan}
+
+            \begin{lstlisting}[frame=single]
+import java.util.Scanner;
+public class Latihan{
+    public static void main (String arg[]){
+        Scanner in = new Scanner(System.in);
+        int jawab;
+        System.out.print("1.Mobil 2.Motor = ");
+        jawab= in.nextInt();
+        switch(jawab)
+        {
+            case 1:
+            System.out.print("1.Honda 2.Suzuki = ");
+            jawab = in.nextInt();
+            switch(jawab)
+            {
+                case 1:
+                System.out.print("1.Jazz 2.Brio 3.Mobilio = ");
+                jawab=in.nextInt();
+                switch(jawab)
+                {
+                    case 1:
+                    System.out.println("Jazz = 170jt");
+                    break;
+                    case 2:
+                    System.out.println("Brio = 120jt");
+                    break;
+                    case 3:
+                    System.out.println("Mobilio = 170jt");
+                    break;
+                }
+                break;
+                case 2:
+                System.out.print("1.APV 2.Swift 3.Ertiga = ");
+                jawab=in.nextInt();
+                switch(jawab)
+                {
+                    case 1:
+                    System.out.println("APV = 180jt");
+                    break;
+                    case 2:
+                    System.out.println("Swift = 155jt");
+                    break;
+                    case 3:
+                    System.out.println("Ertiga = 160jt");
+                    break;
+                }
+                break;
+            }
+            break;
+            case 2:
+            System.out.print("1.Honda 2.Yamaha = ");
+            jawab = in.nextInt();
+            switch(jawab)
+            {
+                case 1:
+                System.out.print("1.Vario 2.Supra = ");
+                jawab=in.nextInt();
+                switch(jawab)
+                {
+                    case 1:
+                    System.out.println("Vario = 15jt");
+                    break;
+                    case 2:
+                    System.out.println("Supra = 12jt");
+                    break;
+                }
+                break;
+                case 2:
+                System.out.print("1.Mio 2.Vixion = ");
+                jawab=in.nextInt();
+                switch(jawab)
+                {
+                    case 1:
+                    System.out.println("Mio = 14jt");
+                    break;
+                    case 2:
+                    System.out.println("Vixion = 20jt");
+                    break;
+                }
+                break;
+            }
+            break;
+        }
+    }
+}        
+    \end{lstlisting}
+    \paragraph{}
+    Program diatas merupakan program untuk menampilkan harga mobil dan motor. Seleksi pertama memilih motor atau mobil, lalu seleksi kedua memilih merk motor atau mobil, lalu seleksi terakhir memilih model motor atau mobil.\\
+    Jika program dijalankan maka akan seperti berikut:\\
+    \includegraphics{Latihan3.PNG}
+
 \end{document}
