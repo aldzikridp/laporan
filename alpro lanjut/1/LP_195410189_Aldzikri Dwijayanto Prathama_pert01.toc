@@ -11,3 +11,4 @@
 \contentsline {paragraph}{}{16}%
 \contentsline {subsection}{\numberline {3.2}Latihan}{16}%
 \contentsline {paragraph}{}{18}%
+\contentsline {section}{\numberline {4}Kesimpulan}{19}%
