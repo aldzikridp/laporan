@@ -1,0 +1,12 @@
+\babel@toc {indonesian}{}
+\contentsline {section}{\numberline {1}Tujuan}{2}%
+\contentsline {section}{\numberline {2}Dasar Teori}{2}%
+\contentsline {paragraph}{Web\\}{2}%
+\contentsline {paragraph}{HTML\\}{2}%
+\contentsline {paragraph}{Browser\\}{2}%
+\contentsline {paragraph}{Editor\\}{2}%
+\contentsline {paragraph}{Struktur Dokumen Html\\}{3}%
+\contentsline {section}{\numberline {3}Pembahasan}{3}%
+\contentsline {section}{\numberline {4}Tugas}{5}%
+\contentsline {paragraph}{Jawab\\}{5}%
+\contentsline {section}{\numberline {5}Kesimpulan}{6}%
