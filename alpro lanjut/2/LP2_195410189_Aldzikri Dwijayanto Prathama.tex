@@ -154,6 +154,76 @@ sejumlah perulangan induknya. Sehinnga program akan menghasilkan output berbentu
     \includegraphics[scale=.7]{4.png}
 \end{center}
 
+\subsubsection{Praktik 4}
+\begin{lstlisting}
+public class Bentuk3
+{
+    public static void main(String[] args)
+    {
+        int x = 5;
+        for (int i = 1; i <= x; i++)
+        {
+            for (int j = 4; j >= i; j--)
+            {
+                System.out.print(' ');
+            }
+            for (int k = 1; k <= i; k++)
+            {
+                System.out.print('*');
+            }
+            for (int l = 1; l <= i - 1; l++)
+            {
+                System.out.print('*');
+            }
+            System.out.println();
+        }
+    }
+}
+\end{lstlisting}
+Program pada praktik 3 dimodifikasi agar bisa menampilkan piramid, sehingga seperti di atas. Perulangan paling luar akan mengulang sebanyak 5 kali, dan 
+mempunyai pernyataan yang akan mengganti baris. Lalu di dalamnya terdapat tiga perulangan. Perulangan yang pertama akan mengprint spasi sebanyak 5-i. Perulangan 
+kedua akan mengeprint "*" sebanyak i. Sedangkan perulangan terakhir akan mengeprint "*" sebanyak i-1. Jika program dijalankan akan menjadi seperti berikut:\\
+\begin{center}
+    \includegraphics[scale=.7]{5.png}
+\end{center}
+
+\subsubsection{Praktik 5}
+
+\begin{lstlisting}
+public class Bentuk3a
+{
+    public static void main(String[] args)
+    {
+        int x = 5;
+        for (int i = 1; i <= x; i++)
+        {
+            for (int j = 4; j >= i; j--)
+            {
+                System.out.print(' ');
+            }
+            for (int k = 1; k <= i; k++)
+            {
+                System.out.print(k);
+            }
+            for (int l = 1; l <= i - 1; l++)
+            {
+                System.out.print(i);
+            }
+        System.out.println();
+        }
+    }
+}
+\end{lstlisting}
+Program tersebut merupakan program sebelumnya yang dimodifikasi sehingga akan menampilkan piramid angka. Perulangan paling luar akan mengulang sebanyak 5 kali, dan 
+mempunyai pernyataan yang akan mengganti baris. Lalu di dalamnya terdapat tiga perulangan. Perulangan yang pertama akan mengprint spasi sebanyak 5-i. Perulangan 
+kedua akan mengeprint variabel k sebanyak i. Sedangkan perulangan terakhir akan mengeprint variabel i sebanyak i-1. Jika program dijalankan akan menjadi seperti berikut:\\
+\begin{center}
+    \includegraphics[scale=.7]{6.png}
+\end{center}
+
+\subsubsection{Praktik 6}
+\paragraph{Program Praktik 2}
+
 \newpage
 \section{Kesimpulan}
 
