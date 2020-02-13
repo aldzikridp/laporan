@@ -19,6 +19,7 @@
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 \lstset{%
     language=java,
+    showstringspaces=false,          % Prevent tex replacing space to bracket in code
     frame=single,                    % Set frame around code
     backgroundcolor=\color{white},   % choose the background color
     basicstyle=\footnotesize,        % size of fonts used for the code
@@ -32,7 +33,7 @@
 
 \graphicspath{ {./img/} }
 \begin{document}
-\title{ {\Large Laporan Praktikum}\\ Algoritma dan Pemrograman Lanjut\\{\Large Pertemuan 1}}
+\title{ {\Large Laporan Praktikum}\\ Algoritma dan Pemrograman Lanjut\\{\Large Pertemuan 2}}
 
 \author{Aldzikri Dwijayanto Prathama 
 	\\195410189
@@ -288,6 +289,163 @@ Outputnya seperti berikut:\\
 \begin{center}
     \includegraphics[scale=.7]{8.png}
 \end{center}
+
+\paragraph{Program Praktik 3}
+\begin{center}
+   \begin{lstlisting}
+public class Bentuk2a
+{
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 1;
+        do {
+            int c = 1;
+            do {
+                System.out.print('*');
+                c++;
+            }while(c <= b);
+            System.out.println();
+            b++;
+        }while(b <= a);
+    }
+}
+   \end{lstlisting} 
+\end{center}
+Program tersebut merupakan program dari praktik 3 yang perulangannya dirubah menjadi do-while. Sehingga init, dan incrementnya harus dinyatakan sendiri.
+Outputnya seperti berikut:\\
+\begin{center}
+    \includegraphics[scale=.7]{9.png}
+\end{center}
+
+\paragraph{Program Praktik 4}
+\begin{center}
+    \begin{lstlisting}
+public class Bentuk3b
+{
+    public static void main(String[] args)
+    {
+        int x = 5;
+        int i = 1;
+        do 
+        {
+            int j = 4;
+            do 
+            {
+                System.out.print(' ');
+                j--;
+            }while(j >= i);
+
+            int k = 1;
+            do 
+            {
+                System.out.print('*');
+                k++;
+            }while(k <= i);
+
+            int l = 1;
+            do 
+            {
+                System.out.print('*');
+                l++;
+            }while(l <= i - 1);
+
+            System.out.println();
+            i++;
+        }while(i <= x);
+    }
+}
+    \end{lstlisting}
+\end{center}
+Program tersebut merupakan program dari praktik 4 yang perulangannya dirubah menjadi do-while. Sehingga init, dan incrementnya harus dinyatakan sendiri. Karena perulangan do-while 
+akan melakukan perulangan terlebih dahulu, baru melakukan pengecekan, piramid yang dihasilkan tidak rapih.
+Outputnya seperti berikut:\\
+\begin{center}
+    \includegraphics[scale=.7]{10.png}
+\end{center}
+
+\newpage
+
+\subsection{Latihan}
+\subsubsection{Latihan 1}
+\begin{center}
+    \begin{lstlisting}
+public class Pola1 {
+    public static void main(String[] args) {
+        int i,j;
+        System.out.println("Pengulangan Bersarang Membentuk Pola");
+        for(i=1;i<=5;i++){
+            for(j=1;j<=3;j++){
+                System.out.print(" * ");
+            }
+            System.out.println("akakom ");
+        }
+    }
+}
+    \end{lstlisting}
+\end{center}
+Program ini memiliki perulangan for, yang di dalamnya terdapat perulangan for lagi. Perulangan yang berada di dalam akan mengeprint bintang sebanyak tiga kali. Lalu perulangan yang paling luar akan mengeprint akakom dan mengganti baris. Outputnya seperti berikut ini:\\
+\begin{center}
+\includegraphics[scale=.7]{11.png}
+\end{center}
+
+\newpage
+
+\subsubsection{Latihan 2}
+\begin{center}
+    \begin{lstlisting}
+public class Pola2 {
+    public static void main(String[] args) {
+        int i,j;
+        System.out.println("Pengulangan Membentuk Pola");
+        for(i=1;i<=5;i++){
+            for(j=1;j<=5;j++){
+                if(i>=j){
+                    System.out.print(" * ");
+                }
+            }
+            System.out.println("akakom ");
+        }
+    }
+}
+    \end{lstlisting}
+\end{center}
+Setelah program latihan sebelumnya dimodifikasi dengan menambahkan seleksi di dalam perulangan yang berada di dalam, maka program akan menghasilkan segitiga, karena program akan mengeprint "*"
+sesuai jumlah baris. Outputnya seperti berikut:\\
+\begin{center}
+    \includegraphics[scale=.7]{12.png}
+\end{center}
+
+\subsubsection{Latihan 3}
+\begin{center}
+    \begin{lstlisting}
+public class Pola2a {
+    public static void main(String[] args) {
+        int i,j,c;
+        System.out.println("Pengulangan Membentuk Pola");
+        for(i=1;i<=5;i++){
+            for(c=1;c<=i;c++){
+                System.out.print("   ");
+            }
+            for(j=5;j>=1;j--){
+                if(i<=j){
+                    System.out.print(" * ");
+                }
+            }
+            System.out.println("akakom ");
+        }
+    }
+}
+    \end{lstlisting}
+\end{center}
+Agar program menghasilkan segitiga terbalik, ditambahkan perulangan yang akan mengeprint spasi sesuai dengan jumlah baris. Lalu perulangan yang kedua dirubah, yang semula (j=1;j<=5;j++) 
+menjadi (j=5;j>=1;j--), dan seleksi yang semula memiliki kondisi i>=j dirubah menjadi i<=j. Maka jika program dijalankan maka akan seperti berikut ini:\\
+\begin{center}
+    \includegraphics[scale=.7]{13.png}
+\end{center}
+
+\newpage
+
+\subsection{Tugas}
 
 
 \newpage
