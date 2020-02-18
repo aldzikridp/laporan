@@ -446,9 +446,84 @@ menjadi (j=5;j>=1;j--), dan seleksi yang semula memiliki kondisi i>=j dirubah me
 \newpage
 
 \subsection{Tugas}
+\subsubsection{Tugas 1}
+\begin{center}
+    \begin{lstlisting}
+public class Tugas1
+{
+    public static void main(String[] args)
+    {
+        int batas = 5;
+        int ulang1a = 1;
+        int ulang2a = batas - 1;
+        while (ulang1a <= batas) {
+            int ulang1b = 1;
+            while (ulang1b <= ulang1a) {
+                System.out.print(ulang1b + " ");
+                ulang1b++;
+            }
+            System.out.println();
+            ulang1a++;
+        }
+        while (ulang2a >= 1) {
+            int ulang2b = 1;
+            while (ulang2b <= ulang2a) {
+                System.out.print(ulang2b + " ");
+                ulang2b++;
+            }
+            System.out.println();
+            ulang2a--;
+        }
+    }
+}
+    \end{lstlisting}
+\end{center}
+Untuk tugas dibuat program untuk menghasilkan segitiga. Perulangan bersarang pertama akan mngeprint dari baris pertama sampai baris kelima. Kemudian dilanjutkan 
+perulangan bersarang kedua yang akan mengeprint baris keenam sampai baris kesembilan.
+\begin{center}
+    \includegraphics[scale=.7]{tugas1.png}
+\end{center}
 
+\subsubsection{Tugas 2}
+\begin{center}
+    \begin{lstlisting}
+import java.util.Scanner;
+public class Tugas2
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int x = in.nextInt();
+        for (int i = 1; i <= x; i++)
+        {
+            for (int j = x - 1; j >= i; j--)
+            {
+                System.out.print(' ');
+            }
+            for (int k = 1; k <= i; k++)
+            {
+                System.out.print('*');
+            }
+            for (int l = 1; l <= i - 1; l++)
+            {
+                System.out.print('*');
+            }
+            System.out.println();
+        }
+    }
+}
+    \end{lstlisting}
+\end{center}
+Program tersebut merupakan program praktik 4 yang variabel x, dan kondisi pada perulangan pertama yang berada di dalam dirubah. Variabel x dirubah sehingga 
+nilainya dinamis, dan kondisi pada perulangan diganti menjadi x - 1, agar piramid yang terbentuk tetap rapi jika user memasukkan nilai lebih dari 5. 
+Hasil dari program tersebut adalah seperti berikut:\\
+\begin{center}
+    \includegraphics[scale=.7]{tugas2.png} 
+\end{center}
 
 \newpage
 \section{Kesimpulan}
+Setelah praktik ini mahasiswa dapat membuat program untuk menyelesaikan kasus menggunakan
+perulangan bertingkat 2 maupun 3
 
 \end{document}
