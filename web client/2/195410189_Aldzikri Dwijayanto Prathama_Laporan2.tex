@@ -117,7 +117,6 @@
 }
 \lstset{
     frame=single,
-    language=htmlcssjs,
 }
 %
 
@@ -376,5 +375,57 @@ type "1" sehingga penomorannya menggunakan angka
     \includegraphics[width=\linewidth]{8.png}
 \end{center}
 
+\newpage
+
+\subsection{Tugas}
+\subsubsection{Tugas 1}
+Pada tugas dibuat jadwal mata kuliah dengan html. Yang menyertakan link untuk ke hari selanjutnya
+\begin{lstlisting}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Senin</title>
+        <style>
+            div{
+                background-color: #03fcd3;
+                border:2px solid black;
+                margin-top:10px;
+                margin-left:500px;
+                padding:50px;
+                width:300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h2> Jadwal Mata Kuliah </h2>
+            <h3> Senin </h3>
+            <ul>
+                <li> ALJABAR VECTOR DAN MATRIKS </li>
+                <li>STATISTIKA MODELING</li>
+                <li>KECERDASAN BUATAN</li>
+            </ul>
+            <a href="selasa.html">Selasa</a>
+    </body>
+</html>
+\end{lstlisting}
+Tag div tersebut berfungsi untuk membuat kotak di sekeliling jadwal, sehingga hasilnya seperti berikut:\\
+\begin{center}
+    \includegraphics[scale=.7]{tugas1.png}
+\end{center}
+Untuk hari-hari sesudahnya memiliki struktur yang sama.
+
+\subsubsection{Tugas 2}
+Tag html dan fungsinya\\
+\begin{itemize}
+    \item <b>…<b> 	Bold, tag html yang berfungsi untuk mempertebal teks
+    \item <pre>…<pre> 	Preformated Text, tag html berfungsi untuk menampilkan teks apa adanya sesuai text editor
+    \item <center>…</center> 	Tag html berfungsi untuk menampilkan teks dengan posisi horizontal ditengah
+    \item <font>…</font> 	Tag html berfungsi untuk merubah jenis, ukuran dan warna dari tampilan huruf
+    \item <img> 	Tag html untuk menampilkan gambar
+\end{itemize}
+
 \section{Kesimpulan}
+Mahasiswa mampu untuk menuliskan script HTML sesuai struktur, tag-tag dasar (h1, p, div, span, hr, br), script hyperlink, script list (ul dan ol), dan atribut yang sesuai
+
 \end{document}
