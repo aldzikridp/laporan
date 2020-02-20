@@ -11,4 +11,8 @@
 \contentsline {subsubsection}{\numberline {3.1.4}Praktik 4}{5}%
 \contentsline {subsubsection}{\numberline {3.1.5}Praktik 5}{6}%
 \contentsline {subsubsection}{\numberline {3.1.6}Praktik 6}{7}%
-\contentsline {section}{\numberline {4}Kesimpulan}{9}%
+\contentsline {subsection}{\numberline {3.2}Latihan}{8}%
+\contentsline {subsubsection}{\numberline {3.2.1}Latihan 1}{8}%
+\contentsline {subsubsection}{\numberline {3.2.2}Latihan 2}{9}%
+\contentsline {subsection}{\numberline {3.3}Tugas}{12}%
+\contentsline {section}{\numberline {4}Kesimpulan}{15}%

@@ -256,7 +256,188 @@ array untuk mencari nilai terbesar dan terkecil, lalu menyimpannya ke dalam vari
     \includegraphics[scale=.7]{5.png}
 \end{center}
 
+\subsection{Latihan}
+\subsubsection{Latihan 1}
+\begin{lstlisting}
+import java.util.Scanner;
+public class Biodata_Mhs {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        String nama, nim, jenisKelamin, alamat, nope, def="Masukan ";
+        System.out.println("================================");
+        System.out.println("| INPUT BIODATA MAHASISWA |");
+        System.out.println("================================");
+        System.out.print(def + "Nama \t\t: " );
+        nama = input.nextLine();
+        System.out.print(def + "NIM \t\t: " );
+        nim = input.nextLine();
+        System.out.print(def + "Jenis Kelamin \t: " );
+        jenisKelamin = input.nextLine();
+        System.out.print(def + "Alamat \t\t: " );
+        alamat = input.nextLine();
+        System.out.print(def + "Nomor Handphone\t: " );
+        nope = input.nextLine();
+        System.out.println("");
+        System.out.println("+------------------------------+");
+        System.out.println("| Data Biodata Mahasiswa |");
+        System.out.println("+------------------------------+");
+        System.out.println("| Nama\t\t: " + nama);
+        System.out.println("| NIM\t\t: " + nim);
+        System.out.println("| Jenis Kelamin\t: " + jenisKelamin);
+        System.out.println("| Alamat\t: " + alamat);
+        System.out.println("| Nomor HP\t: " + nope);
+        System.out.println("+-------------------------------+");
+    }
+}
+\end{lstlisting}
+Program tersebut merupakan program yang akan mnampilkan biodata mahasiswa. Saat dijalankan program akan menampilkan biodata mahasiswa yang sebelumnya dimasukkan 
+oleh user yang disimpan ke dalam variabel biasa, bukan array. Jika dijalankan akan maka program akan menghasilkan output seperti berikut:\\
+\begin{center}
+    \includegraphics[scale=.7]{6.png}
+\end{center}
+
+\subsubsection{Latihan 2}
+\begin{lstlisting}
+import java.util.Scanner;
+public class Latihan {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String jur;
+        String nama;
+        String nim;
+        int batas;
+        System.out.println("==================================");
+        System.out.println("Menghitung Nilai Mahasiswa");
+        System.out.println("==================================");
+        System.out.print("Masukan Jumlah Mata Kuliah: ");
+        batas = input.nextInt();
+        input.nextLine();
+        String[] matkul = new String[batas];
+        String[] grade = new String[batas];
+        float[] uas= new float[batas];
+        float[] uts= new float[batas];
+        float[] rata= new float[batas];
+        float[] jumlah= new float[batas];
+        System.out.println("==================================");
+        System.out.print("Nama\t:");
+        nama = input.nextLine();
+        System.out.print("NIM\t:");
+        nim = input.nextLine();
+        System.out.print("Jurusan\t:");
+        jur = input.nextLine();
+        System.out.println("==================================");
+        System.out.println();
+        for(int i = 0; i < batas; i++){
+            int print = i + 1;
+            System.out.print("Mata kuliah ke-"+print+" :");
+            matkul[i] = input.nextLine();
+            System.out.print("Nilai UTS : ");
+            uts[i] = input.nextFloat();
+            System.out.print("Nilai UAS : ");
+            input.nextLine();
+            uas[i] = Float.parseFloat(input.nextLine());
+            System.out.println();
+        }
+        input.close();
+        for (int i=0; i<batas; i++){
+            jumlah[i] = uas[i] + uts[i];
+        }
+        for (int i=0; i<batas; i++){
+            rata[i]=jumlah[i]/2;
+        }
+        for (int i=0; i<batas; i++){
+            if(rata[i] >= 85){
+                grade[i] = "A";
+            }
+            else if(rata[i] >= 75){
+                grade[i] = "B";
+            }
+            else if(rata[i] >= 60){
+                grade[i] = "C";
+            }
+            else if(rata[i] >= 50){
+                grade[i] = "D";
+            }
+            else {
+                grade[i] = "E";
+            }
+        }
+        System.out.println("==================================");
+        System.out.println("Nama :"+nama+"\tNPM : "+nim);
+        System.out.println("==================================");
+        System.out.println("Mata Kuliah     Nilai       Grade");
+        System.out.println("==================================");
+        for (int i=0; i<batas; i++){
+            System.out.println(matkul[i] + "\t\t"+rata[i]+"\t\t"+grade[i]);
+        }
+    }
+}
+\end{lstlisting}
+Program di atas akan menampilkan biodata mahasiswa, dan menghitung nilai berdasarkan nilai yang dimasukkan oleh user. panjang array akan mengikuti nilai dari 
+variabel batas. Untuk pemberian grade digunakan seleksi. Jika dijalankan program akan menghasilkan output seperti berikut:\\
+\begin{center}
+    \includegraphics[scale=.7]{7.png}
+\end{center}
+
+\subsection{Tugas}
+\begin{lstlisting}
+import java.util.Scanner;
+public class Tugas
+{
+    public static void main (String[] args) 
+    {
+        Scanner in = new Scanner(System.in);
+        int batas,besar,kecil;
+        float jumlah;
+        System.out.print("Masukkan panjang data = ");
+        batas = in.nextInt();
+        int[] nilai = new int[batas];
+        for(int i = 0; i < nilai.length; i++)
+        {
+            int ke = i + 1;
+            System.out.print("Masukkan nilai ke-"+ke+" :");
+            nilai[i] = in.nextInt();
+        }
+        in.close();
+
+        jumlah = 0;
+        for(int i = 0; i < nilai.length; i++)
+        {
+            jumlah = jumlah + nilai[i];
+        }
+        System.out.println("Jumlah = "+jumlah);
+
+        jumlah = jumlah / batas;
+        System.out.println("Rata-rata = "+jumlah);
+
+        besar=nilai[0];
+        kecil=nilai[0];
+        for(int i = 1; i < nilai.length; i++)
+        {
+            if(besar<nilai[i])
+            {
+                besar = nilai[i];
+            }
+            if(kecil>nilai[i])
+            {
+                kecil = nilai[i];
+            }
+        }
+        System.out.println("Nilai terbesar = "+besar);
+        System.out.println("Nilai terkecil = "+kecil);
+    }
+}
+\end{lstlisting}
+Program tersebut akan menjumlahkan semua data yang ada di array. Panjang data array tersebut mengikuti nilai yang ada dalam variabel batas. Dengan menggunakan perulangan for dan pernytaan total = total + nilai[i] maka program akan menjumlahkan semua data yang ada 
+didalam array nilai. Setelah itu untuk menghitung rata-rata maka variabel total dibagi dengan variabel batas. Lalu terdapat perulangan yang memiliki pernyataan seleksi. Seleksi tersebut akan membandingkan data dalam variabel array. 
+\begin{center}
+    \includegraphics[scale=.7]{8.png}
+\end{center}
+
+
 \newpage
 \section{Kesimpulan}
+Setelah praktik ini mahasiswa mampu Menjelaskan konsep array 1dimensi dan perbedaan array dengan data, Merencanakan struktur data dalam bentuk array 1 dimensi, serta
+Mengaplikasikan array
 
 \end{document}
