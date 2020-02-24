@@ -222,14 +222,194 @@ h1 dan p diatur warna dan marginnya. Jika dibuka di browser tampilannya seperti 
 \end{lstlisting}
 
 Dokumen html tersebut memiliki CSS secara inline, karena dimasukkan langsung di elemen yang
- akan diatur tampilannya.
- \begin{center}
-     \includegraphics[width=\linewidth]{2.png}
- \end{center}
+akan diatur tampilannya.
+\begin{center}
+    \includegraphics[width=\linewidth]{2.png}
+\end{center}
 
- \subsubsection{Praktik 3}
- Pada praktik 3 dibuat dokumen html, yang script CSS nya terpisah, Pertama 
+\subsubsection{Praktik 3}
+Pada praktik 3 dibuat dokumen html, yang script CSS nya terpisah, Pertama buat file dengan nama desainku.css, dengan isi sebagai berikut:
+\begin{lstlisting}
+body {
+    background-color: lightblue;
+}
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+\end{lstlisting}
+File css tersebut akan mengatur warna background menjadi warna lightblue, dan elemen h1 diatur menjadi warna navy, dan margin kiri 20 pixel.\\
+Setelah itu buat file html dengan nama eksternalCSS.html, isi seperti ini:
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="desainku.css">
+    </head>
+    <body>
+        <h1>STMIK AKAKOM</h1>
+        <p>Telepon: (0274) 486664</p>
+    </body>
+</html>
+\end{lstlisting}
+Pada tag head didalamnya terdapat tag link, yang akan menginstruksikan browser untuk memuat file desainku.css dan menerapkan pengaturan yang ditentukan ke dokumen html tersebut.
+\begin{center}
+    \includegraphics[width=\linewidth]{3.png}
+\end{center}
+
+\subsubsection{Praktik 4}
+Praktik 4 adalah membuat css internal yang menggunakan id css
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #kampus {
+            text-align: center;
+            color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="kampus">STMIK AKAKOM</p>
+        <p>Telepon: (0274) 486664</p>
+    </body>
+</html>
+\end{lstlisting}
+Script CSS yang digunakan ditulis pada tag style, di dalam tag head, tanda pagar(\#) menandakan bahwa script CSS tersbut berbentuk ID. Untuk menggunakan CSS ini kita perlu 
+menyertakannya ke dalam tag yang ingin kita atur tampilannya.\\
+Untuk dokumen html di atas yang di atur adalah tag p yang pertama. Karena ID CSS hanya bisa 
+panggil sekali, maka kita hanya bisa menggunakannya pada salah satu tag saja.
+\begin{center}
+    \includegraphics[scale=0.4]{4.png}
+\end{center}
+
+\subsubsection{Praktik 5}
+Untuk praktik 5, adalah membuat css internal yang menggunakan class.
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .center {
+            text-align: center;
+            color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="center">STMIK AKAKOM</h1>
+        <p class="center">Telepon: (0274) 486664</p>
+    </body>
+</html>
+\end{lstlisting}
+Script CSS yang digunakan ditulis pada tag style, di dalam tag head, tanda titik(.) menandakan bahwa script CSS tersebut berbentuk Class. Untuk menggunakan CSS ini kita perlu 
+menyertakannya ke dalam tag yang ingin kita atur tampilannya.\\
+Untuk dokumen html di atas yang di atur adalah tag h1 dan p. Karena Class CSS bisa 
+dipanggil berulangkali, maka kita bisa menggunakannya pada beberapa tag.
+\begin{center}
+    \includegraphics[width=\linewidth]{5.png}
+\end{center}
 
 \newpage
 
+\subsection{Latihan}
+\subsubsection{Latihan 1}
+Untuk latihan 1, adalah mengubah praktik 4 agar CSS menjadi eksternal. Caranya cukup dengan 
+memindahkan CSS di dalam tag style ke file baru dengan ekstensi css. Dan memanggilnya 
+dengan tag link.\\
+Isi dari file CSS untuk Latihan 1 sebagai berikut:
+\begin{lstlisting}
+#kampus {
+text-align: center;
+color: red;
+}
+\end{lstlisting}
+Sedangkan untuk file htmlnya seperti berikut:
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="latihan1.css">
+    </head>
+    <body>
+        <p id="kampus">STMIK AKAKOM</p>
+        <p>Telepon: (0274) 486664</p>
+    </body>
+</html>
+\end{lstlisting}
+\begin{center}
+    \includegraphics[scale=0.4]{4.png}
+\end{center}
+
+\subsubsection{Latihan 2}
+Sama dengan latihan sebelumnya, yaitu mengubah Praktik 5 agar memiliki CSS eksternal. Caranya 
+pun sama dengan praktik 1.\\
+Isi dari file css:
+\begin{lstlisting}
+.center {
+text-align: center;
+color: red;
+}
+\end{lstlisting}
+Isi file html:
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="latihan2.css">
+    </head>
+    <body>
+        <h1 class="center">STMIK AKAKOM</h1>
+        <p class="center">Telepon: (0274) 486664</p>
+    </body>
+</html>
+\end{lstlisting}
+\begin{center}
+    \includegraphics[width=\linewidth]{5.png}
+\end{center}
+
+\newpage
+
+\subsection{Tugas}
+Untuk tugas adalah merubah salah satu praktik di atas yang belum diubah CSS-nya menjadi CSS eksternal. Untuk praktik 1 agar CSS-nya menjadi eksternal kita perlu memindahkan bagian CSS ke file 
+baru berekstensi CSS.
+\begin{lstlisting}
+body{
+    background-color: linen;
+}
+h1 {
+    color: green;
+    margin-left:40px;
+}
+p{
+    color: red;
+    margin-left:20px;
+}
+\end{lstlisting}
+Dan memanggilnya menggunakan tag link di file html.
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="Tugas1.css">
+    </head>
+    <body>
+        <h1>STMIK AKAKOM</h1>
+        <p>Alamat: Jl.Janti no.143, 
+        Jaranan, Karang Jambe, 
+        Kec. Banguntapan, Bantul, DIY 55918</p>
+
+        <p>Telepon: (0274) 486664</p>
+    </body>
+</html>
+\end{lstlisting}
+Tampilan saat dibuka di browser.
+\begin{center}
+    \includegraphics[width=\linewidth]{1.png}
+\end{center}
+
+\newpage
+\section{Kesimpulan}
+Setelah praktik ini, mahasiswa mampu menuliskan CSS sesuai aturan (properti dan nilai), selektor tag, selektor id, selektor class, script internal style, script eksternal style, dan inline style
 \end{document}
