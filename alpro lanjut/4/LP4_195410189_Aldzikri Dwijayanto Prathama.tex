@@ -33,7 +33,7 @@
 
 \graphicspath{ {./img/} }
 \begin{document}
-\title{ {\Large Laporan Praktikum}\\ Algoritma dan Pemrograman Lanjut\\{\Large Pertemuan 3}}
+\title{ {\Large Laporan Praktikum}\\ Algoritma dan Pemrograman Lanjut\\{\Large Pertemuan 4}}
 
 \author{Aldzikri Dwijayanto Prathama 
 	\\195410189
@@ -61,20 +61,17 @@
 \paragraph{}
 Mahasiswa dapat :
 \begin{enumerate}
-    \item Menjelaskan konsep array 1dimensi
-    \item Menjelaskan perbedaan array dengan data
-    \item Merencanakan struktur data dalam bentuk array 1 dimensi
-    \item Mengaplikasikan array
+    \item Menjelaskan konsep array 2 dimensi
+    \item Merencanakan struktur data dalam bentuk array 2 dimensi
+    \item Mengaplikasikan array 2 dimens
 \end{enumerate}
 
 \section{Teori}
 \paragraph{}
-Array adalah sebuah variabel yang bisa menyimpan banyak data dalam
-satu variabel.
-Array menggunakan indeks untuk memudahkan akses terhadap data
-yang disimpannya.
-Indeks array selalu dimulai dari 0 dan perlu diketahui juga, indeks tidak
-selalu dalam bentuk angka. Bisa juga karakter atau teks.
+Array 2 Dimensi atau bisa disebut juga Array Multi Dimensi ,adalah versi lanjut
+dari Array biasa ,yang merupakan sebuah deretan atau susunan , nama-nama
+variable( element) , yang memiliki tipe data sama dalam struktur list atau daftar,
+27yang dapat diakses secara baris dan kolom, berdasarkan element/indexnya.
 
 \newpage
 
@@ -82,362 +79,194 @@ selalu dalam bentuk angka. Bisa juga karakter atau teks.
 \subsection{Praktik}
 \subsubsection{Praktik 1}
 \begin{lstlisting}
-public class Array1
-{
-    public static void main (String[] args)
-    {
-        //array 1 dimensi
-        String[] nama = new String[5];
-        nama[0] = "Jono";
-        nama[1] = "Joni";
-        nama[2] = "Jini";
-        nama[3] = "Jeni";
-        nama[4] = "Juni";
-        //menampilkan array menggunakan for
-        for (int i=0; i<nama.length; i++)
-        System.out.println(nama[i]);
+public class Array2 {
+    public static void main(String[] args) {
+        String cats[][]= {{"terry","brown"},
+        {"kitty","white"},
+        {"toby","gray"},
+        {"fido","black"}};
+        System.out.println("Nama Kucing\tWarna");
+        System.out.println(cats[0][0] + "\t\t" + cats[0][1]);
+        System.out.println(cats[1][0] + "\t\t" + cats[1][1]);
+        System.out.println(cats[2][0] + "\t\t" + cats[2][1]);
+        System.out.println(cats[3][0] + "\t\t" + cats[3][1]);
     }
 }
 \end{lstlisting}
-Program tersebut memiliki array 1 dimensi. Array dideklarasikan dengan String[] nama, itu berarti array tersebut terdiri dari tipe data string, lalu panjangnya didefinisikan dengan new String[5]
-yang berarti array tersebut memiliki panjang data sejumlah 5. Setelah panjangnya ditentukan array diisi. Karena indeks array dihitung dari 0, maka indeks pertama yang diisi adalah indeks 0 
-sampai indeks 4. Setelah itu program akan mengeprint isi dari array, dengan menggunakan perulangan for. Init diberi nilai 0, karena array dimulai dari 0. Kondisinya init < panjang array.\\
-Sehingga jika dijalankan program akan menghasilkan output seperti berikut:\\
+Program praktik 1 tersebut memiliki matriks 2 dimensi yang memiliki ukuran 4 baris dan 2 kolom (4x2). Matriks tersebut kemudian diisi dengan nama kucing untuk 
+kolom satu, dan warna dari kucing tersebut pada kolom kedua.
 \begin{center}
-    \includegraphics[scale=.7]{1.png}
+    \includegraphics{1.png}
 \end{center}
 
 \subsubsection{Praktik 2}
 \begin{lstlisting}
-public class Array1b {
+public class Array2a {
     public static void main(String[] args) {
-        //array 1 dimensi
-        String[] nama = {"Jono","Joni","Jini","Jeni","Juni"};
-        //menampilkan array menggunakan foreach
-        for (String name:nama)
-            System.out.println(name);
+        String cats[][]= {{"terry","brown"},
+        {"kitty","white"},
+        {"toby","gray"},
+        {"fido","black"}};
+        System.out.println("Nama Kucing\tWarna");
+        for (int i=0;i<cats.length;i++) {
+            for (int j=0;j<cats[i].length;j++) {
+                System.out.print(cats[i][j]);
+                System.out.print("\t");
+            }
+            System.out.println(" ");
+        }
     }
 }
 \end{lstlisting}
-Jika isi dari array dideklarasikan di dalam program maka kita bisa langsung mengisinya tanpa menentukan panjang array, dan menyertakan indeks ke berapa data tersebut akan diisikan. 
-Data akan diisikan ke dalam indeks array sesuai urutannya.
-Selain itu kita juga bisa mengeprint isi array dengan for each, jadi perulangan akan akan mengulang sesuai dengan jumlah data di dalam array, kita tidak perlu menentukan init dan kondisi 
-untuk for tersebut.\\
-Sehingga jika program dijalankan maka akan menghasilkan output berikut:\\
+Pada praktik 2, adalah mengubah program pada praktik 1, yang semula cara mengeprintnya secara manual, pada praktik 2 dimodifikasi agar mengeprint menggunakan 
+perulangan. Karena arraynya mreupakan array dua dimensi, maka digunakan dua perulangan. Yang perulangan pertama berguna untuk menghitung baris, dan perulangan 
+kedua untuk menghitung kolom.
 \begin{center}
-    \includegraphics[scale=.7]{1.png}
+    \includegraphics{2.png}
 \end{center}
 
 \subsubsection{Praktik 3}
-Selain string array juga bisa menyimpan tipe data lain, untuk string dengan tipe data integer dapat dideklarasikan sama seperti sebelumnya
 \begin{lstlisting}
-public class Array1c {
+import java.util.Scanner;
+public class Array2b {
     public static void main(String[] args) {
-        String[] nama = {"Jono","Joni","Jini","Jeni","Juni"};
-        int[]umur={25, 30, 55, 35, 40};
-        System.out.println("Nama\tUmur");
-        //menampilkan array
-        for (int i=0; i<nama.length; i++)
-            System.out.println(nama[i]+"\t " +umur[i]);
+        String cats[][] = new String[4][2];
+        Scanner in = new Scanner(System.in);
+        for (int i=0;i<cats.length;i++) {
+            for (int j=0;j<cats[i].length;j++) {
+                cats[i][j] = in.nextLine();
+            }
+        }
+        System.out.println("Nama Kucing\tWarna");
+        for (int i=0;i<cats.length;i++) {
+            for (int j=0;j<cats[i].length;j++) {
+                System.out.print(cats[i][j]);
+                System.out.print("\t");
+            }
+            System.out.println(" ");
+        }
     }
 }
 \end{lstlisting}
-Karena array nama dan umur memiliki panjang data yang sama, maka kondisi untuk for dapat menggunakan panjang dari array nama.\\
-Output dari program tersebut seperti berikut:\\
+Program tersebut merupakan program dari praktik 2, yang dimodifikasi sehingga mampu menerima input dari user. Perulangan yang digunakan untuk mneginputkan
+sama dengan perulangan yang sebelumnya digunakan untuk mengeprint array, sehingga input pertama akan memasukkan nama kucing, dan 
+input kedua akan memasukkna warna kucing.
 \begin{center}
-    \includegraphics[scale=.7]{2.png}
+    \includegraphics{3.png}
 \end{center}
 
 \subsubsection{Praktik 4}
 \begin{lstlisting}
 import java.util.Scanner;
-public class ArrayInputUser {
+public class Matrik {
     public static void main(String[] args) {
-        int bilangan[] = new int[4];
-        int i,j;
         Scanner input = new Scanner(System.in);
-        for (i=0;i<=3;i++) {
-            System.out.print("Silahkan masukan bilangan : ");
-            bilangan[i] = input.nextInt();
+        int[][] x = {{1, 2, 3}, {4, 5, 6}};
+        int[][] y = {{3, 6, 1}, {4, 7, 9}};
+        int baris = 2;
+        int kolom = 3;
+        int[][] z = new int[baris][kolom];
+        System.out.println("ini adalah matrix x");
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                System.out.print(x[i][j] + " ");
+            }
+            System.out.println();
         }
-        //untuk menampilkan array
-        for (j=0;j<=3;j++) {
-            System.out.println("Bilangan yang anda masukkan" +" "+
-            bilangan[j]);
+        System.out.println("ini adalah matrix y");
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                System.out.print(y[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
 \end{lstlisting}
-Program diatas mampu memasukkan nilai yang diberi oleh user ke array pada saat program dijalankan. Dengan menggunakan perulangan for, maka program akan memasukkan input ke array ke 
-dalam array ke dalam indeks yang sesuai dengan jumlah perulangan. Maka jika program dijalankan akan seperti berikut:\\
+Pada praktik 4 program memiliki dua array yang berisi matrix. Kemudian kedua matriks tersebut diprint menggunakan perulangan seperti program pada praktik 2.
 \begin{center}
-    \includegraphics[scale=.7]{3.png}
+    \includegraphics{4.png}
 \end{center}
-
-\newpage
 
 \subsubsection{Praktik 5}
 \begin{lstlisting}
 import java.util.Scanner;
-public class Larik2{
-    public static void main(String args[]){
-        Scanner masuk = new Scanner(System.in);
-        float nilai[]= new float[5];
-        float total,rata;
-        System.out.println("Masukan 5 buat data nilai");
-        for (int i = 0; i < 5; i++)
-        {
-            System.out.print( (i + 1 )+" : ");
-            nilai[i]=masuk.nextFloat();
+public class Matrika {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[][] x = {{1, 2, 3}, {4, 5, 6}};
+        int[][] y = {{3, 6, 1}, {4, 7, 9}};
+        int baris = 2;
+        int kolom = 3;
+        int[][] z = new int[baris][kolom];
+        System.out.println("ini adalah matrix x");
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                System.out.print(x[i][j] + " ");
+            }
+            System.out.println();
         }
-        System.out.println("Data nilai yang dimasukan");
-        for (int i = 0; i < 5; i++)
-            System.out.println(nilai[i]);
-        total = 0;
-        for (int i = 0; i < 5; i++)
-            total = total + nilai[i];
-        rata = total/5;
-        System.out.println("Total data = "+total);
-        System.out.println("Rata-rata = "+rata);
+        System.out.println("ini adalah matrix y");
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                System.out.print(y[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("hasil dari x-y");
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                z[i][j]=x[i][j]-y[i][j];
+                System.out.print(z[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println("hasil dari x+y");
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                z[i][j]=x[i][j]+y[i][j];
+                System.out.print(z[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 }
 \end{lstlisting}
-Program tersebut akan menjumlahkan semua data yang ada di array. Dengan menggunakan perulangan for dan pernytaan total = total + nilai[i] maka program akan menjumlahkan semua data yang ada 
-didalam array nilai. Setelah itu untuk menghitung rata-rata maka variabel total dibagi dengan 5.
+Praktik 5 adalah memodifikasi dari praktik 4, sehingga bisa melakukan operasi penambahan dan pengurangan pada matrix yang di masukkan. Pada perulangan 
+pertama dan kedua program akan menginputkan matriks pertama dan kedua menginputkan matriks. Perulangan kedua akan mengurangi matriks x dengan matriks y, 
+dengan mengurangi baris dengan baris, dan kolom dengan kolom, kemudian mengeprintnya. Kemudian perulangan ketiga akan menambahkan matriks x dengan matriks y, baris dengan baris, kolom dengan kolom, kemudian mengeprintnya.
 \begin{center}
-    \includegraphics[scale=.7]{4.png}
+    \includegraphics{5.png}
 \end{center}
-
-\newpage
 
 \subsubsection{Praktik 6}
 \begin{lstlisting}
-import java.util.Scanner;
-public class Larik2a{
-    public static void main(String args[]){
-        Scanner masuk = new Scanner(System.in);
-        float nilai[]= new float[5];
-        float total,rata,besar,kecil;
-        System.out.println("Masukan 5 buat data nilai");
-        for (int i = 0; i < 5; i++)
-        {
-            System.out.print( (i + 1 )+" : ");
-            nilai[i]=masuk.nextFloat();
-        }
-        System.out.println("Data nilai yang dimasukan");
-        for (int i = 0; i < 5; i++)
-            System.out.println(nilai[i]);
-        total = 0;
-        for (int i = 0; i < 5; i++)
-            total = total + nilai[i];
-        rata = total/5;
-        besar=nilai[0];
-        for (int i = 1; i < 5; i++){
-            if(besar < nilai[i]){
-                besar = nilai[i];
-            }
-        }
-        kecil=nilai[0];
-        for (int i = 1; i < 5; i++){
-            if(kecil > nilai[i]){
-                kecil = nilai[i];
-            }
-        }
-        System.out.println("Nilai terkecil = "+kecil);
-        System.out.println("Nilai terbesar = "+besar);
-        System.out.println("Total data = "+total);
-        System.out.println("Rata-rata = "+rata);
-    }
-}
-\end{lstlisting}
-Program tersebut merupakan program dari praktik sebelumnya yang dimodifikasi dengan menambahkan perulangan yang memiliki pernyataan seleksi. Seleksi tersebut akan membandingkan data dalam 
-array untuk mencari nilai terbesar dan terkecil, lalu menyimpannya ke dalam variabel besar untuk nilai terbesar, dan kecil untuk variabel terkecil.
-\begin{center}
-    \includegraphics[scale=.7]{5.png}
-\end{center}
-
-\subsection{Latihan}
-\subsubsection{Latihan 1}
-\begin{lstlisting}
-import java.util.Scanner;
-public class Biodata_Mhs {
-    public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-        String nama, nim, jenisKelamin, alamat, nope, def="Masukan ";
-        System.out.println("================================");
-        System.out.println("| INPUT BIODATA MAHASISWA |");
-        System.out.println("================================");
-        System.out.print(def + "Nama \t\t: " );
-        nama = input.nextLine();
-        System.out.print(def + "NIM \t\t: " );
-        nim = input.nextLine();
-        System.out.print(def + "Jenis Kelamin \t: " );
-        jenisKelamin = input.nextLine();
-        System.out.print(def + "Alamat \t\t: " );
-        alamat = input.nextLine();
-        System.out.print(def + "Nomor Handphone\t: " );
-        nope = input.nextLine();
-        System.out.println("");
-        System.out.println("+------------------------------+");
-        System.out.println("| Data Biodata Mahasiswa |");
-        System.out.println("+------------------------------+");
-        System.out.println("| Nama\t\t: " + nama);
-        System.out.println("| NIM\t\t: " + nim);
-        System.out.println("| Jenis Kelamin\t: " + jenisKelamin);
-        System.out.println("| Alamat\t: " + alamat);
-        System.out.println("| Nomor HP\t: " + nope);
-        System.out.println("+-------------------------------+");
-    }
-}
-\end{lstlisting}
-Program tersebut merupakan program yang akan mnampilkan biodata mahasiswa. Saat dijalankan program akan menampilkan biodata mahasiswa yang sebelumnya dimasukkan 
-oleh user yang disimpan ke dalam variabel biasa, bukan array. Jika dijalankan akan maka program akan menghasilkan output seperti berikut:\\
-\begin{center}
-    \includegraphics[scale=.7]{6.png}
-\end{center}
-
-\subsubsection{Latihan 2}
-\begin{lstlisting}
-import java.util.Scanner;
-public class Latihan {
+public class MatriksTranspose {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String jur;
-        String nama;
-        String nim;
-        int batas;
-        System.out.println("==================================");
-        System.out.println("Menghitung Nilai Mahasiswa");
-        System.out.println("==================================");
-        System.out.print("Masukan Jumlah Mata Kuliah: ");
-        batas = input.nextInt();
-        input.nextLine();
-        String[] matkul = new String[batas];
-        String[] grade = new String[batas];
-        float[] uas= new float[batas];
-        float[] uts= new float[batas];
-        float[] rata= new float[batas];
-        float[] jumlah= new float[batas];
-        System.out.println("==================================");
-        System.out.print("Nama\t:");
-        nama = input.nextLine();
-        System.out.print("NIM\t:");
-        nim = input.nextLine();
-        System.out.print("Jurusan\t:");
-        jur = input.nextLine();
-        System.out.println("==================================");
-        System.out.println();
-        for(int i = 0; i < batas; i++){
-            int print = i + 1;
-            System.out.print("Mata kuliah ke-"+print+" :");
-            matkul[i] = input.nextLine();
-            System.out.print("Nilai UTS : ");
-            uts[i] = input.nextFloat();
-            System.out.print("Nilai UAS : ");
-            input.nextLine();
-            uas[i] = Float.parseFloat(input.nextLine());
+        int[][] matriks =
+        {{12,23,32},{34,56,63},{78,89,97}};
+        int j,k;
+        System.out.println("Matriks Sebelum Transpose");
+        for(j=0;j<3;j++){
+            for(k=0;k<3;k++){
+                System.out.print(matriks[j][k]+" ");
+            }
             System.out.println();
         }
-        input.close();
-        for (int i=0; i<batas; i++){
-            jumlah[i] = uas[i] + uts[i];
-        }
-        for (int i=0; i<batas; i++){
-            rata[i]=jumlah[i]/2;
-        }
-        for (int i=0; i<batas; i++){
-            if(rata[i] >= 85){
-                grade[i] = "A";
+        System.out.println("\nMatriks Setelah Transpose");
+        for(j=0;j<3;j++){
+            for(k=0;k<3;k++){
+                System.out.print(matriks[k][j]+" ");
             }
-            else if(rata[i] >= 75){
-                grade[i] = "B";
-            }
-            else if(rata[i] >= 60){
-                grade[i] = "C";
-            }
-            else if(rata[i] >= 50){
-                grade[i] = "D";
-            }
-            else {
-                grade[i] = "E";
-            }
-        }
-        System.out.println("==================================");
-        System.out.println("Nama :"+nama+"\tNPM : "+nim);
-        System.out.println("==================================");
-        System.out.println("Mata Kuliah     Nilai       Grade");
-        System.out.println("==================================");
-        for (int i=0; i<batas; i++){
-            System.out.println(matkul[i] + "\t\t"+rata[i]+"\t\t"+grade[i]);
+            System.out.println();
         }
     }
 }
 \end{lstlisting}
-Program di atas akan menampilkan biodata mahasiswa, dan menghitung nilai berdasarkan nilai yang dimasukkan oleh user. panjang array akan mengikuti nilai dari 
-variabel batas. Untuk pemberian grade digunakan seleksi. Jika dijalankan program akan menghasilkan output seperti berikut:\\
+Program praktik 6 akan menjalankan operasi transpose terhadap array matriks. Untuk melakukannya digunakan perulangan, yang semula perulangan pertama untuk 
+menhitung baris, dan perulangan kedua untuk kolom, dibalik sehingga perulangan pertama untuk menghitung kolom, dan perulangan kedua untuk menghitung baris.
 \begin{center}
-    \includegraphics[scale=.7]{7.png}
+    \includegraphics{6.png}
 \end{center}
-
-\subsection{Tugas}
-\begin{lstlisting}
-import java.util.Scanner;
-public class Tugas
-{
-    public static void main (String[] args) 
-    {
-        Scanner in = new Scanner(System.in);
-        int batas,besar,kecil;
-        float jumlah;
-        System.out.print("Masukkan panjang data = ");
-        batas = in.nextInt();
-        int[] nilai = new int[batas];
-        for(int i = 0; i < nilai.length; i++)
-        {
-            int ke = i + 1;
-            System.out.print("Masukkan nilai ke-"+ke+" :");
-            nilai[i] = in.nextInt();
-        }
-        in.close();
-
-        jumlah = 0;
-        for(int i = 0; i < nilai.length; i++)
-        {
-            jumlah = jumlah + nilai[i];
-        }
-        System.out.println("Jumlah = "+jumlah);
-
-        jumlah = jumlah / batas;
-        System.out.println("Rata-rata = "+jumlah);
-
-        besar=nilai[0];
-        kecil=nilai[0];
-        for(int i = 1; i < nilai.length; i++)
-        {
-            if(besar<nilai[i])
-            {
-                besar = nilai[i];
-            }
-            if(kecil>nilai[i])
-            {
-                kecil = nilai[i];
-            }
-        }
-        System.out.println("Nilai terbesar = "+besar);
-        System.out.println("Nilai terkecil = "+kecil);
-    }
-}
-\end{lstlisting}
-Program tersebut akan menjumlahkan semua data yang ada di array. Panjang data array tersebut mengikuti nilai yang ada dalam variabel batas. Dengan menggunakan perulangan for dan pernytaan total = total + nilai[i] maka program akan menjumlahkan semua data yang ada 
-didalam array nilai. Setelah itu untuk menghitung rata-rata maka variabel total dibagi dengan variabel batas. Lalu terdapat perulangan yang memiliki pernyataan seleksi. Seleksi tersebut akan membandingkan data dalam variabel array. 
-\begin{center}
-    \includegraphics[scale=.7]{8.png}
-\end{center}
-
-
-\newpage
-\section{Kesimpulan}
-Setelah praktik ini mahasiswa mampu Menjelaskan konsep array 1dimensi dan perbedaan array dengan data, Merencanakan struktur data dalam bentuk array 1 dimensi, serta
-Mengaplikasikan array
 
 \end{document}
