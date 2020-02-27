@@ -269,4 +269,111 @@ menhitung baris, dan perulangan kedua untuk kolom, dibalik sehingga perulangan p
     \includegraphics{6.png}
 \end{center}
 
+\subsubsection{Praktik 7}
+Untuk praktik 7 dibuat program yang akan menginputkan nilai dari matriks 3x3 dan menampilkannya di layar.
+\begin{lstlisting}
+import java.util.Scanner;
+public class Array2Dimensi1 {
+    public static void main(String[] args){
+        int b=3;int d=3; //matrik 3 baris 3 kolom
+        System.out.println("Masukan Nilai Matrix:");
+        int[][] matrix1=new int[b][d];
+        for(int i=0;i<b;i++){
+            for(int j=0;j<d;j++){
+                matrix1[i][j]=input();
+            }
+        }
+        for(int i=0;i<b;i++){
+            for(int j=0;j<d;j++){
+                System.out.print(matrix1[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+    static int input(){
+        Scanner a=new Scanner(System.in);
+        int b=a.nextInt();
+        return b;
+    }
+}
+\end{lstlisting}
+Sama dengan program pada praktik 3, disini digunakan perulangan for untuk memasukkan nilai ke dalam matriks. Pengisiannya dengan cara baris demi baris.
+\begin{center}
+    \includegraphics{7.png}
+\end{center}
+
+\subsubsection{Praktik 8}
+Praktik 8 adalah memodifikasi program dari praktik 7 agar bisa menjalankan operasi perkalian antar matriks.
+\begin{lstlisting}
+import java.util.Scanner;
+public class Array2Dimensi1a {
+    public static void main(String[] args){
+        int b=3;int d=3; //matrik 3 baris 3 kolom
+        System.out.println("Masukan Nilai Matrix:");
+        int[][] matrix1=new int[b][d];
+        int[][] matrix2=new int[b][d];
+        int[][] matrix3=new int[b][d];
+        System.out.println("Masukkan Matriks A");
+        for(int i=0;i<b;i++){
+            for(int j=0;j<d;j++){
+                matrix3[i][j] = 0;
+                matrix1[i][j]=input();
+            }
+        }
+        System.out.println("Masukkan Matriks B");
+        for(int i=0;i<b;i++){
+            for(int j=0;j<d;j++){
+                matrix2[i][j]=input();
+            }
+        }
+        System.out.println("Matriks A");
+        for(int i=0;i<b;i++){
+            for(int j=0;j<d;j++){
+                System.out.print(matrix1[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println("Matriks B");
+        for(int i=0;i<b;i++){
+            for(int j=0;j<d;j++){
+                System.out.print(matrix2[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println("Matriks A * Matriks B");
+        for(int i=0;i<b;i++){
+            for(int j=0;j<d;j++){
+                matrix3[i][j] = 0;
+                for(int k=0;k<d;k++){
+                    matrix3[i][j] = matrix1[i][k] * matrix2[k][j] + matrix3[i][j];
+                }
+            }
+        }
+        System.out.println("Hasil");
+        for(int i=0;i<b;i++){
+            for(int j=0;j<d;j++){
+                System.out.print(matrix3[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+    static int input(){
+        Scanner a=new Scanner(System.in);
+        int b=a.nextInt();
+        return b;
+    }
+}
+\end{lstlisting}
+Pada program tersebut terdapat beberapa perulangan bertingkat. Perulangan bertingkat pertama dan kedua berfungsi untuk memasukkan nilai dari matriks dari user. Perulangan bertingkat ketiga dan keempat berfungsi
+untuk menampilkan matriks1 dan matriks 2. Sedangkan perulangan bertingkat ke lima berfungsi untuk memberi nilai 0 pada matriks3, agar nilai tidak null, Lalu akan mengkalikan baris dengan kolom 
+lalu akan menambahkannya. Karena rumus perkalian dari matriks seperti berikut:
+\begin{center}
+    \includegraphics[width=\linewidth]{rumus.png}
+\end{center}
+Lalu perulangan bertingkat yang terakhir adalah untuk menampilkan matriks3, dimana kita menyimpan hasil operasi perkalian matriks1 dengan matriks 3 tadi. Jadi jika program dijalankan akan 
+menghasilkan output seperti berikut:
+\begin{center}
+    \includegraphics{8.png}
+\end{center}
+
 \end{document}
