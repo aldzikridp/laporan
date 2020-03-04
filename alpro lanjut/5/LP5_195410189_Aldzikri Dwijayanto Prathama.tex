@@ -1,0 +1,83 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[indonesian]{babel}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{wrapfig}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{lipsum}
+\usepackage{adjustbox}
+
+
+\usepackage{color}
+\usepackage[table]{xcolor}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{%
+    language=java,
+    showstringspaces=false,          % Prevent tex replacing space to bracket in code
+    frame=single,                    % Set frame around code
+    backgroundcolor=\color{white},   % choose the background color
+    basicstyle=\footnotesize,        % size of fonts used for the code
+    breaklines=true,                 % automatic line breaking only at whitespace
+    captionpos=b,                    % sets the caption-position to bottom
+    commentstyle=\color{mygreen},    % comment style
+    keywordstyle=\color{blue},       % keyword style
+    stringstyle=\color{mymauve},     % string literal style
+}
+
+\graphicspath{ {./img/} }
+\begin{document}
+\title{ {\Large Laporan Praktikum}\\ Algoritma dan Pemrograman Lanjut\\{\Large Pertemuan 5}}
+
+\author{Aldzikri Dwijayanto Prathama
+    \\195410189
+    \\Informatika}
+\makeatletter
+\begin{titlepage}
+    \begin{center}
+        {\huge \bfseries \@title}\\[14ex]
+        \includegraphics[scale=.8]{logo}\\[4ex]
+        {\large \@author}\\[12ex]
+        {\large \bfseries {SEKOLAH TINGGI MANAJEMEN INFORMATIKA DAN KOMPUTER
+            AKAKOM YOGYAKARTA}}
+    \end{center}
+
+
+%{\large \@date}
+\end{titlepage}
+\makeatother
+%\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Tujuan}
+\paragraph{}
+Mahasiswa dapat:
+\begin{enumerate}
+    \item Menjelaskan konsep array 3 dimensi
+    \item Merencanakan struktur data dalam bentuk array 3 dimensi
+    \item Mengaplikasikan array 3 dimensi
+\end{enumerate}
+
+
+\section{Teori}
+\paragraph{}
+Array 3 dimensi adalah array yang tidak jauh berbeda dari array
+dimensi satu dan dua yang telah dijelaskan sebelumnya, kecuali pada indeks
+dari array. Pada tipe ruang misalnya type ruang = array [1..8,1..5,1..3] of
+integer; menunjukkan bahwa ruang adalah nama-pengenal/variabel yang
+berupa array yang komponennya bertipe integer dan terdiri atas 8 baris,
+mempunyai 5 kolom dan 3 halaman.
+
+\newpage
+
+\section{Pembahasan}
+\subsection{Praktik}
+\subsubsection{Praktik 1}
+
+\end{document}
