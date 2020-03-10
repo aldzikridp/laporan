@@ -90,13 +90,8 @@
   % General design
 %  backgroundcolor=\color{editorGray},
   basicstyle={\footnotesize\ttfamily},   
-  frame=b,
+  frame=single,
   % line-numbers
-  xleftmargin={0.75cm},
-  numbers=left,
-  stepnumber=1,
-  firstnumber=1,
-  numberfirstline=true,	
   % Code design
   identifierstyle=\color{black},
   keywordstyle=\color{blue}\bfseries,
@@ -159,9 +154,25 @@ framexbottommargin=4pt,
 showstringspaces=false,      % Leerzeichen in Strings anzeigen ?
 }%
 %
+\definecolor{dkgreen}{rgb}{0,.6,0}
+\definecolor{dkblue}{rgb}{0,0,.6}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+
+\lstdefinestyle{PHP}{
+  language        = php,
+  basicstyle      = \small\ttfamily,
+  keywordstyle    = \color{dkblue},
+  stringstyle     = \color{red},
+  identifierstyle = \color{dkgreen},
+  commentstyle    = \color{gray},
+  emph            =[1]{php},
+  emphstyle       =[1]\color{black},
+  emph            =[2]{if,and,or,else},
+  emphstyle       =[2]\color{dkyellow}}
 \lstset{
     frame=single,
     breaklines=true,
+    rulecolor=\color{black}
 }
 %
 
@@ -259,5 +270,227 @@ input[type=text]{
     border: 1px solid;
 }
 \end{lstlisting}
+\newline
+file css tersebut akan mengatur element dan mendeklarasikan class yang ditulis. Class container akan mengatur elemen dengan luas menjadi 50\%, dan margin yang diatur otomatis.
+Elemen span displaynya diatur menjadi block, dan ukuran margin bawahnya diatur sebesar 20px.
+Class success akan mengatur display menjadi block, mengatur margin atas sebesar 20px, margin bawah sebesar 0, dan mengatur besar font sebesar 14px.
+Lalu tag b akan diatur wawrnanya menjadi hijau.
+div.main diatur lebarnya sebesar 206px, padding mmenjadi 10px 50px 30px, dan float ke kiri, sedangkan margin atas diatur sebesar 15px.
+Untuk kolom input diatur lebarnya menjadi 96\%, tingginya 25px, dan bordernya berukuran 1px dan modelnya solid.\\[2ex]
+
+Lalu buat skrip php yang bertugas untuk mengolah data, file tersebut kita beri nama proses.php.
+\begin{lstlisting}[style=PHP]
+<?php
+if (isset($_POST['fnama'])) {
+    $fnama = $_POST['fnama'];
+    $lalamat = $_POST['lalamat'];
+    echo "<span class='success'>Dengan <b>METODE POST</b></span><br/>";
+    echo "Nama : " . $fnama . "<br/>Alamat : " . $lalamat;
+}
+//------------------------------------------------------
+if (isset($_GET['fnama'])) {
+    $fnama = $_GET['fnama'];
+    $lalamat = $_GET['lalamat'];
+    echo "<span class='success'>Dengan <b>METODE GET</b></span><br/>";
+    echo "Nama : " . $fnama . "<br/>Alamat : " . $lalamat;
+}
+?>
+\end{lstlisting}
+Script PHP tersebut akan mengambil input dari user, dan memasukkannya ke variabel. Selain itu terdapat pemilihan, jika method menggunakan POST, akan mengeprint Dengan METODE POST, sedangkan jika menggunakan method GET, maka akan mengeprint Dengan METODE GET.\\[2ex]
+
+Selanjutnya buat file dengan nama index.php, lalu ketik seperti berikut.
+\begin{lstlisting}[style=PHP]
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <form method="get" action="index.php" id="form">
+                <h2>DATA IDENTITAS</h2>
+                <hr />
+                <label>Nama :</label>
+                <input type="text" name="fnama" id="fnama" />
+                <label>Alamat :</label>
+                <input type="text" name="lalamat" id="lalamat" />
+                <input type="submit" name="submit" id="submit" value="submit">
+            </form>
+            <?php include "proses.php"; ?>
+        </div>
+    </div>
+</body>
+
+</html>
+\end{lstlisting}
+File php tersebut berfungsi sebagai halaman utama. Selain itu terdapat juga form yang berfungsi untuk menerima input dari user. Setelah user memasukkan data ke form, maka file php
+ini akan memanggil file proses.php yang akan memproses data yang sudah dimasukkan.\\[2ex]
+
+Jika kita membuka file index.php melalui web server, dan memasukkan data ke form, maka tampilannya seprti berikut
+\begin{center}
+    \includegraphics[scale=.6]{3.png} 
+\end{center}
+Pada url bar terlihat, setelah kita memasukkan data, dan menklik submit, data yang sudah kita masukkan akan muncul pada url bar. Dan karena proses.php, setelah data dimasukkan
+dibawah form akan muncul method apa yang digunakan untuk mengirim data, dan mengeprint data yang kita masukkan.\\[2ex]
+
+Selanjutnya kita rubah file index.php pada baris berikut
+\begin{lstlisting}[style=PHP]
+<form method="get" action="index.php" id="form">
+\end{lstlisting}
+Method dirubah menjadi POST seperti berikut
+\begin{lstlisting}[style=PHP]
+<form method="post" action="index.php" id="form">
+\end{lstlisting}
+
+Setelah kita rubah dan simpan lalu buka di browser dan isikan data.
+\begin{center}
+    \includegraphics[scale=.6]{4.png} 
+\end{center}
+Setelah method dirubah menjadi post, hasilnya sedikit berbeda dengan sebelumnya. Jika method menggunakan get, data yang dimasukkan tidak muncul pada urlbar.
+
+\newpage
+
+\subsection{Latihan}
+Pada latihan, file index.php dirubah untuk menambah isian untuk input bomor hp dan tanggal lahir.\\
+\begin{lstlisting}[style=PHP]
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <form method="post" action="index.php" id="form">
+                <h2>DATA IDENTITAS</h2>
+                <hr />
+                <label>Nama :</label>
+                <input type="text" name="fnama" id="fnama" />
+                <label>Alamat :</label>
+                <input type="text" name="lalamat" id="lalamat" />
+                <label>No Telp :</label>
+                <input type="text" name="telp" id="telp" />
+                <label>Tgl Lahir :</label>
+                <input type="text" name="lahir" id="lahir" />
+                <input type="submit" name="submit" id="submit" value="submit">
+            </form>
+            <?php include "proses.php"; ?>
+        </div>
+    </div>
+</body>
+
+</html>
+\end{lstlisting}
+Tambahkan baris dengan struktur yang dengan form sebelumnya, rubah tabel, name dan id.\\
+Lalu ubah juga file proses.php.
+\begin{lstlisting}[style=PHP]
+<?php
+if (isset($_POST['fnama'])) {
+    $fnama = $_POST['fnama'];
+    $lalamat = $_POST['lalamat'];
+    $telp = $_POST['telp'];
+    $lahir = $_POST['lahir'];
+    echo "<span class='success'>Dengan <b>METODE POST</b></span><br/>";
+    echo "Nama : " . $fnama . "<br/>Alamat : " . $lalamat . "<br/> No Telp : " . $telp . "<br/> Tgl Lahir : " . $lahir;
+}
+//------------------------------------------------------
+if (isset($_GET['fnama'])) {
+    $fnama = $_GET['fnama'];
+    $lalamat = $_GET['lalamat'];
+    $telp = $_GET['telp'];
+    $lahir = $_GET['lahir'];
+    echo "<span class='success'>Dengan <b>METODE GET</b></span><br/>";
+    echo "Nama : " . $fnama . "<br/>Alamat : " . $lalamat . "<br/> No Telp : " . $telp . "<br/> Tgl Lahir : " . $lahir;
+}
+?>
+\end{lstlisting}
+Untuk file proses.php kita tambhkan variabel, dan tambahkan variabel tersebut di echo.\\
+Buka di browser dan isi dengan data.
+\begin{center}
+    \includegraphics[scale=.6]{5.png} 
+\end{center}
+
+\newpage
+
+\subsection{Tugas}
+Menyimpan data ke database.\\
+Buat database, dan tabel baru menggunakan DBeaver. Lalu buat kolom untuk menyimpan nama, alamat, nomor hp, dan tanggal lahir.
+\begin{center}
+    \includegraphics[scale=.4]{6.png} 
+\end{center}
+Lalu modifikasi file proses.php
+\begin{lstlisting}[style=PHP]
+<?php
+$server="localhost";
+$username="admin";
+$password="91Eix1bS8iQ4";
+$dbname="Data";
+$link = mysqli_connect($server, $username,$password,$dbname);
+if (!$link) {
+      die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected to sql";
+$fnama = mysqli_real_escape_string($link, $_REQUEST['fnama']);
+$lalamat = mysqli_real_escape_string($link, $_REQUEST['lalamat']);
+$telp = mysqli_real_escape_string($link, $_REQUEST['telp']);
+$lahir = mysqli_real_escape_string($link, $_REQUEST['lahir']);
+if (isset($_POST['fnama'])) {
+    $fnama = $_POST['fnama'];
+    $lalamat = $_POST['lalamat'];
+    $telp = $_POST['telp'];
+    $lahir = $_POST['lahir'];
+    echo "<span class='success'>Dengan <b>METODE POST</b></span><br/>";
+    echo "Nama : " . $fnama . "<br/>Alamat : " . $lalamat . "<br/> No Telp : " . $telp . "<br/> Tgl Lahir : " . $lahir;
+
+    $sql = "INSERT INTO Siswa (nama, alamat, telp, tgllahir) VALUES ('$fnama', '$lalamat', '$telp', '$lahir')";
+    if (mysqli_query($link, $sql)) {
+        echo "<br/>Data berhasil dimasukkan";
+    }
+    else {
+        echo "<br/>Error: " . $sql . "<br>" . mysqli_error($link);
+    }
+}
+//-----------------------------------------------------
+if (isset($_GET['fnama'])) {
+    $fnama = $_GET['fnama'];
+    $lalamat = $_GET['lalamat'];
+    $telp = $_GET['telp'];
+    $lahir = $_GET['lahir'];
+    echo "<span class='success'>Dengan <b>METODE GET</b></span><br/>";
+    echo "Nama : " . $fnama . "<br/>Alamat : " . $lalamat . "<br/> No Telp : " . $telp . "<br/> Tgl Lahir : " . $lahir;
+
+    $sql = "INSERT INTO Siswa (nama, alamat, telp, tgllahir) VALUES ('$fnama', '$lalamat', '$telp', '$lahir')";
+    if (mysqli_query($link, $sql)) {
+        echo "<br/>Data berhasil dimasukkan";
+    }
+    else {
+        echo "<br/>Error: " . $sql . "<br>" . mysqli_error($link);
+    }
+}
+    
+mysqli_close($link);
+
+?>
+\end{lstlisting}
+Setelah itu buka file index.php menggunakan browser, dan isikan data.
+\begin{center}
+    \includegraphics[scale=.6]{7.png} 
+\end{center}
+Jika data berhasil dimasukkan ke MySQL maka data akan terlihat di tabel pada aplikasi DBeaver.
+\begin{center}
+    \includegraphics[scale=.6]{8.png} 
+\end{center}
+
+\newpage
+
+\section{Kesimpulan}
+Setelah praktik ini, mahasiswa mampu menuliskan script kontainer form beserta atributnya, menuliskan element input teks dan submit, menyiapkan server web, menguji input form dengan mengirim data ke server dan menampilkan data dari server, dan menjelaskan perbedaan metode POST dan GET
+
+
 
 \end{document}

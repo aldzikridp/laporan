@@ -3,3 +3,6 @@
 \contentsline {section}{\numberline {2}Dasar Teori}{2}%
 \contentsline {section}{\numberline {3}Pembahasan}{3}%
 \contentsline {subsection}{\numberline {3.1}Praktik}{3}%
+\contentsline {subsection}{\numberline {3.2}Latihan}{8}%
+\contentsline {subsection}{\numberline {3.3}Tugas}{11}%
+\contentsline {section}{\numberline {4}Kesimpulan}{15}%
