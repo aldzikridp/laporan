@@ -1,0 +1,164 @@
+% !TeX spellcheck = id_ID
+\documentclass[a4paper,12pt]{article}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{listings}
+\graphicspath{ {./img/} }
+\begin{document}
+\title{Dasar Infrastruktur Nirkabel dan Topologi}
+%\author{Aldzikri Dwijayanto Prathama \\ {\small 195410189}}
+\author{Aldzikri Dwijayanto Prathama
+	\\195410189}
+\makeatletter
+\begin{titlepage}
+	\begin{center}
+		{\huge \bfseries \@title }\\[14ex]
+		\includegraphics[scale=.8]{logo}\\[4ex]
+		{\large \@author}\\[20ex]
+		{\large \bfseries {SEKOLAH TINGGI MANAJEMEN INFORMATIKA DAN KOMPUTER
+				AKAKOM YOGYAKARTA}}
+	\end{center}
+
+
+%{\large \@date} 
+\end{titlepage}
+\makeatother
+%\maketitle
+
+\section{Tujuan}
+\begin{itemize}
+    \item Mengetahui topologi jaringan nirkabel yang paling banyak digunakan
+    \item Mampu mengidentifikasi dan merencanakan topologi yang cocok pada pada skenario nyata
+    \item Memberikan pengenalan singkat untuk pemasangan praktis
+\end{itemize}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Topologi yang Relevan untuk Jaringan Nirkabel}
+\begin{itemize}
+    \item Star: Dapat diterapkan, topologi nirkabel yang standar
+    \item Tree: Dapat diterapkan (kombinasi antara topologi star dan line)
+    \item Line: Dapat diterapkan, dengan dua elemen atau lebih (PtP)
+    \item Mesh: Dapat diterapkan, biasanya partial mesh
+    \item Ring: Dapat diterapkan, namun jarang ditemui
+    \item Bus: Tidak dapat diterapkan
+\end{itemize}
+
+\subsection{Beberapa Keterangan Umum}
+\begin{itemize}
+    \item Komunikasi nirkabel tidak membutuhkan medium
+        \subitem Gelombang EM menyebar tanpa medium
+        \subitem Garis pada diagram jaringan merupakan sambungan yang dibuat
+
+    \item Komunikasi nirkabel selalu 2 arah
+        \subitem Terkecuali untuk passive sniffing
+        \subitem Berlaku untuk pemancar/penerima, client/master
+\end{itemize}
+
+\section{Komponen Jaringan Nirkabel}
+\begin{itemize}
+    \item Acces Point
+        \subitem pemancar/penerima nirkabel yang menghubungkan antara node jaringan nirkabel, dan jaringan kabel
+        \subitem IEEE 802.11 + Koneksi kabel Ethernet
+
+    \item Client Nirkabel
+        \subitem Semua komputer yang memiliki kartu adapter jaringan nirkabel yang memancarkan dan menerima sinyal RF
+        \sub Laptop, PDA, perangkat pengintai, dan telepon VoIP
+\end{itemize}
+
+\section{Dasar Mode Nirkabel}
+\subsection{Ad Hoc (Peer-to-Peer)}
+\begin{itemize}
+    \item Merupakan \textit{Independent Basic Service Set} (IBSS)
+    \item Tidak membutuhkan access point pusat
+    \item Semua node harus menggunakan SSID dan channel yang sama
+    \item Tidak terskalakan
+\end{itemize}
+
+\subsection{Infrastructure}
+\begin{itemize}
+    \item Merupakan \textit{Extended Service Set} (ESS)
+    \item Membutuhkan access point pusat
+    \item "Menghubungkan" Wlan ke jaringan ethernet
+    \item Terskalakan
+\end{itemize}
+
+\subsection{Keterangan Mengenai Mode Wireless}
+\begin{itemize}
+    \item Pada kedua mode, SSID mengidentifikasi jaringan
+    \item Pertimbangkan SSID sebagai "label" dari Ethernet jack pada dinding
+    \item Mode (mode dari operasi) bisa tersembunyi dan tidak terlihat di dalam topologi
+        \subitem contoh: link PtP dapat berupa \textit{ad hoc} atau \textit{infrastructure}
+\end{itemize}
+
+\section{Contoh Kasus}
+\subsection{Contoh Kasus Ad hoc 1: Point-to-Point}
+\begin{itemize}
+    \item Menghubungkan dua client secara langsung
+    \item gedung satu ke gedung lain (ketika salah satu gedung memiliki akses internet sedangkan gedung lainnya tidak)
+    \item Didalam kantor
+\end{itemize}
+
+\subsection{Contoh Kasus Infrastructure 1: Star}
+\begin{itemize}
+    \item Hotspot, Telecenter, KAntor, dan WISP's
+    \item Point to Multi-point
+    \item infrastruktur yang paling umum dalam jaringan nirkabel
+\end{itemize}
+
+\subsection{Contoh Kasus Infrastructure 2: Point-to-Point}
+\begin{itemize}
+    \item elemen dasar dari infrastruktur nirkabel 
+    \item PtP link bisa bagian dari:
+        \subitem star, tree, two point line atau topologi lain
+\end{itemize}
+
+\subsection{Contoh Kasus Infrastructure 3: Repeating}
+\begin{itemize}
+    \item Diperlukan ketika \textit{direct line of sight} (LOS) terhambat 
+    \item repeating unit terdiri dari:
+        \subitem satu atau dua perangkat fisik
+        \subitem dua radio atau satu radio dan \textit{"isolated antenna"}
+    \item Dapat dilihat sebagai client penerima dan akses point pemancar ulang
+\end{itemize}
+
+\subsection{Contoh Kasus Infrastructure 4: Mesh}
+\begin{itemize}
+    \item Topologi mesh adalah pilihan yang menarik terutama di
+        \subitem Lingkungan yang dinamis (daerah perkotaan)
+        \subitem Di mana infrastruktur pusat sulit diimplementasikan
+        \subitem Ketika redundansi diinginkan
+    \item Kasus umum adalah: jaringan pada kota, jaringan pada kampus dan Perumahan
+    \item Topologi full mesh yaitu setiap node dapat terhubung ke node yang lain
+    \item Topologi partial mesh yaitu setiap node dapat hanya dapat terhubung ke beberapa namun tidak ke semua node
+    \item Pada sebuah mesh tidak harus dinamis
+    \item Digunakan sebagai sinonim untuk jaringan adhoc atau mobile
+    \item Semua mesh node harus berjalan dengan menggunakan mesh routing protocol yang sama
+    \item Setiap node dapat menggunakan sistem operasi, dan tipe perangkat keras yang berbeda selama sesuai dengan
+        spesifikasi protokol mesh.
+\end{itemize}
+
+\section{Contoh Infrastruktur Nirkabel Pada Kehidupan Nyata}
+\begin{itemize}
+    \item jaringan nirkabel pada kerhidupan nyata biasanya merupakan kombinasi lebih dari satu topologi
+    \item Representasi grafis hanya sebagai contoh, dan berbeda satu sama lain.
+\end{itemize}
+
+\newpage
+
+\section{Kesimpulan}
+\begin{itemize}
+    \item Kebanyakan implementasi jaringan nirkabel didasari oleh topologi star, tree, atau line.
+    \item Pada implementasi kita bisa menemukan dua mode, Ad hoc atau infrastruktur (lebih sering ditemui)
+    \item Dasar dari semua susunan terdiri dari:
+        \subitem Mode, SSID, Channel + Mac/auth + IP
+    \item Kebanyakan implementasi dari jaringan nirkabel terdiri dari lebih dari satu topologi
+\end{itemize}
+
+\end{document}
