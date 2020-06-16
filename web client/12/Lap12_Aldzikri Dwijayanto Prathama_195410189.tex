@@ -1,0 +1,394 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[indonesian]{babel}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{wrapfig}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{lipsum}
+\usepackage{adjustbox}
+\usepackage{upquote}
+
+
+\usepackage{color}
+\usepackage[table]{xcolor}
+\definecolor{lightgray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{darkgray}{rgb}{0.4, 0.4, 0.4}
+%\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+\definecolor{orange}{rgb}{1,0.45,0.13}		
+\definecolor{olive}{rgb}{0.17,0.59,0.20}
+\definecolor{brown}{rgb}{0.69,0.31,0.31}
+\definecolor{purple}{rgb}{0.38,0.18,0.81}
+\definecolor{lightblue}{rgb}{0.1,0.57,0.7}
+\definecolor{lightred}{rgb}{1,0.4,0.5}
+% CSS
+\lstdefinelanguage{CSS}{
+  keywords={color,background-image:,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width, transition:, transform:, transition-property, transition-duration, transition-timing-function},	
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  alsoletter={:},
+  alsodigit={-}
+}
+
+% JavaScript
+\lstdefinelanguage{JavaScript}{
+  morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morestring=[b]",
+  morestring=[b]'
+}
+
+\lstdefinelanguage{HTML5}{
+  language=html,
+  sensitive=true,	
+  alsoletter={<>=-},	
+  morecomment=[s]{<!-}{-->},
+  tag=[s],
+  otherkeywords={
+  % General
+  >,
+  % Standard tags
+	<!DOCTYPE,
+  </html, <html, <head, <title, </title, <style, </style, <link, </head, <meta, />,
+	% body
+	</body, <body,
+	% Divs
+	</div, <div, </div>, 
+	% Paragraphs
+	</p, <p, </p>,
+	% scripts
+	</script, <script,
+  % More tags...
+  <canvas, /canvas>, <svg, <rect, <animateTransform, </rect>, </svg>, <video, <source, <iframe, </iframe>, </video>, <image, </image>, <header, </header, <article, </article
+  },
+  ndkeywords={
+  % General
+  =,
+  % HTML attributes
+  charset=, src=, id=, width=, height=, style=, type=, rel=, href=,
+  % SVG attributes
+  fill=, attributeName=, begin=, dur=, from=, to=, poster=, controls=, x=, y=, repeatCount=, xlink:href=,
+  % properties
+  margin:, padding:, background-image:, border:, top:, left:, position:, width:, height:, margin-top:, margin-bottom:, font-size:, line-height:,
+	% CSS3 properties
+  transform:, -moz-transform:, -webkit-transform:,
+  animation:, -webkit-animation:,
+  transition:,  transition-duration:, transition-property:, transition-timing-function:,
+  }
+}
+
+\lstdefinestyle{htmlcssjs} {%
+  % General design
+%  backgroundcolor=\color{editorGray},
+  basicstyle={\footnotesize\ttfamily},   
+  frame=single,
+  % line-numbers
+  % Code design
+  identifierstyle=\color{black},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{editorGreen}\bfseries,
+  stringstyle=\color{editorOcher}\ttfamily,
+  commentstyle=\color{brown}\ttfamily,
+  % Code
+  language=HTML5,
+  alsolanguage=JavaScript,
+  alsodigit={.:;},	
+  tabsize=2,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  extendedchars=true,
+  breaklines=true,
+  % German umlauts
+  literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+%
+\lstdefinestyle{py} {%
+language=python,
+literate=%
+*{0}{{{\color{lightred}0}}}1
+{1}{{{\color{lightred}1}}}1
+{2}{{{\color{lightred}2}}}1
+{3}{{{\color{lightred}3}}}1
+{4}{{{\color{lightred}4}}}1
+{5}{{{\color{lightred}5}}}1
+{6}{{{\color{lightred}6}}}1
+{7}{{{\color{lightred}7}}}1
+{8}{{{\color{lightred}8}}}1
+{9}{{{\color{lightred}9}}}1,
+basicstyle=\footnotesize\ttfamily, % Standardschrift
+numbers=left,               % Ort der Zeilennummern
+%numberstyle=\tiny,          % Stil der Zeilennummern
+%stepnumber=2,               % Abstand zwischen den Zeilennummern
+numbersep=5pt,              % Abstand der Nummern zum Text
+tabsize=4,                  % Groesse von Tabs
+extendedchars=true,         %
+breaklines=true,            % Zeilen werden Umgebrochen
+keywordstyle=\color{blue}\bfseries,
+frame=b,
+commentstyle=\color{brown}\itshape,
+stringstyle=\color{editorOcher}\ttfamily, % Farbe der String
+showspaces=false,           % Leerzeichen anzeigen ?
+showtabs=false,             % Tabs anzeigen ?
+xleftmargin=17pt,
+framexleftmargin=17pt,
+framexrightmargin=5pt,
+framexbottommargin=4pt,
+%backgroundcolor=\color{lightgray},
+showstringspaces=false,      % Leerzeichen in Strings anzeigen ?
+}%
+%
+\definecolor{dkgreen}{rgb}{0,.6,0}
+\definecolor{dkblue}{rgb}{0,0,.6}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+
+\lstdefinestyle{PHP}{
+  language        = php,
+  basicstyle      = \small\ttfamily,
+  keywordstyle    = \color{dkblue},
+  stringstyle     = \color{red},
+  identifierstyle = \color{dkgreen},
+  commentstyle    = \color{gray},
+  emph            =[1]{php},
+  emphstyle       =[1]\color{black},
+  emph            =[2]{if,and,or,else},
+  emphstyle       =[2]\color{dkyellow}}
+\lstset{
+    showstringspaces=false,
+    frame=single,
+    breaklines=true,
+    rulecolor=\color{black},
+    style=htmlcssjs,
+    numbers=left
+}
+%
+
+\graphicspath{ {./img/} }
+\begin{document}
+\title{ {\Large Laporan Praktikum}\\ Pemrograman Web Client\\{\Large Pertemuan 12}}
+
+\author{Aldzikri Dwijayanto Prathama 
+	\\195410189
+	\\Informatika}
+\makeatletter
+\begin{titlepage}
+	\begin{center}
+		{\huge \bfseries \@title }\\[14ex]
+		\includegraphics[scale=.8]{logo}\\[4ex]
+		{\large \@author}\\[12ex]
+		{\large \bfseries {SEKOLAH TINGGI MANAJEMEN INFORMATIKA DAN KOMPUTER
+				AKAKOM YOGYAKARTA}}
+	\end{center}
+
+
+%{\large \@date} 
+\end{titlepage}
+\makeatother
+%\maketitle
+\renewcommand{\figurename}{Gambar}
+\newpage
+\tableofcontents
+\newpage
+\section{Tujuan}
+\begin{enumerate}
+   \item Memformat konten teks dengan CSS (warna, bentuk dan jenis huruf, latar belakang)
+   \item Positioning konten
+\end{enumerate}
+\newpage
+
+\section{Pembahasan}
+\subsection{Praktik}
+\begin{lstlisting}
+header, section, footer, aside, nav, article, figure, figcaption {
+display : block;
+}
+
+body {
+color: #666666;
+background-color: #f9f8f6;
+background-image: url("latar.jpg");
+background-position: center;
+font-family: Georgia, Times, serif;
+line-height: 1.4em;
+margin: 0px;
+}
+
+.wrapper {
+width: 940px;
+margin: 20px auto 20px auto;
+border: 2px solid #000000;
+background-color: #ffffff;
+}
+
+header{
+height: 160px;
+background-image: url("header1.png");
+}
+
+h1{
+text-indent: -9999px;
+width: 940px;
+height: 130px;
+margin: Opx;
+}
+
+nav, footer{
+clear: both;
+color: #ffffff;
+background-color: #aeaca8;
+height: 30px;
+}
+
+nav ul{
+margin: Opx;
+padding: 5px Opx 5px 30px;
+}
+
+nav li{
+display: inline;
+margin-left: 40px;
+}
+
+nav li a{
+color: #ffffff;
+}
+
+nav li a:hover, nav li a.current {
+color: #000000;
+}
+
+section.utama {
+float: left;
+width: 659px;
+border-right: 1px solid #eeeeee;
+}
+
+arcicle {
+clear: both;
+overflow: auto;
+width: 100%;
+}
+
+hgroup {
+margin-top: 40px;
+}
+
+figure {
+float: left;
+width: 290px;
+margin: 20px;
+border: 1px solid #eeeeee;
+}
+
+figcaption{
+font-size: 90%;
+text-align: left;
+}
+
+aside {
+width: 230px;
+float: left;
+padding: 0px 0px 0px 20px;
+}
+
+aside section a {
+display: block;
+padding: 10px;
+border-bottom: 1px solid #eeeeee;
+}
+
+aside section a:hover{
+color: #985d6a;
+background-color: #efefef;
+}
+
+a{
+color: #de6581;
+text-decoration: none;
+}
+
+h1, h2, h3 {
+font-weight: normal
+}
+
+h2 {
+margin: 10px 0px 5px 0px;
+padding: 0px;
+}
+
+h3 {
+margin: 0px 0px 10px 0px;
+color: #de6581;
+}
+
+aside h2 {
+padding: 30px 0px 10px 0px;
+color: #de6581;
+}
+
+footer {
+font-size: 80%;
+padding: 7px 0px 0px 20px;
+}
+\end{lstlisting}
+Pada file CSS tersebut terdapat beberapa tiga class, yaitu .wrapper, .current, dan .utama.\\
+
+Untuk elemen yang diatur oleh CSS tersebut antara lain
+\begin{enumerate}
+   \item Header
+   \item Section
+   \item Footer
+   \item Aside
+   \item Nav
+   \item Article
+   \item Figure
+   \item Figcaption
+   \item h1, h2, dan h3
+\end{enumerate}
+
+Sedangkan properties yang diatur pada CSS tersebut sebagai berikut:
+\begin{enumerate}
+    \item dislpay mengatur tampilan suatu elemen
+    \item color mengatur warna
+    \item background-color mengatur warna background
+    \item Background-position digunakan untuk mengatur posisi dari background gambar tersebut.
+    \item Font-family digunakan untuk mengatur style pada tulisan tersebut.
+    \item Line-height digunakan untuk mengatur jarak antara paragraph di dalam sebuah halaman website.
+    \item Margin digunakan untuk mengaplikasikan jarak tepi pada sebuah elemen bagian luar (tepi garis luar).
+    \item Width digunakan untuk mengatur lebar dari sebuah element.
+    \item Border digunkaan untuk membuat garis tepi sebuah objek html.
+    \item Height digunakan untuk mengatur tinggi dari sebuah element.
+    \item Text-indent digunakan untuk membuat baris pertama pada paragraph/kalimat menjorok kedalam.
+    \item Clear digunakan untuk membersihkan element yang sebelumnya telah mengalami float. Sehingga, element yang di-clear tersebut akan berpisah dari element yang mengalami floar dan akan berpindah pda baris baru.
+    \item Display digunakan untuk mengatur tampilan suatu element.
+    \item Padding digunakan untuk membuat spasi/ruang diantara sebuah konten utama dan border.
+    \item Margin-right digunakan untuk mengaplikasikan jarak tepi ke kanan pada sebuah element.
+    \item Float digunakan untuk menentukan apakah sebuah element box harus mengapung atay tidak. Maksudnya, sebuah element bisa diposisikan seakan-akan berada mengapung diantara element setelahnya.
+    \item Overflow digunakan untuk menyembunyikan, menampakkan, atau membuat scroll dan pada property ini, dapat diterapkan dalam objek teks ataupun gambar.
+    \item Font-size digunakan untuk mengatur ukuran pada tulisan pada teks tersebut.
+    \item Border-bottom digunakan untuk mengatur garis yang terletak pada bagian bawah.
+    \item Text-decoration digunakan untuk memberikan efek garis pada suatu text.
+\end{enumerate}
+
+\newpage
+
+\section{Kesimpulan}
+Setelah praktik mahasiswa mampu memformat konten teks dengan CSS (warna, bentuk dan jenis huruf, latar belakang) dan positioning konten.
+
+\end{document}

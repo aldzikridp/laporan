@@ -1,0 +1,175 @@
+% !TeX spellcheck = id_ID
+\documentclass[a4paper,12pt]{article}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{listings}
+\graphicspath{ {./img/} }
+\begin{document}
+\title{Memilih Perangkat Wireless}
+%\author{Aldzikri Dwijayanto Prathama \\ {\small 195410189}}
+\author{Aldzikri Dwijayanto Prathama
+	\\195410189}
+\makeatletter
+\begin{titlepage}
+	\begin{center}
+		{\huge \bfseries \@title }\\[14ex]
+		\includegraphics[scale=.8]{logo}\\[4ex]
+		{\large \@author}\\[20ex]
+		{\large \bfseries {SEKOLAH TINGGI MANAJEMEN INFORMATIKA DAN KOMPUTER \\
+				AKAKOM YOGYAKARTA}}
+	\end{center}
+
+
+%{\large \@date} 
+\end{titlepage}
+\makeatother
+%\maketitle
+\newpage
+
+\begin{center}
+\section*{Memilih Perangkat Wireless}
+\end{center}
+\section{Jenis Sambungan}
+\subsection{Wifi Indoor}
+Wireless Indoor sesuai namanya memiliki pengertian sebuah perangkat wireless yang berfungsi untuk menghubungkan suatu
+komputer/perangkat sejenis ke internet yang dipasang di dalam ruangan. Wireless indoor memiliki ciri cakupan yang cukup kecil
+dan memiliki sinyal yang tidak terlalu kuat Untuk mengakses internet biasanya access point (atau dikenal dengan wifi
+hotspot) dipasang di lokasi strategis dalam bangunnan yang memungkinkan orang menjangkau wifi hotspot tersebut dengan
+mudah dan nyaman.
+
+\subsection{Wireless Outdoor}
+Pengertian wireless outdoor sendiri ialah perangkat wirelss yang dipasang di area terbuka dan luas dengan tujuan untuk
+menyebarkan akses internet pada jangkauan yang luas. Jika wireless indoor dipasang di dalam bangunan atau dekat bangunan
+maka wireless indoor memiliki ciri berbeda dengan pemasangannya yang berada di tempat tinggi, terbuka, dan menggunakan
+perangkat tambahan seperti tower untuk pemasangannya.
+
+\subsection{Perbedaan Perangkat Wireless Indoor dan Outdoor}
+\subsubsection{Jarak}
+Dikarenakan jarak jangkauan yang berbeda tentu alat yang digunakan berbeda dan memiliki bentuk yang berbeda. Wirelss Indoor
+memiliki peralatan yang cukup sederhana (hanya aceess point dan kabel) dan tidak banyak dibandingkan wireless outdoor yang
+memiliki bentuk yang berbeda dan diberi tambahan alat lainnya.
+
+\subsubsection{Bangunan dan Alat Tambahan}
+Wireless indoor yang hanya dipasang di dalam ruangan tidak memerlukan bangunan atau alat tambahan, hanya berupa kotak access
+point dan kabel sudah cukup untuk mengakses internet. Sedangkan wireless outdoor memiliki perbedaan adanya tambahan bangunan
+berupa tower dan alat seperti antena dan penangkal petir untuk dapat mengakses internet dengan aman dan nyaman.
+
+\section{Wireless Indoor}
+Hal yang harus diperhatikan saat memasang perangkat wireless Indoor
+\begin{enumerate}
+    \item \textbf{Perangkat Client\\}
+        Perangkat client untuk jaringan nirkabel indoor cenderung memiliki kekuatan wireless transmite kecil.
+        Contohnya:laptop, hp, tab, dll. Sehingga pemasangan indoor
+        tidak memerlukan ukuran jangkauan sel yang besar. Cara untuk
+        pemasangannya yaitu dengan cara meletakkan AP di setiap ruangan.
+
+    \item \textbf{Jarak Sel\\}
+            Jarak sel 10-15 meter tanpa adanya penghalang/ hambatan tembok,
+            beton, dll.
+
+    \item \textbf{Jumlah Client\\}
+        Rata-rata jumlah client yang dapat terkoneksi dengan baik adalah 20 sampai 30 client, sehingga jika terdapat
+        client lebih dari itu, maka kita memerlukan lebih banyak perangkat, dan dipasang secara tersebar.
+
+    \item \textbf{Frekuensi\\}
+        Frekuensi yang digunakan biasanya 2.4 GHz, tetapi perangk-perangkat baru biasanya sudah mendukung jaringan pada
+        frekuensi 5 GHz, sehingga disarankan untuk menggunakan perengkat yang dapat memancarkan dua frekuensi sinyal
+        yang berbeda secara bersamaan.
+
+    \item \textbf{Peletakan\\}
+        Untuk peletakan perangkat disarankan diletakan di tempat yang tinggi, sehingga jangkauan sinyal luas, dan
+        hambatan lebih kecil. Selain itu peletekan diusahakan berada di tengah ruangan, sehingga seluruh ruangan
+        terjangkau oleh sinyal perengkat.
+
+    \item \textbf{Perangkat\\}
+        Usahakan gunakan perengkat yang mendukung AC, atau dual frequency.\\
+        Memakai perangkat wireless outdoor untuk indoor bisa dilakukan, tapi tidak disarankan. Karena ukurannya besar
+        dan biasanya hanya mendukung satu frekuensi.\\
+        Jangan menggunakan perangkat CPE untuk Access Point
+
+    \item \textbf{Frekuensi\\}
+        Beberapa perangkat dalam satu lokasi jangan menggunakan frekuensi yang sama\\
+        TX Power disesuaikan dengan kebutuhan\\
+\end{enumerate}
+
+\section{Wireless Outdoor}
+Hal yang harus diperhatikan untuk jaringan wireless outdoor.
+\begin{enumerate}
+   \item Topologi jaringan
+   \item Kondisi ideal, jarak pandang dari titik satu ke titik sasaran tidak terhalang.
+   \item Fresnel zone atau tempat merambatnya frekuensi ada.
+   \item Tidak ada interferensi.
+\end{enumerate}
+
+\subsection{Software}
+Software yang membantu dalam pemasangan jaringan wireless:
+\begin{enumerate}
+    \item Possibility Calculator
+    \item Penghitung tinggi antenna
+    \item Wireless Link Calculator
+\end{enumerate}
+
+\subsection{Topologi yang Digunakan}
+\subsubsection{Point to Point}
+digunakan untuk access point dengan memilih
+perangkat yang lisensi minimalnya adalah level 3
+
+\subsubsection{Point to Multipoint}
+digunakan untuk access point dengan memilih
+perangkat yang lisensi minimalnya adalah level 4
+
+\subsection{Frekuensi}
+\subsubsection{5 GHz}
+Menggunakan parengkat dengan frekuensi 5 GHz lebih bersih dan baik digunakan untuk outdoor, karena lebih bersih,
+bandwidth lebih besar, dan banyak perangkat baru yang mendukung frekuensi 5 GHz.\\
+Contoh perangkat PtP yang mendukung frekuensi 5 Ghz:
+\begin{enumerate}
+    \item LDF 5 Series (biasa dan versi AC)
+    \item SXT 5 Series
+    \item SXTSQ 5 Series
+\end{enumerate}
+
+Contoh perangkat untuk jaringan menengah.
+\begin{enumerate}
+    \item SexTANT G
+    \item QRT 5 Series
+    \item Disc Lite 5 Series versi 5 GB AC
+\end{enumerate}
+
+Perangkat yang digunakan untuk jarak jauh
+\begin{enumerate}
+    \item LHG (HP 5, XL, 5 AC, XL 5 AC)
+    \item Bynadish
+\end{enumerate}
+
+Perengkat point to multipoint sebagai access pointnya
+\begin{enumerate}
+   \item Omnitik 5GB versi AC atau non POE
+   \item Omnitik versi POE atau omnitik versi AC
+   \item SXT
+\end{enumerate}
+
+\subsubsection{2.4 GHz}
+Penggunaan perengkat dengan frekuensi 2.4 GHz dianjurkan jika kompatibilitas menjadi kendala, karena perengkat lama
+biasanya hanya mendukung frekuensi 2.4 GHz. Untuk jarak dekat pada frekuensi ini adalah 1 Km dan
+dengan begitu perangkat yang biasanya digunakan adalah
+perangkat LDF. Dengan frekuensi dengan ukuran ini dapat juga
+dibuat dengan spesifikasi outdor.
+
+Seri CPE yang sering digunakan:
+\begin{enumerate}
+    \item SXT (Square dan Classic), biasanya digunakan untuk jarak dekat
+    \item QRT, digunakan untuk jarak menengah
+    \item LHG, digunakan untuk jarak jauh
+    \item LHG-XL, kita pilih yang memiliki frekuensi 2,4 GHz bukan yang 5 GHz
+\end{enumerate}
+
+Dari kedua frekuensi diatas, setiap antenanya di desain dengan
+desain tertentu. Jika kita membuat access point to multipoint, maka
+kita tidak bisa menggunakan frekuensi 2,4 GHz. Untuk pemasangan
+outdor, baik menggunakan frekuensi 5 GHz atau 2,4 GHz hanya bisa
+mengarah ke titik tertentu (directional).
+
+\end{document}

@@ -1,0 +1,219 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{esvect}
+\usepackage{textcomp}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{parskip}
+
+\begin{document}
+   \null\hfill\begin{tabular}[t]{l@{}}
+      \textbf{Nama: Aldzikri Dwijayanto P.} \\
+      \textbf{NIM:\@ 195410189} \\
+      \textbf{Kelas: TI-4}
+   \end{tabular} 
+
+   \begin{enumerate}
+      \item Diketahui vector $\underline{u} = (3, 2, -1) ; \underline{v} = (2, 6, 7) $; dan $\underline{w} = (0, 2, 3)$ Hitung 
+      \begin{enumerate}[label=\alph*.]
+         \item $\underline{u} \cdot \underline{v}$
+         \item $\underline{u} - \underline{v}$
+         \item $3(7\underline{u} -\underline{v})$
+         \item $\underline{u} \times (\underline{v} \times \underline{w})$ \\[4ex]
+      \end{enumerate}
+
+      Jawab
+      \begin{enumerate}[label= (\alph*)]
+         \item 
+         $
+         \begin{aligned}
+            \underline{u} \cdot \underline{v} 
+            &= (3)(2) + (2)(6) + (-1)(7) \\
+            &= 6 + 12 + (-7) \\
+            &= 11
+         \end{aligned}
+         $\\[2ex]
+
+         \item
+         $
+         \begin{aligned}
+            \underline{u} - \underline{v}
+            &= (3 - 2 , 2 - 6 , -1 -7) \\
+            &= (1, -4, -8)
+         \end{aligned}
+         $\\[2ex]
+
+         \item 
+         $
+         \begin{aligned}
+            3(7\underline{u} - \underline{v})
+            &= 21\underline{u} - 3\underline{v} \\
+            &= (63 - 6 , 42 - 18 , -21 - 21) \\
+            &= (57, 24, -42)
+         \end{aligned}
+         $\\[2ex]
+
+         \item
+         $
+         \begin{aligned}
+             \underline{u} \times (\underline{v} \times \underline{w})
+             &= (\underline{u} \cdot \underline{w})\underline{v} - (\underline{u} \cdot \underline{v})\underline{w} \\
+             &= (1)\underline{v} - 11\underline{w} \\
+             &= (2, 6, 7) - (0, 22, 33) \\
+             &= (2, -16, -26)
+         \end{aligned}
+         $\\[4ex]
+      \end{enumerate}
+
+      \item 
+      Diketahui $u = (2, -1, 1) ; v = (1, 1, 2)$\\
+      Hitung
+      \begin{enumerate}[label=\alph*.]
+        \item $u + 2v$
+        \item $||u|| , ||v||$
+        \item Sudut antara \textit{u} dan \textit{v}\\[4ex]
+      \end{enumerate}
+
+
+      Jawab
+      \begin{enumerate}[label=(\alph*)]
+        \item
+        $
+        \begin{aligned}
+           u + 2v
+           &= (2 + 2, -1 + 2, 1 + 4) \\
+           &= (4, 1, 5)
+        \end{aligned}
+        $\\[2ex]
+
+        \item 
+        $
+        \begin{aligned}
+           ||u||
+           &= \sqrt{(2^{2} + (-1)^{2} + 1^{2})} \\
+           &= \sqrt{4 + 1 + 1} \\
+           &= \sqrt{6}
+        \end{aligned}
+        $\\[2ex]
+
+        $
+        \begin{aligned}
+           ||v||
+           &= \sqrt{1^{2} + 1^{2} + 2^{2}} \\
+           &= \sqrt{6}
+        \end{aligned}
+        $\\[2ex]
+
+        \item Sudut antara $u$ dan $v$\\
+        $u \cdot v = 3$ \\
+        $||u|| = \sqrt{6}$ \\
+        $||v|| = \sqrt{6}$ \\
+        $
+        \begin{aligned}
+           \cos \theta
+           &= \frac{\vv{u} \cdot \vv{v}}{|\vv{u}| |\vv{v}|} \\
+           &= \frac{3}{\sqrt{6} \sqrt{6}} \\
+           &= \frac{3}{6} \\
+           &= \frac{1}{2} \\
+           &= \ang{60} 
+        \end{aligned}
+        $\\[4ex]
+      \end{enumerate}
+
+      \item Tentukan jarak antara $P_{1}$ dan $P_{2}$ jika $P_{1}$ $(0, -1, -6)$ ; $P_{2}$ $(2, -4, 8)$! \\
+      Jawab \\
+          $
+          \begin{aligned}
+             d
+             &= \sqrt{(x_{2} - x_{1})^{2} + (y_{2} - y_{1})^{2} + (2_{2} - 2_{1})^{2}} \\
+             &= \sqrt{4 + 9 + 196} \\
+             &= \sqrt{209}
+          \end{aligned}
+          $\\[4ex]
+
+     \item Selesaikan SPL berikut \\
+     $-3x + 4y + 6z = 30$ \\
+     $-x - 2y + 3z = 8$ \\
+     $x + z = 6$\\[4ex]
+
+     Jawab \\
+     $-3x + 4y + 6z = 30$ \\
+     $-x - 2y + 3z = 8$ \\
+     $x + z = 6$
+     $\\
+     \rightarrow \begin{bmatrix}
+        -3 & 4 & 6 \\
+        -1 & -2 & 3 \\
+        1 & 0 & 1
+     \end{bmatrix}
+     \quad
+     \begin{bmatrix}
+        x \\
+        y \\
+        z \\
+     \end{bmatrix}
+     =\begin{bmatrix}
+        36 \\
+        8 \\
+        6
+     \end{bmatrix}
+     $
+
+     $
+     \begin{bmatrix}
+        x \\
+        y \\
+        z
+     \end{bmatrix}
+     =\begin{bmatrix}
+        -3 & 4 & 6 \\
+        -1 & -2 & 3 \\
+        1 & 0 & 1
+     \end{bmatrix}^{-1}
+     \quad
+     \begin{bmatrix}
+        30 \\
+        8 \\
+        6
+     \end{bmatrix}
+     $
+
+     $
+     =\frac{1}{34}\begin{bmatrix}
+        -2 & -4 & 24 \\
+        -4 & -9 & 3 \\
+        2 & 4 & 10
+     \end{bmatrix}
+     \quad
+     \begin{bmatrix}
+        30 \\
+        8 \\
+        6
+     \end{bmatrix}
+     $
+
+     $
+     =\begin{bmatrix}
+        \frac{-1}{17} & \frac{-2}{17} & \frac{12}{17} \\[6pt] 
+        \frac{2}{17} & \frac{-9}{34} & \frac{3}{34} \\[6pt] 
+        \frac{1}{17} & \frac{2}{17} & \frac{5}{17}
+     \end{bmatrix}
+     \quad
+     \begin{bmatrix}
+        30 \\
+        8 \\
+        6
+     \end{bmatrix}
+     $
+
+     $
+     =\begin{bmatrix}
+        \frac{26}{17} \\[6pt]
+        \frac{33}{17} \\[6pt]
+        \frac{76}{17}
+     \end{bmatrix}
+     $
+   \end{enumerate}
+\end{document}

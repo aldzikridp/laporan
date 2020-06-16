@@ -1,0 +1,5 @@
+\babel@toc {indonesian}{}
+\contentsline {section}{\numberline {1}Tujuan}{2}%
+\contentsline {section}{\numberline {2}Pembahasan}{3}%
+\contentsline {subsection}{\numberline {2.1}Praktik}{3}%
+\contentsline {section}{\numberline {3}Kesimpulan}{8}%
