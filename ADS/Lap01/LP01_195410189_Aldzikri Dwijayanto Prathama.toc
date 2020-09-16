@@ -1,0 +1,10 @@
+\babel@toc {indonesian}{}
+\contentsline {section}{\numberline {1}Tujuan}{2}%
+\contentsline {section}{\numberline {2}Teori}{2}%
+\contentsline {section}{\numberline {3}Pembahasan}{4}%
+\contentsline {subsection}{\numberline {3.1}Praktik}{4}%
+\contentsline {subsection}{\numberline {3.2}Latihan}{6}%
+\contentsline {subsection}{\numberline {3.3}Tugas}{7}%
+\contentsline {subsubsection}{\numberline {3.3.1}Tugas 1}{7}%
+\contentsline {subsubsection}{\numberline {3.3.2}Tugas 2}{7}%
+\contentsline {section}{\numberline {4}Kesimpulan}{8}%
