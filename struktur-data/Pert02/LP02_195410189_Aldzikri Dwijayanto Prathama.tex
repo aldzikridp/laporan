@@ -127,13 +127,15 @@ sehingga tentu akan membentuk suatu struktur penyimpan yang terpisah pula sekali
 (”AgungBP”; ”Jakarta”,28, ’L’,”musik”, ”mancing”, ”touring” ,3.5).\\
 Jika program dijalankan, akan menghasilkan output seperti berikut:
 \begin{center}
-    \includegraphics[scale=1]{prog12.png} 
+    \includegraphics[scale=.7]{prog12.png} 
 \end{center}
 
-\paragraph*{Struktur Penyimpanan yang Terstruktur\\}
+\newpage
+\textbf{Struktur Penyimpanan yang Terstruktur}
+
 \begin{lstlisting}
 import java.util.Scanner;
-class formatBiodata { // bagian deklarasi struktur record ----------------------------------
+class formatBiodata { // bagian deklarasi struktur record 
     String nama;
     String alamat;
     int umur;
@@ -214,10 +216,10 @@ yang terpisah maka konsep penyimpanan data seperti ini juga dapat disebut dengan
 terstruktur.\\
 Jika program dijalankan akan menghasilkan keluaran berikut:
 \begin{center}
-    \includegraphics[scale=1]{prog12.png} 
+    \includegraphics[scale=.7]{prog12.png} 
 \end{center}
 
-\paragraph*{Struktur Penyimpanan Berbasis Array of Record (Rekaman dalam Larik)\\}
+\textbf{Struktur Penyimpanan Berbasis Array of Record (Rekaman dalam Larik)}
 \begin{lstlisting}
 import java.util.Scanner;
 
@@ -292,11 +294,11 @@ Program ini dibuat sebuah struktur penyimpanan array yang berorientasi pada reco
 data mahasiswa.\\
 Jika program dijalankan maka akan menghasilkan output seperti berikut ini:
 \begin{center}
-    \includegraphics[scale=1]{prog34a.png} 
-    \includegraphics[scale=1]{prog34b.png} 
+    \includegraphics[scale=.7]{prog34a.png} 
+    \includegraphics[scale=.7]{prog34b.png} 
 \end{center}
 
-\paragraph*{Pembuatan Program Secara Modular (Fungsi)\\}
+\textbf{Pembuatan Program Secara Modular (Fungsi)}
 \begin{lstlisting}
 import java.util.Scanner;
 
@@ -385,8 +387,8 @@ sebelumnya mempunyai 3 bagian besar. Yang pertama deklarasi, lalu entri data, ke
 pada program ini code ditulis secara lebih modular berdasarkan ketiga bagian tadi.\\
 Jika program ini dijalankan akan menghasilkan output berikut:\\
 \begin{center}
-    \includegraphics[scale=1]{prog34a.png} 
-    \includegraphics[scale=1]{prog34b.png} 
+    \includegraphics[scale=.7]{prog34a.png} 
+    \includegraphics[scale=.7]{prog34b.png} 
 \end{center}
 
 \subsubsection{Praktik 2}
@@ -486,18 +488,376 @@ Kedua pada bagian pendeklarasian variabel array, yang tadinya hanya sampai array
 ke 9.\\
 Jika program dijalankan, maka akan memiliki output seperti berikut:
 \begin{center}
-    \includegraphics[scale=1]{out-prak2-1.png} 
-    \includegraphics[scale=1]{out-prak2-2.png} 
-    \includegraphics[scale=1]{out-prak2-3.png} 
+    \includegraphics[scale=.7]{out-prak2-1.png} 
+    \includegraphics[scale=.7]{out-prak2-2.png} 
+    \includegraphics[scale=.7]{out-prak2-3.png} 
+\end{center}
+\newpage
+\subsection{Latihan}
+\begin{lstlisting}
+import java.util.Scanner;
+
+class formatBiodata { // bagian deklarasi struktur record ---------------------------------
+    String nama;
+    String alamat;
+    int umur;
+    char jekel;
+    String hobi[] = new String[3];
+    float ipk;
+}
+
+class Latihan {
+    // --------------------------------------------------
+    // --- Fungsi untuk mengentri data ke dalam Larik ---
+    // --------------------------------------------------
+    public static void ngentriData(formatBiodata biodataMahasiswa[], int N) {
+        // bagian entri data ke dalam struktur larik ----------------
+        Scanner masukan = new Scanner(System.in);
+        int bacaTombol = 0;
+        for (int i = 0; i <= N - 1; i++) {
+            System.out.print("Silakan masukkan nama anda : ");
+            biodataMahasiswa[i].nama = masukan.next();
+            System.out.print("Silakan masukkan alamat anda : ");
+            biodataMahasiswa[i].alamat = masukan.next();
+            System.out.print("Silakan masukkan umur anda : ");
+            biodataMahasiswa[i].umur = masukan.nextInt();
+            System.out.print("Silakan masukkan Jenis Kelamin anda : ");
+            try {
+                bacaTombol = System.in.read();
+            } catch (java.io.IOException e) {
+            }
+            biodataMahasiswa[i].jekel = (char) bacaTombol;
+            System.out.println("Silakan masukkan hobi (maks 3) : ");
+            System.out.print("hobi ke-0 : ");
+            biodataMahasiswa[i].hobi[0] = masukan.next();
+            System.out.print("hobi ke-1 : ");
+            biodataMahasiswa[i].hobi[1] = masukan.next();
+            System.out.print("hobi ke-2 : ");
+            biodataMahasiswa[i].hobi[2] = masukan.next();
+            System.out.print("Silakan masukkan IPK anda : ");
+            biodataMahasiswa[i].ipk = masukan.nextFloat();
+            System.out.println();
+        }
+    }
+
+    // --------------------------------------------------
+    // --- Fungsi untuk menampilkan data ---
+    // --------------------------------------------------
+    public static void tampilkanData(formatBiodata biodataMahasiswa[], int N) {
+        // bagian menampilkan isi struktur Larik --------------------------
+        System.out.println("---------------------------------------------");
+        System.out.println("NAMA ALAMAT UMUR  JEKEL HOBI1 HOBI2 HOBI3 IPK");
+        System.out.println("---------------------------------------------");
+        for (int i = 0; i <= N - 1; i++) {
+            System.out.print(biodataMahasiswa[i].nama + "  ");
+            System.out.print(biodataMahasiswa[i].alamat + "  ");
+            System.out.print(biodataMahasiswa[i].umur + "  ");
+            System.out.print(biodataMahasiswa[i].jekel + "  ");
+            System.out.print(biodataMahasiswa[i].hobi[0] + "  ");
+            System.out.print(biodataMahasiswa[i].hobi[1] + "  ");
+            System.out.print(biodataMahasiswa[i].hobi[2] + "  ");
+            System.out.println(biodataMahasiswa[i].ipk);
+        }
+        System.out.println("---------------------------------------------");
+    }
+
+    // --------------------------------------------------
+    // --- Program Utama ---
+    // --------------------------------------------------
+    public static void main(String[] args) { // bagian deklarasi record berbasis LARIK -----------------------
+        Scanner in = new Scanner(System.in);
+        int N = 0;
+        do{
+            System.out.print("Masukkan banyak mahasiswa (max 15): ");
+            N = in.nextInt();
+        }while(N >15 || N < 0);
+        formatBiodata biodataMahasiswa[] = new formatBiodata[N];
+        for(int i = 0; i<N; i++){
+            biodataMahasiswa[i] = new formatBiodata();
+        }
+        ngentriData(biodataMahasiswa, N);
+        tampilkanData(biodataMahasiswa, N);
+    }
+}
+\end{lstlisting}
+Untuk program pada bagian latihan ini, masih serupa dengan program sebelumnya, tetapi kali ini, nilai dari
+variabel N bersifat dinamis dan ditentukan oleh user, tetapi maksimal dari banyak data yang ditampung sebanyak 15.\\
+Agar N bisa disesuaikan oleh user maka variabel N dipindahkan ke fungsi main, kemudian pembuatan array dilakukan
+menggunakan loop.\\
+Untuk inputnya karena jumlah data yang akan ditampung adalah 1-15, input diberi loop do-while. Do while dipilih karena
+dialog program akan ditampilkan pada saat pertama kali dijalankan. Looping ini akan terus berjalan jika user memasukkan
+bilanga selain 1-15\\
+Jika program dijalankan maka menghasilkan output seperti berikut:
+\begin{center}
+    \includegraphics[scale=.7]{lat1.png} 
+    \includegraphics[scale=.7]{lat2.png} 
+    \includegraphics[scale=.7]{lat3.png} 
+    \includegraphics[scale=.7]{lat4.png} 
+    \includegraphics[scale=.7]{lat5.png} 
 \end{center}
 
-\subsection{Latihan}
-
+\newpage
 \subsection{Tugas}
+\subsubsection{Tugas 1}
+\begin{lstlisting}
+import java.util.Scanner;
+
+class formatBiodata { // bagian deklarasi struktur record ---------------------------------
+    String nama;
+    String alamat;
+    int umur;
+    char jekel;
+    String hobi[] = new String[3];
+    float ipk;
+}
+
+class Tugas1 {
+    // --------------------------------------------------
+    // --- Fungsi untuk mengentri data ke dalam Larik ---
+    // --------------------------------------------------
+    public static void ngentriData(formatBiodata biodataMahasiswa[], int hit) {
+        // bagian entri data ke dalam struktur larik ----------------
+        Scanner masukan = new Scanner(System.in);
+        int bacaTombol = 0;
+        System.out.print("Silakan masukkan nama anda : ");
+        biodataMahasiswa[hit].nama = masukan.next();
+        System.out.print("Silakan masukkan alamat anda : ");
+        biodataMahasiswa[hit].alamat = masukan.next();
+        System.out.print("Silakan masukkan umur anda : ");
+        biodataMahasiswa[hit].umur = masukan.nextInt();
+        System.out.print("Silakan masukkan Jenis Kelamin anda : ");
+        try {
+            bacaTombol = System.in.read();
+        } catch (java.io.IOException e) {
+        }
+        biodataMahasiswa[hit].jekel = (char) bacaTombol;
+        System.out.println("Silakan masukkan hobi (maks 3) : ");
+        System.out.print("hobi ke-0 : ");
+        biodataMahasiswa[hit].hobi[0] = masukan.next();
+        System.out.print("hobi ke-1 : ");
+        biodataMahasiswa[hit].hobi[1] = masukan.next();
+        System.out.print("hobi ke-2 : ");
+        biodataMahasiswa[hit].hobi[2] = masukan.next();
+        System.out.print("Silakan masukkan IPK anda : ");
+        biodataMahasiswa[hit].ipk = masukan.nextFloat();
+        System.out.println();
+    }
+
+    // --------------------------------------------------
+    // --- Fungsi untuk menampilkan data ---
+    // --------------------------------------------------
+    public static void tampilkanData(formatBiodata biodataMahasiswa[], int hit) {
+        // bagian menampilkan isi struktur Larik --------------------------
+        System.out.println("---------------------------------------------");
+        System.out.println("NAMA ALAMAT UMUR  JEKEL HOBI1 HOBI2 HOBI3 IPK");
+        System.out.println("---------------------------------------------");
+        for (int i = 0; i < hit; i++) {
+            System.out.print(biodataMahasiswa[i].nama + "  ");
+            System.out.print(biodataMahasiswa[i].alamat + "  ");
+            System.out.print(biodataMahasiswa[i].umur + "  ");
+            System.out.print(biodataMahasiswa[i].jekel + "  ");
+            System.out.print(biodataMahasiswa[i].hobi[0] + "  ");
+            System.out.print(biodataMahasiswa[i].hobi[1] + "  ");
+            System.out.print(biodataMahasiswa[i].hobi[2] + "  ");
+            System.out.println(biodataMahasiswa[i].ipk);
+        }
+        System.out.println("---------------------------------------------");
+    }
+
+    // --------------------------------------------------
+    // --- Program Utama ---
+    // --------------------------------------------------
+    public static void main(String[] args) { // bagian deklarasi record berbasis LARIK -----------------------
+        Scanner in = new Scanner(System.in);
+        formatBiodata biodataMahasiswa[] = new formatBiodata[20];
+        boolean N = true;
+        int jawab;
+        int hit = 0;
+        do{
+            biodataMahasiswa[hit] = new formatBiodata();
+            ngentriData(biodataMahasiswa, hit);
+            System.out.printf("Tambah data lagi?\n 1=ya 2=tidak\n");
+            jawab = in.nextInt();
+            if(jawab<2){
+                hit++;
+            }else{
+                N = false;
+            }
+        }while(N && (hit < 20));
+        tampilkanData(biodataMahasiswa, hit+1);
+    }
+}
+\end{lstlisting}
+Untuk tugas bagian pertama, adalah memodifikasi program 2.4, sehingga recordnya dinamis, dan akan otomatis menambahkan
+record jika user ingin menambah data, dengan data maksimal yang disimpan adalah 20 record.\\
+Karena data maksimal yang disimpan adalah 20 record, maka kita deklarasikan panjang record adalah 20.\\
+Kemudian dengan menggunakan perulangan do-while kita akan menambahkan array sesuai dengan input keberapa saat ini,
+kemudian akan menanyakan user, apakah akan menambahkan data lagi atau tidak, jika ya, maka program akan menambahkan
+record, jika tidak program akan menampilkan data yang sudah diinput oleh user.\\
+Jika dijalankan program menghasilkan output seperti berikut:
+\begin{center}
+    \includegraphics[scale=.7]{Tugas1.png} 
+\end{center}
+
+\subsubsection{Tugas 2}
+\begin{lstlisting}
+import java.util.Scanner;
+
+class formatData {
+    String nama;
+    String noMhs;
+    float nUTS;
+    float nUAS;
+}
+
+public class Tugas2 {
+    public static void entryData(formatData nilaiMhs[], int N) {
+        Scanner in2 = new Scanner(System.in);
+        for (int i = 0; i < N; i++) {
+            System.out.print("Masukkan nama: ");
+            nilaiMhs[i].nama = in2.next();
+            System.out.print("Masukkan NIM: ");
+            nilaiMhs[i].noMhs = in2.next();
+            System.out.print("Masukkan Nilai UTS: ");
+            nilaiMhs[i].nUTS = in2.nextFloat();
+            System.out.print("Masukkan Nilai UAS: ");
+            nilaiMhs[i].nUAS = in2.nextFloat();
+            System.out.println();
+        }
+    }
+
+    public static void viewData(formatData nilaiMhs[], int N) {
+        System.out.println("________________________________________________");
+        System.out.println("Nama                     NIM         UTS    UAS ");
+        System.out.println("________________________________________________");
+        for (int i = 0; i < N; i++) {
+            System.out.printf("%-16.16s %14.14s %8.1f %6.1f\n",
+                    nilaiMhs[i].nama,
+                    nilaiMhs[i].noMhs,
+                    nilaiMhs[i].nUTS,
+                    nilaiMhs[i].nUAS);
+        }
+        System.out.println("________________________________________________\n");
+    }
+
+    public static void main(String[] args) {
+        Scanner in1 = new Scanner(System.in);
+        int jawab;
+        int N = 0;
+        System.out.print("Banyak data: ");
+        N = in1.nextInt();
+        formatData nilaiMhs[] = new formatData[N];
+        for (int i = 0; i < N; i++) {
+            nilaiMhs[i] = new formatData();
+        }
+        do {
+            System.out.println("Menu:");
+            System.out.printf(" 1.Input\n 2.View\n 3.Exit\n");
+            System.out.print("(1/2/3): ");
+            jawab = in1.nextInt();
+            switch (jawab) {
+                case 1:
+                    entryData(nilaiMhs, N);
+                    break;
+                case 2:
+                    viewData(nilaiMhs, N);
+                    break;
+                default:
+                    break;
+            }
+        } while (jawab != 3);
+    }
+}
+\end{lstlisting}
+Untuk tugas kedua, adalah membuat program yang akan menyimpan biodata mahasiswa dengan isi nama, NIM, nilai UTS,
+dan UAS. Lalu pada saat dijalankan program akan menampilkan menu untuk input data, menampilkan data, dan keluar dari
+program.\\
+Untuk class pertama, dibuat record terlebih dahulu, yaitu tediri dari nama dan NIM, yang berjenis String, kemudian nilai
+UTS, dan UAS yang berjenis float.\\
+Lalu dibuat fungsi entryData, yang berfungsi untuk mengisikan data kedalam record, kemudian fungsi viewData untuk
+menampilkan data.\\
+Lalu fungsi main sebagai fungsi utama yang akan memanggil fungsi entryData dan viewData, serta menampilkan menu ke user.
+Untuk menampilkan menu digunakan perulangan do-while, sehingga menu akan ditampilkan lagi sesudah user memasukkan atau
+melihat data, dan perulangan akan berhenti jika user memasukkan nilai 3, sehingga program akan berhenti.\\
+Jika user menampilkan data sebelum memasukkan data, maka yang nilai yang ditampilkan adalah null.\\
+Jika program dijalankan, maka akan tampak seperti berikut ini:
+\begin{center}
+    \includegraphics[scale=.7]{Tugas2a.png} 
+    \includegraphics[scale=.7]{Tugas2b.png} 
+\end{center}
 
 \newpage
 
 \section{Kesimpulan}
-Setelah praktik mahasiswa dapat menggunakan berbagai tipe data untuk menyimpan data baik alphabetic, alphanumeric,
-maupun boolean.
+Setelah praktik mahasiswa dapat membuat suatu struktur \textit{record} (rekaman) dan \textit{array of record}
+(rekaman dalam larik) untuk menyimpan data mengunakan bahasa java.
+
+\newpage
+\section{Listing}
+\subsubsection{program 1}
+\begin{center}
+    \includegraphics[scale=.5]{code01.png} 
+\end{center}
+
+\subsubsection{program 2}
+\begin{center}
+    \includegraphics[scale=.5]{code02.png} 
+    \includegraphics[scale=.5]{code03.png} 
+\end{center}
+
+\subsubsection{program 3}
+\begin{center}
+    \includegraphics[scale=.5]{code04.png} 
+    \newpage
+    \includegraphics[scale=.5]{code05.png} 
+\end{center}
+
+\subsubsection{program 4}
+\begin{center}
+    \includegraphics[scale=.5]{code06.png} 
+    \newpage
+    \includegraphics[scale=.5]{code07.png} 
+\end{center}
+
+\subsubsection{program 5}
+\begin{center}
+    \includegraphics[scale=.5]{code08.png} 
+    \newpage
+    \includegraphics[scale=.5]{code09.png} 
+\end{center}
+
+\subsubsection{program 6}
+\begin{center}
+    \includegraphics[scale=.5]{code10.png} 
+    \newpage
+    \includegraphics[scale=.5]{code11.png} 
+\end{center}
+
+\subsubsection{program 7}
+\begin{center}
+    \includegraphics[scale=.5]{code12.png} 
+    \newpage
+    \includegraphics[scale=.5]{code13.png} 
+\end{center}
+
+\subsubsection{output}
+\begin{center}
+    \includegraphics[scale=.7]{prog12.png} 
+\end{center}
+\begin{center}
+    \includegraphics[scale=.7]{prog34a.png} 
+    \includegraphics[scale=.7]{prog34b.png} 
+    \includegraphics[scale=.7]{out-prak2-1.png}
+    \includegraphics[scale=.7]{out-prak2-2.png}
+    \includegraphics[scale=.7]{out-prak2-3.png}
+    \includegraphics[scale=.7]{lat1.png}
+    \includegraphics[scale=.7]{lat2.png}
+    \includegraphics[scale=.7]{lat3.png}
+    \includegraphics[scale=.7]{lat4.png}
+    \includegraphics[scale=.7]{lat5.png}
+    \includegraphics[scale=.7]{Tugas1.png}
+    \includegraphics[scale=.7]{Tugas2a.png}
+    \includegraphics[scale=.7]{Tugas2b.png}
+\end{center}
+
 \end{document}
