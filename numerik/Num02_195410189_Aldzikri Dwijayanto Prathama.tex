@@ -1,0 +1,80 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{esvect}
+\usepackage{textcomp}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{parskip}
+
+\begin{document}
+   \null\hfill\begin{tabular}[t]{l@{}}
+      \textbf{Nama: Aldzikri Dwijayanto P.} \\
+      \textbf{NIM:\@ 195410189} \\
+      \textbf{Kelas: TI-4}
+   \end{tabular} 
+
+   \begin{enumerate}
+      \item Hasil pengukuran panjang paku adalah 9cm. jika panjang paku sesungguhnya adalah 10cm, hitung :
+      \begin{enumerate}[label=\alph*.]
+            \item galat
+            \item Persen galat relatif
+      \end{enumerate}
+
+      Jawab
+      \begin{enumerate}[label= (\alph*)]
+         \item 
+         $
+            E_{t} = 10 - 9 = 1cm
+         $\\
+
+         \item
+         $
+            E_{t} = \frac{1}{10} \times 100\% \\
+            = 10 \%
+         $\\[2ex]
+      \end{enumerate}
+
+      \item Diberikan deret tak hingga sebagai berikut :\\
+         $
+            f(x) = 1 + x + \frac{x^{2}}{2!} +  \frac{x^{3}}{3!} + \frac{x^{4}}{4!} + ...
+         $\\
+         Hitung:
+         \begin{enumerate}[label=\alph*.]
+            \item 
+               $
+               f(x) = e ^{-\frac{1}{2}}
+               $
+               dengan deret diatas sebagai cacah suku = 5
+
+            \item Jika nilai eksak $f(x) = e ^{-\frac{1}{2}} = 0,060653$, hitunglah galat dan persen galat relatif
+         \end{enumerate}
+         
+      Jawab\\
+         \begin{enumerate}[label=(\alph*)]
+               \item
+             \begin{flalign*}
+                f(x) &= e^{x}\\
+                e^{x} &= e^{-\frac{1}{2}} , x = -\frac{1}{2} = 0,5\\
+                f(-\frac{1}{2}) &=
+             1+(-\frac{1}{2})+\frac{(-\frac{1}{2})^{2}}{2!}+\frac{(-\frac{1}{2})^{3}}{3!}+\frac{(-\frac{1}{2})^{4}}{4!}\\
+                &=1+(-0,5)+\frac{0,25}{2}+(\frac{-0,125}{6})+\frac{0,0625}{24}\\
+                &=1-0,5+0,125-0,02083+0,002604\\
+                &=0,60677
+             \end{flalign*}
+
+               \item 
+            \begin{flalign*}
+               galat \implies E_{t} &= 0,60653 - 0,60677\\
+               &=-0,00024
+            \end{flalign*}
+
+               \begin{flalign*}
+                  Persen\ galat \implies E_{t}&=\frac{-0,00024}{0,60653} \times 100\%\\
+                  &=0,039
+               \end{flalign*}
+         \end{enumerate}
+
+   \end{enumerate}
+\end{document}
