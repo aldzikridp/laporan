@@ -1,0 +1,124 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{esvect}
+\usepackage{textcomp}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{graphicx}
+
+\begin{document}
+   \null\hfill\begin{tabular}[t]{l@{}}
+      \textbf{Nama: Aldzikri Dwijayanto P.} \\
+      \textbf{NIM:\@ 195410189} \\
+      \textbf{Kelas: TI-4}
+   \end{tabular} 
+
+   Tentukan solusi sistem persamaan linear berikut, sampai dengan 5 iterasi
+   \begin{flalign*}
+       4x_{1}-2x_{2}-x_{3}&+40\\
+       x_{1}-6x_{2}+2x_{3}=-28\\
+       x_{1}-2x_{2}+12x_{3}=-86
+   \end{flalign*}
+
+   Metode Gauss Seidel\\
+   Jawab:\\
+   \begin{flalign*}
+       x_{1}=\frac{40+(+2x_{2})+1x_{3}}{4} 
+       x_{2}
+   \end{flalign*}
+
+   \begin{itemize}
+       \item Iterasi 1
+           \begin{flalign*}
+           \end{flalign*}
+   \end{itemize}
+
+   \begin{enumerate}
+       \item Lanjutkan penyelesaian contoh pada metode Jacobi hingga iterasi ke-4
+           \begin{itemize}
+               \item Iterasi 3
+                   \begin{flalign*}
+                       x_1^3&=\frac{7,85+0,1x_2^2+0,2x_3^2}{3}\\
+                       &=\frac{7,85+0,1(-17,4196667)+0,2(6,90642)}{3}\\
+                       &=2,49643911
+                   \end{flalign*}
+                   \begin{flalign*}
+                       x_2^3&=\frac{-19,3-0,1x_1^2+0,3x_3^2}{7}\\
+                       &=\frac{-19,3-0,1(9,00229)+0,3(6,90642)}{7}\\
+                       &=-2,289757571
+                   \end{flalign*}
+                   \begin{flalign*}
+                       x_3^3&=\frac{71,4-0,3x_1^2+0,2x_2^2}{10}\\
+                       &=\frac{71,4-0,3(9,00229)+0,2(-17,4196667)}{10}\\
+                       &=7,218324634
+                   \end{flalign*}
+
+               \item Iterasi 4
+                   \begin{flalign*}
+                       x_1^4&=\frac{7,85+0,1x_2^3+0,2x_3^3}{3}\\
+                       &=\frac{7,85+0,1(-2,289757571)+0,2(7,218324634)}{3}\\
+                       &=3,021563057
+                   \end{flalign*}
+                   \begin{flalign*}
+                       x_2^4&=\frac{-19,3-0,1x_1^3+0,3x_3^3}{7}\\
+                       &=\frac{-19,3-0,1(2,49643911)+0,3(7,218324634)}{7}\\
+                       &=-2,483448817
+                   \end{flalign*}
+                   \begin{flalign*}
+                       x_3^4&=\frac{71,4-0,3x_1^3+0,2x_2^3}{10}\\
+                       &=\frac{71,4-0,3(2,49643911)+0,2(-2,289757571)}{10}\\
+                       &=7,019311675
+                   \end{flalign*}
+
+                   \begin{flalign*}
+                       \varepsilon_{a1}^4&=\left|\frac{x_1^4-x_1^3}{x_1^4}\right|\times100\%=0.1737921523\%\\
+                       \varepsilon_{a3}^4&=\left|\frac{x_2^4-x_2^3}{x_2^4}\right|\times100\%=0.07799284796\%\\
+                       \varepsilon_{a3}^4&=\left|\frac{x_3^4-x_3^3}{x_3^4}\right|\times100\%=−0.02835220435\%\\
+                   \end{flalign*}
+           \end{itemize}
+       \item Lanjutkan penyelesaian contoh pada metode Gauss Seidel hingga iterasi ke-4
+           \begin{itemize}
+               \item Iterasi 3
+                   \begin{flalign*}
+                       x_1^3&=\frac{7,85+0,1x_2^2+0,2x_3^2}{3}\\
+                       &=\frac{7,85+0,1(2,499624684)+0,2(7,005609524)}{3}\\
+                       &=3,167028124
+                   \end{flalign*}
+                   \begin{flalign*}
+                       x_2^3&=\frac{-19,3-0,1x_1^3+0,3x_3^2}{7}\\
+                       &=\frac{-19,3-0,1(3,167028124)+0,3(7,005609524)}{7}\\
+                       &=-2,502145708
+                   \end{flalign*}
+                   \begin{flalign*}
+                       x_3^3&=\frac{71,4-0,3x_1^3+0,2x_2^3}{10}\\
+                       &=\frac{71,4-0,3(3,167028124)+0,2(-2,502145708)}{10}\\
+                       &=6,994946242
+                   \end{flalign*}
+               \item Iterasi 4
+                   \begin{flalign*}
+                       x_1^3&=\frac{7,85+0,1x_2^3+0,2x_3^3}{3}\\
+                       &=\frac{7,85+0,1(-2,502145708)+0,2(6,994946242)}{3}\\
+                       &=2,999591559
+                   \end{flalign*}
+                   \begin{flalign*}
+                       x_2^3&=\frac{-19,3-0,1x_1^4+0,3x_3^3}{7}\\
+                       &=\frac{-19,3-0,1(2,999591559)+0,3(6,994946242)}{7}\\
+                       &=−2,500210755
+                   \end{flalign*}
+                   \begin{flalign*}
+                       x_3^3&=\frac{71,4-0,3x_1^4+0,2x_2^4}{10}\\
+                       &=\frac{71,4-0,3(2,999591559)+0,2(−2,500210755)}{10}\\
+                       &=7,000008038
+                   \end{flalign*}
+                   \begin{flalign*}
+                       \varepsilon_{a1}^4&=\left|\frac{x_1^4-x_1^3}{x_1^4}\right|\times100\%=0,05581978803\%\\
+                       \varepsilon_{a3}^4&=\left|\frac{x_2^4-x_2^3}{x_2^4}\right|\times100\%=−7,73915957\times10^{4}\%\\
+                       \varepsilon_{a3}^4&=\left|\frac{x_3^4-x_3^3}{x_3^4}\right|\times100\%=7,23112884\times10^{4}\%\\
+                   \end{flalign*}
+           \end{itemize}
+   \end{enumerate}
+
+\end{document}

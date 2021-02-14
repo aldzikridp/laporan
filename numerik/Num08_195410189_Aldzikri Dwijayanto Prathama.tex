@@ -1,0 +1,69 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{esvect}
+\usepackage{textcomp}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{graphicx}
+
+\begin{document}
+   \null\hfill\begin{tabular}[t]{l@{}}
+      \textbf{Nama: Aldzikri Dwijayanto P.} \\
+      \textbf{NIM:\@ 195410189} \\
+      \textbf{Kelas: TI-4}
+   \end{tabular} 
+
+   Tentukan salah satu akar dari $f(x)=e^{-x}-x$ dengan nilai awal $x_{-1}=0$ dan $x_{0}=1$ \\
+   Penyelesaian:
+   \begin{itemize}
+      \item Iterasi 1
+          \begin{flalign*}
+              x_{-1}&=0 \rightarrow f(x_{-1})=1,00000\\
+              x_{0}&=1 \rightarrow f(x_{0})=-0,63212\\
+              x_{1}&=x_{0}-\frac{f(x_{0})(x_{-1}-x_{0})}{f(x_{-1})-f(x_{0})}\\
+              &=1-\frac{-0,63212(0-1)}{1-(-0,63212)}=0,61270\\
+          \end{flalign*}
+
+      \item Iterasi 2
+          \begin{flalign*}
+              x_{0}&=1 \rightarrow f(x_{0})=0,63212\\
+              x_{1}&=0,61270 \rightarrow f(x_{1})=-0,07081\\
+              x_{2}&=x_{1}-\frac{f(x_{1})(x_{0}-x_{1})}{f(x_{0})-f(x_{1})}\\
+              &=0,61270-\frac{-0,07081(1-0,61270)}{0,63212-(-0,07081)}=0,56384\\
+          \end{flalign*}
+
+      \item Iterasi 3
+          \begin{flalign*}
+              x_{1}&=0,61270\\
+              x_{2}&=0,56384 \rightarrow f(x_{2})=0,005180\\
+              &=0,56384-\frac{0,005180(0,61270-0,56384)}{-0,07081-0,005180}=0,56717\\
+          \end{flalign*}
+
+      \item Iterasi 4
+          \begin{flalign*}
+              x_{2}&=0,56384\\
+              x_{3}&=0,56717 \rightarrow f(x_{3})=0,000042\\
+              &=0,56717-\frac{0,000042(0,56384-0,56717)}{0,005180-0,000042}=0,567197\\
+          \end{flalign*}
+
+      \item Iterasi 5
+          \begin{flalign*}
+              x_{3}&=0,56717\\
+              x_{4}&=0,567197 \rightarrow f(x_{4})=0,000084\\
+              &=0,567197-\frac{0,000084(0,56717-0,567197)}{0,000042-0,000084}=0,567143\\
+          \end{flalign*}
+
+      \item Iterasi 6
+          \begin{flalign*}
+              x_{4}&=0,567197\\
+              x_{5}&=0,567143 \rightarrow f(x_{5})=0,00000045\\
+              &=0,567143-\frac{0,00000045(0,567197-0,567143)}{0,00000045-0,000084}=0,5671433\\
+          \end{flalign*}
+   \end{itemize}
+
+
+  
+\end{document}

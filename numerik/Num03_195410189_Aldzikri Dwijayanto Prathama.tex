@@ -1,0 +1,52 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{esvect}
+\usepackage{textcomp}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{parskip}
+
+\begin{document}
+   \null\hfill\begin{tabular}[t]{l@{}}
+      \textbf{Nama: Aldzikri Dwijayanto P.} \\
+      \textbf{NIM:\@ 195410189} \\
+      \textbf{Kelas: TI-4}
+   \end{tabular} 
+
+   Uraikan Deret Taylor orde nol sampai dengan orde 2, untuk menaksir f(3) untuk
+   $f(x)=25x^{3}-6x+7x-88$ dengan titik dasar x=2.\\
+
+   \textbf{Jawab\\}
+   $
+   f(12)=102
+   f(3)=554
+   $
+
+   \begin{flalign*}
+      n=0\\
+      f(x)&=25x^{3}-6x^{2}+7x-88\\
+      f(2)&=102\\
+      Et&=554-102=452
+   \end{flalign*}
+
+   \begin{flalign*}
+     n=1\\
+      f'(x)&=75x^{2}-12x+7\\
+      f'(2)&=283\\
+      f(x)&=102+283\\
+      &=385\\
+      f(3)&=385\\
+      Et&=554-385=169
+   \end{flalign*}
+
+   \begin{flalign*}
+     n=2\\
+      f''(x)&=150x-12\\
+      f''(2)&=288\\
+      f(x)&=102+283+144\\
+      f(3)&=529\\
+      Et&=554-529=25
+   \end{flalign*}
+\end{document}
